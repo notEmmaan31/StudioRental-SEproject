@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginForgot">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginManage">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -30,7 +30,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Button fx:id="btn_confirmPass" layoutX="370.0" layoutY="258.0" mnemonicParsing="false" onAction="#confirmPass" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="OKAY" textFill="WHITE" />
+                  <Button fx:id="btn_exit" layoutX="370.0" layoutY="258.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="OKAY" textFill="WHITE" />
                </children>
             </Pane>
          </children>

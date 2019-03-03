@@ -23,7 +23,7 @@
                   <Label layoutX="147.0" layoutY="73.0" style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required administrator account information." />
                   <Label layoutX="306.0" layoutY="22.0" style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Login Verification" />
                   <Label fx:id="btn_forgotpass" layoutX="180.0" layoutY="238.0" style="-fx-text-fill: #b64750; -fx-font-weight: bold;" text="Forgot Password?" />
-                  <Button fx:id="btn_cancellogin" layoutX="198.0" layoutY="302.0" mnemonicParsing="false" onAction="#cancel" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #fffffff;" text="CANCEL" textFill="WHITE" />
+                  <Button fx:id="btn_exit" layoutX="198.0" layoutY="302.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #fffffff;" text="CANCEL" textFill="WHITE" />
                   <Button fx:id="btn_confirmlogin" layoutX="558.0" layoutY="302.0" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="CONFIRM" />
                   <PasswordField fx:id="tf_password" layoutX="180.0" layoutY="198.0" prefHeight="26.0" prefWidth="479.0" promptText="Password" />
                   <TextField fx:id="tf_username" layoutX="180.0" layoutY="145.0" prefHeight="26.0" prefWidth="479.0" promptText="Username" />

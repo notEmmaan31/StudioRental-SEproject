@@ -30,10 +30,9 @@
                         </Label>
                      </children>
                   </VBox>
-                  <HBox layoutX="216.0" layoutY="303.0">
+                  <HBox layoutX="165.0" layoutY="302.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #ffffff;" text="CANCEL" />
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="BACK">
+                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="BACK">
                            <HBox.margin>
                               <Insets left="200.0" />
                            </HBox.margin>

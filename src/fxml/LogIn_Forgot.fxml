@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginForgot">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginManage">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -42,8 +42,8 @@
                   </VBox>
                   <HBox layoutX="215.0" layoutY="300.0">
                      <children>
-                        <Button fx:id="btn_cancel" mnemonicParsing="false" onAction="#cancel" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #ffffff;" text="CANCEL" />
-                        <Button fx:id="btn_confirm" mnemonicParsing="false" onAction="#confirm" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="CONFIRM">
+                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #ffffff;" text="CANCEL" />
+                        <Button fx:id="btn_confirm" mnemonicParsing="false" onAction="#emailMatch" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="CONFIRM">
                            <HBox.margin>
                               <Insets left="200.0" />
                            </HBox.margin>
