@@ -2,7 +2,7 @@ package util;
 
 public class Encryption {
 	
-	private static int[]  keys = {216, 1512, 184, 586, 15};
+	private static int[]  keys = {216, 1512, 184, 586, 15,49,432,23,41,534,564,646,1476,245,235,523,52342,123425,645743,356};
 	public static String encrypt(String pass) {
 		String newPass = "";
 		char ch;
@@ -16,7 +16,6 @@ public class Encryption {
 			newPass += ch;
 		}
 		return newPass;
-		
 	}
 	
 	public static String decrypt(String pass) {
