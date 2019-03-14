@@ -30,8 +30,16 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Button fx:id="btn_exit" layoutX="215.0" layoutY="302.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #ffffff;" text="CANCEL" textFill="WHITE" />
-                  <Button fx:id="btn_retryError" layoutX="521.0" layoutY="302.0" mnemonicParsing="false" onAction="#retryError" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="RETRY" textFill="WHITE" />
+                  <HBox layoutX="215.0" layoutY="300.0">
+                     <children>
+                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="200.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btn_retryError" mnemonicParsing="false" onAction="#retryError" prefHeight="38.0" prefWidth="101.0" styleClass="button-retry" stylesheets="@../styles.css" text="RETRY" textFill="WHITE" />
+                     </children>
+                  </HBox>
                </children>
             </Pane>
          </children>

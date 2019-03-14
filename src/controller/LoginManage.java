@@ -4,14 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import util.SceneUtil;
 import util.Encryption;
 
@@ -66,8 +63,8 @@ public class LoginManage {
     private PasswordField pf_newPassRetype;
     
 
-	private static String connectionUrl = "jdbc:derby:C:\\Users\\kyosk\\MyDB;create=true";
-	private static String driver =  "org.apache.derby.jdbc.EmbeddedDriver";
+	private static String connectionUrl = "jdbc:derby://localhost:1527/srmsDB;create=true";
+	private static String driver =  "org.apache.derby.jdbc.ClientDriver";
 	private static Connection connection;
 	private static PreparedStatement ps;
 	private static ResultSet rs;
@@ -84,19 +81,21 @@ public class LoginManage {
     		Class.forName(driver);
     		try {
     			connection = DriverManager.getConnection(connectionUrl);
-    			ps = connection.prepareStatement("SELECT * FROM ACCOUNT.USERS");
+    			ps = connection.prepareStatement("SELECT * FROM ACCOUNT.USERS WHERE USERNAME = ? AND PASSWORD = ?");
+    			ps.setString(1, user);
+    			ps.setString(2, Encryption.encrypt(pass));
     			rs = ps.executeQuery();
-    			while(rs.next()) {
-    				if(rs.getString("USERNAME").equalsIgnoreCase(user) && rs.getString("PASSWORD").equals(Encryption.encrypt(pass))) {
-            			oldStage = (Stage) btn_exit.getScene().getWindow();
-       					root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Manage_Success.fxml"));
-       					SceneUtil.nextScene(root, "Login Successful", oldStage);
-        			}
-        			else {
-        				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Manage_Failed.fxml"));
-        				SceneUtil.openWindow(root);
-        			}
-    		    }
+    			
+    			if(rs.next()) {
+    				oldStage = (Stage) btn_exit.getScene().getWindow();
+       				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Manage_Success.fxml"));
+       				SceneUtil.nextScene(root, "Login Successful", oldStage);
+    			}
+        		else {
+        			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Manage_Failed.fxml"));
+        			SceneUtil.openWindow(root);
+        		}
+    		    
 
     			rs.close();
     			ps.close();
@@ -114,7 +113,7 @@ public class LoginManage {
     @FXML
     void toMain(ActionEvent event) {
 		try {
-			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/adminMain.fxml"));
+			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
 			Stage stage = (Stage) btn_confirmLogin.getScene().getWindow();
 			SceneUtil.nextScene(root, "Login Success", stage);
 		} catch (IOException e) {
@@ -135,20 +134,23 @@ public class LoginManage {
     	try {
     		Class.forName(driver);
 			connection = DriverManager.getConnection(connectionUrl);
-			ps = connection.prepareStatement("SELECT * FROM ACCOUNT.USERS");
+			ps = connection.prepareStatement("SELECT * FROM ACCOUNT.USERS WHERE EMAIL = ?");
+			ps.setString(1,tf_email.getText());
 			rs = ps.executeQuery();
-			while(rs.next()) {
-				email = rs.getString("EMAIL").trim();
-				if(email.equalsIgnoreCase(tf_email.getText().trim())) {
-					Stage oldStage = (Stage)btn_confirm.getScene().getWindow();
-		    		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Match.fxml"));
-		    		SceneUtil.nextScene(root, "Change password", oldStage);
-				}
-				else {
-					Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
-		    		SceneUtil.openWindow(root);
-				}
-		    }
+			
+			if (rs.next()) {
+				
+				Stage oldStage = (Stage)btn_confirm.getScene().getWindow();
+		    	Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Match.fxml"));
+		    	SceneUtil.nextScene(root, "Change password", oldStage);	
+		    	
+			}
+			else {
+				
+			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
+			SceneUtil.openWindow(root);
+						
+			}
 			
 			rs.close();
 			ps.close();

@@ -30,7 +30,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Button fx:id="btn_confirmPass" layoutX="370.0" layoutY="258.0" mnemonicParsing="false" onAction="#confirmPass" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="OKAY" textFill="WHITE" />
+                  <Button fx:id="btn_confirmPass" layoutX="370.0" layoutY="300.0" mnemonicParsing="false" onAction="#confirmPass" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" textFill="WHITE" />
                </children>
             </Pane>
          </children>

@@ -42,8 +42,8 @@
                   </VBox>
                   <HBox layoutX="215.0" layoutY="300.0">
                      <children>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #ffffff;" text="CANCEL" />
-                        <Button fx:id="btn_confirm" mnemonicParsing="false" onAction="#emailMatch" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="CONFIRM">
+                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" />
+                        <Button fx:id="btn_confirm" mnemonicParsing="false" onAction="#emailMatch" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="CONFIRM">
                            <HBox.margin>
                               <Insets left="200.0" />
                            </HBox.margin>

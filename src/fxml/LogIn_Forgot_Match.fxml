@@ -31,10 +31,10 @@
                         </Label>
                      </children>
                   </VBox>
-                  <HBox layoutX="215.89999389648438" layoutY="298.8999938964844">
+                  <HBox layoutX="215.0" layoutY="300.0">
                      <children>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #515151; -fx-text-fill: #ffffff;" text="CANCEL" textFill="WHITE" />
-                        <Button fx:id="btn_changePass" mnemonicParsing="false" onAction="#changePass" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="CHANGE" textFill="WHITE">
+                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE" />
+                        <Button fx:id="btn_changePass" mnemonicParsing="false" onAction="#changePass" prefHeight="38.0" prefWidth="101.0" styleClass="button-change" stylesheets="@../styles.css" text="CHANGE" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="200.0" />
                            </HBox.margin>
