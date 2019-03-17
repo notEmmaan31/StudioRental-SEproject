@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -64,12 +65,7 @@
       </AnchorPane>
       <VBox alignment="TOP_RIGHT" layoutX="-36.0" layoutY="410.0" prefHeight="428.0" prefWidth="198.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="242.0" AnchorPane.leftAnchor="-36.0">
          <children>
-            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floor" stylesheets="@../styles.css" text="SECOND FLOOR">
-               <VBox.margin>
-                  <Insets bottom="40.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floor" stylesheets="@../styles.css" text="THIRD FLOOR">
+            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floor" stylesheets="@../styles.css" text="SIXTH FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
@@ -79,7 +75,12 @@
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floor" stylesheets="@../styles.css" text="SIXTH FLOOR">
+            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floor" stylesheets="@../styles.css" text="THIRD FLOOR">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floor" stylesheets="@../styles.css" text="SECOND FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
@@ -135,7 +136,19 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="ds1_7" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="DS1" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="toggleGroup" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="ds1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -144,7 +157,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_8" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -153,7 +166,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_9" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -162,7 +175,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_10" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -171,7 +184,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_11" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -180,7 +193,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_12" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -189,7 +202,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_13" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -198,7 +211,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_14" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -207,7 +220,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_15" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -216,7 +229,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_16" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -225,7 +238,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_17" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -234,16 +247,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds1_18" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2" text="DS1" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="ds1_19" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -256,7 +260,7 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="ds2_7" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -265,7 +269,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_8" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -274,7 +278,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_9" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -283,7 +287,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_10" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -292,7 +296,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_11" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -301,7 +305,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_12" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -310,7 +314,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_13" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -319,7 +323,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_14" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -328,7 +332,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_15" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -337,7 +341,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_16" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -346,7 +350,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_17" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -355,7 +359,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_18" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -364,7 +368,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="ds2_19" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -377,7 +381,7 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="perc_7" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -386,7 +390,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_8" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -395,7 +399,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_9" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -404,7 +408,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_10" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -413,7 +417,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_11" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -422,7 +426,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_12" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -431,7 +435,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_13" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -440,7 +444,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_14" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -449,7 +453,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_15" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -458,7 +462,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_16" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -467,7 +471,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_17" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -476,7 +480,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_18" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -485,7 +489,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="perc_19" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="perc_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -498,7 +502,7 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="opr1_7" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -507,7 +511,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_8" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -516,7 +520,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_9" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -525,7 +529,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_10" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -534,7 +538,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_11" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -543,7 +547,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_12" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -552,7 +556,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_13" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -561,7 +565,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_14" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -570,7 +574,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_15" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -579,7 +583,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_16" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -588,7 +592,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_17" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -597,7 +601,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_18" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -606,7 +610,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr1_19" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -619,7 +623,7 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="opr2_7" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -628,7 +632,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_8" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -637,7 +641,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_9" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -646,7 +650,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_10" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -655,7 +659,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_11" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -664,7 +668,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_12" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -673,7 +677,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_13" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -682,7 +686,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_14" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -691,7 +695,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_15" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -700,7 +704,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_16" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -709,7 +713,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_17" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -718,7 +722,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_18" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
@@ -727,7 +731,7 @@
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="opr2_19" mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="opr2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>

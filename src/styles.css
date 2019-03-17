@@ -101,15 +101,16 @@
 }
 
 .toggle-button-UI-rented{
-    -fx-background-color: #fb717b;
+    -fx-background-color: derive(#df505a,10%);
 }
 
+
 .toggle-button-UI-rented:hover{
-    -fx-background-color: #fd7d86;
+    -fx-background-color: derive(#fd7d86,20%);
 }
 
 .toggle-button-UI-rented:selected{
-    -fx-background-color: #df505a;
+    -fx-background-color: derive(#ff878e,30%);
 }
 
 .label-day{

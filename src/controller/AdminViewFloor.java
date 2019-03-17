@@ -1,23 +1,33 @@
 package controller;
 
+import java.awt.Event;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import util.Encryption;
 import util.SceneUtil;
@@ -886,6 +896,9 @@ public class AdminViewFloor implements Initializable{
 
 	@FXML
 	private ToggleButton rm6B_9;
+	
+    @FXML
+    private ToggleGroup toggleGroup;
 
 	@FXML
 	private ToggleButton rm6B_10;
@@ -1231,13 +1244,25 @@ public class AdminViewFloor implements Initializable{
 	
 	@FXML
 	private Button btn_exit;
+	
+	@FXML
+    private Label lbl_rm;
+
+    @FXML
+    private TextField tf_studNum;
+
+    @FXML
+    private TextField tf_firstName;
+
+    @FXML
+    private TextField tf_lastName;
 
 	@FXML
 	void floor2(ActionEvent event) throws IOException {
 		Stage oldStage = (Stage) btn_floor2.getScene().getWindow();
 		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main2F_Admin.fxml"));
 		SceneUtil.nextScene(root, "2nd Floor Rooms (Administrator)", oldStage);
-		root.requestFocus();
+		
 	}
 
 	@FXML
@@ -1245,7 +1270,7 @@ public class AdminViewFloor implements Initializable{
 		Stage oldStage = (Stage) btn_floor3.getScene().getWindow();
 		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main3F_Admin.fxml"));
 		SceneUtil.nextScene(root, "3rd Floor Rooms (Administrator)", oldStage);
-		root.requestFocus();
+	
 	}
 
 	@FXML
@@ -1254,7 +1279,7 @@ public class AdminViewFloor implements Initializable{
 		Stage oldStage = (Stage) btn_floor5.getScene().getWindow();
 		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main5F_Admin.fxml"));
 		SceneUtil.nextScene(root, "5th Floor Rooms (Administrator)", oldStage);
-		root.requestFocus();
+		
 
 	}
 
@@ -1263,7 +1288,7 @@ public class AdminViewFloor implements Initializable{
 		Stage oldStage = (Stage) btn_floor5.getScene().getWindow();
 		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
 		SceneUtil.nextScene(root, "6th Floor Rooms (Administrator)", oldStage);
-		root.requestFocus();
+		
 
 	}
 
@@ -1277,47 +1302,95 @@ public class AdminViewFloor implements Initializable{
 	
 	@FXML
 	void exit(ActionEvent event) throws IOException {
-		Stage oldStage = (Stage) btn_exit.getScene().getWindow();
-		oldStage.close();
+		Stage stage = (Stage) btn_exit.getScene().getWindow();
+		stage.close();
 	}
 	
-	ToggleButton room;
+	ToggleButton oldRoom;
+	ToggleButton newRoom;
+	
 	@FXML
 	void select(ActionEvent event) throws IOException {
 		
-		if(((ToggleButton) event.getSource()).isSelected()) {
-			room = (ToggleButton) event.getSource();
-		}else {
-			room = null;
-			}
-		}
 		
-	
-	Date now = new Date();
+		
+		newRoom = (ToggleButton) event.getSource();
+		
+		if(newRoom.isSelected()) {
+			
+			if (oldRoom != null) {
+				if (oldRoom != newRoom) {
+					oldRoom.setSelected(false);
+					oldRoom = newRoom;
+				}
+			} else {
+				if (oldRoom != newRoom) {
+					oldRoom = newRoom;
+				}
+			}
+			
+			
+		}else {
+			newRoom = null;
+			}
+		
+	}
+		
+	static Parent root;
+	static Date now = new Date();
+	static Stage oldStage;
+	static String[] roomInfo;
 	
 	@FXML
 	void rent(ActionEvent event) throws IOException {
 		
-		room.getStyleClass().clear();
-		room.getStyleClass().add("toggle-button-UI-rented");
-		room.setSelected(false);
-		room = null;
-		}
+		roomInfo = newRoom.getId().split("_");
+		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation.fxml"));
+		SceneUtil.openWindow(root);
+		
+	}
+	
+	
+		
+		
+		
+//		
 //		try {
 //			Class.forName("org.apache.derby.jdbc.ClientDriver");
 //			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
-//			PreparedStatement ps = con.prepareStatement("INSERT");
+//			PreparedStatement ps = con.prepareStatement("SELECT OID FROM APP.ORDERS ORDER BY OID DESC ");
+//			ResultSet rs = ps.executeQuery();
+//			int oid = 1;
+//			if(rs.next()) {
+//				oid = Integer.parseInt(rs.getString("OID")) + 1;
+//			}
+//			//INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)
+//			ps = con.prepareStatement("INSERT INTO APP.ORDERS (OID,STUDENT_NUMBER, LAST_NAME, FIRST_NAME, ROOM_RENTED, DATE_RENTED, TIME_RENTED, CANCELLED, PAYMENT) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+//			ps.setString(1, Integer.toString(oid));
+//			ps.setString(2, "2013056608");
+//			ps.setString(3, "emman");
+//			ps.setString(4, "falceso");
+//			ps.setString(5, roomInfo[0]);
+//			ps.setString(6, new java.sql.Date(System.currentTimeMillis()).toString());
+//			ps.setString(7, roomInfo[1]);
+//			ps.setString(8, "false");
+//			ps.setString(9, "15");
 //			ps.executeUpdate();
-//			
+//			newRoom.getStyleClass().clear();
+//			newRoom.getStyleClass().add("toggle-button-UI-rented");
+//			newRoom.setSelected(false);
+//			newRoom = null;
+//			rs.close();
+//			ps.close();
+//			con.close();
 //		} catch (ClassNotFoundException e) {
 //			e.printStackTrace();
 //		} catch (SQLException e) {
 //			e.printStackTrace();
 //		}
 //		
-//		room.getStyleClass().clear();
-//		room.getStyleClass().add("toggle-button-UI-rented");
-//		
+		
+	
 	
 
 	@FXML
@@ -1329,22 +1402,69 @@ public class AdminViewFloor implements Initializable{
 
 	@FXML
 	void remove(ActionEvent event) throws IOException {
-		room.getStyleClass().clear();
-		room.getStyleClass().add("toggle-button-UI");
-		room.setSelected(false);
-		room = null;
+		newRoom.getStyleClass().clear();
+		newRoom.getStyleClass().add("toggle-button-UI");
+		newRoom.setSelected(false);
+		newRoom = null;
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		
+		if(location.toString().contains("Main")) {
 		Date now = new Date();
-		 
         SimpleDateFormat day = new SimpleDateFormat("EEEE");
 		lbl_day.setText(day.format(now));
-		
-	}
 
+		reload();
+		}
+	}
 	
+	@FXML
+	private ToggleButton roomReload;
+	
+	
+	public void reload() {
+		try {
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
+			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? ");
+			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
+			ps.setString(2, "false");
+			ResultSet rs = ps.executeQuery();
+			ObservableList<Toggle> rooms = toggleGroup.getToggles();
+			
+			while(rs.next()) {
+				
+				StringBuffer sb = new StringBuffer("");
+				sb.append(rs.getString("ROOM_RENTED"));
+				sb.append("_");
+				sb.append(rs.getString("TIME_RENTED"));
+				int size = rooms.size();
+				
+				for(int i = 0; i < size; i++)
+					if(rooms.get(i).toString().contains(sb)) {
+						
+						rooms.get(i).setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.setSelected(false);
+						break;
+						
+					}
+					
+				}
+				
+			//INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 }

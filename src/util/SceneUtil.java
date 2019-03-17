@@ -12,8 +12,8 @@ public class SceneUtil {
 		Stage primaryStage = new Stage();
 		primaryStage.setScene(new Scene(root));
 		primaryStage.initStyle(StageStyle.UNDECORATED);
-		oldStage.close();
 		primaryStage.show();
+		oldStage.close();
 	}
 	
 	public static void openWindow(Parent root) {
