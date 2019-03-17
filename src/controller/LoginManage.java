@@ -116,6 +116,7 @@ public class LoginManage {
 			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
 			Stage stage = (Stage) btn_confirmLogin.getScene().getWindow();
 			SceneUtil.nextScene(root, "Login Success", stage);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -130,7 +131,7 @@ public class LoginManage {
     
     @FXML
     void emailMatch(ActionEvent event) throws IOException {
-    	
+    	email = tf_email.getText();
     	try {
     		Class.forName(driver);
 			connection = DriverManager.getConnection(connectionUrl);
@@ -175,27 +176,39 @@ public class LoginManage {
     @FXML
     void changePass(ActionEvent event) throws IOException {
     	if (pf_newPass.getText().equals(pf_newPassRetype.getText())) {
+    		System.out.print(pf_newPass.getText());
+    		System.out.print(pf_newPassRetype.getText());
+    		System.out.print(email);
     		try {
-        		Class.forName(driver);
-    			connection = DriverManager.getConnection(connectionUrl);
-    			ps = connection.prepareStatement("UPDATE ACCOUNT.USERS SET PASSWORD = ? WHERE EMAIL = ?");
+        		Class.forName("org.apache.derby.jdbc.ClientDriver");
+        		Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+    			PreparedStatement ps = con.prepareStatement("UPDATE ACCOUNT.USERS SET PASSWORD = ? WHERE EMAIL = ?");
     			ps.setString(1, Encryption.encrypt(pf_newPass.getText()));
     			ps.setString(2, email);
     			ps.executeUpdate();
     			ps.close();
     			connection.close();
+    			
+    			Stage oldStage = (Stage)btn_exit.getScene().getWindow();
+        		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Success.fxml"));
+        		SceneUtil.nextScene(root, "Password changed", oldStage);
     		} catch (SQLException e) {
+    			e.printStackTrace();
     			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
         		SceneUtil.openWindow(root);
     		} catch (ClassNotFoundException e) {
+    			e.printStackTrace();
     			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
         		SceneUtil.openWindow(root);
-    		}
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
+        		SceneUtil.openWindow(root);
+        		
+			}
     		
     		
-    		Stage oldStage = (Stage)btn_exit.getScene().getWindow();
-    		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Success.fxml"));
-    		SceneUtil.nextScene(root, "Password changed", oldStage);
+    		
     	}
     	
     }
@@ -206,6 +219,12 @@ public class LoginManage {
     	Stage stage = (Stage)btn_exit.getScene().getWindow();
     	stage.close();
     }
-
-
+    
+    @FXML
+    void exitLogin(ActionEvent event) throws IOException {
+    	Stage oldStage = (Stage)btn_exit.getScene().getWindow();
+    	Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F.fxml"));
+    	SceneUtil.nextScene(root, "6th Floor Rooms", oldStage);
+    }
+    
 }

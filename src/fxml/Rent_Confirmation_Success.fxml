@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -20,7 +20,7 @@
             </HBox>
             <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
                <children>
-                  <Button layoutX="370.0" layoutY="294.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" textFill="WHITE" />
+                  <Button fx:id="btn_exit" layoutX="370.0" layoutY="294.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" textFill="WHITE" />
                   <VBox alignment="CENTER" layoutX="234.0" layoutY="27.0">
                      <children>
                         <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
@@ -36,18 +36,18 @@
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Rental Fee: " />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="₱15.00" />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="| Name of Room/s:" />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="6A" />
+                                    <Label fx:id="lbl_rm" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="6A" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_CENTER">
                                  <children>
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="No. of Hour/s: " />
+                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="No. of Hour: " />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="1" />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #107400;" text="| Total: " />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: 900; -fx-text-fill: #107400;" text="₱15.00" />
                                  </children>
                               </HBox>
-                              <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 34px; -fx-text-fill: #515151; -fx-font-weight: 900;" text="ROOM/S RENTED">
+                              <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 34px; -fx-text-fill: #515151; -fx-font-weight: 900;" text="ROOM RENTED">
                                  <padding>
                                     <Insets top="60.0" />
                                  </padding>

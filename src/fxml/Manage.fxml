@@ -53,7 +53,7 @@
                   </VBox>
                   <HBox layoutX="215.0" layoutY="300.0">
                      <children>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE">
+                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exitLogin" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE">
                            <HBox.margin>
                               <Insets right="200.0" />
                            </HBox.margin>

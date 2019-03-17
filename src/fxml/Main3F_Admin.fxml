@@ -43,7 +43,7 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <Label alignment="TOP_CENTER" contentDisplay="TOP" styleClass="label-day" text="MONDAY">
+                  <Label fx:id="lbl_day" alignment="TOP_CENTER" contentDisplay="TOP" styleClass="label-day" text="lbl_day">
                      <HBox.margin>
                         <Insets bottom="20.0" left="200.0" right="540.0" />
                      </HBox.margin>
@@ -95,11 +95,11 @@
       </Label>
       <HBox alignment="TOP_CENTER" layoutX="344.0" layoutY="990.0" prefHeight="101.0" prefWidth="1726.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="btn_rent" alignment="CENTER" mnemonicParsing="false" styleClass="button-function" text="RENT">
+            <Button fx:id="btn_rent" alignment="CENTER" mnemonicParsing="false" onAction="#rent" styleClass="button-function" text="RENT">
                <HBox.margin>
                   <Insets right="80.0" />
                </HBox.margin></Button>
-            <Button fx:id="btn_remove" alignment="CENTER" mnemonicParsing="false" styleClass="button-function" text="REMOVE">
+            <Button fx:id="btn_remove" alignment="CENTER" mnemonicParsing="false" onAction="#remove" styleClass="button-function" text="REMOVE">
                <HBox.margin>
                   <Insets right="150.0" />
                </HBox.margin></Button>

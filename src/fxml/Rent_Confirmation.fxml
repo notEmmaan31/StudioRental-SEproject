@@ -76,7 +76,7 @@
                   <HBox layoutX="220.89999389648438" layoutY="298.8999938964844">
                      <children>
                         <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE" />
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="CONFIRM" textFill="WHITE">
+                        <Button fx:id="btn_checkRent" mnemonicParsing="false" onAction="#checkRent" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="CONFIRM" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="200.0" />
                            </HBox.margin>
