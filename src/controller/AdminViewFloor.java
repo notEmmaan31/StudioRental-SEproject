@@ -1328,7 +1328,6 @@ public class AdminViewFloor implements Initializable{
 	@FXML
 	void floor6(ActionEvent event) throws IOException {
 		Stage oldStage = (Stage) btn_floor6.getScene().getWindow();
-		System.out.print(curLocation);
 		if(curLocation.contains("Admin")) {
 			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
 			SceneUtil.nextScene(root, "6th Floor Rooms (Administrator)", oldStage);
