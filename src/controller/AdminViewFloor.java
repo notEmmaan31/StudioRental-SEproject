@@ -13,10 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Sheet;
+
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -41,7 +38,8 @@ public class AdminViewFloor implements Initializable{
 
 	
 	static String curLocation;
-	
+
+
 	@FXML
 	private Label lbl_day;
 	
@@ -71,789 +69,829 @@ public class AdminViewFloor implements Initializable{
 
 	@FXML
 	private Button btn_update;
-	
+
+    @FXML
+    private ToggleGroup toggleGroup;
+
 	// floor 2
-	@FXML
-	private ToggleButton s21_7;
+	   @FXML
+	    private ToggleButton S21_7;
 
-	@FXML
-	private ToggleButton s21_8;
+	    @FXML
+	    private ToggleButton S21_8;
 
-	@FXML
-	private ToggleButton s21_9;
+	    @FXML
+	    private ToggleButton S21_9;
 
-	@FXML
-	private ToggleButton s21_10;
+	    @FXML
+	    private ToggleButton S21_10;
 
-	@FXML
-	private ToggleButton s21_11;
+	    @FXML
+	    private ToggleButton S21_11;
 
-	@FXML
-	private ToggleButton s21_12;
+	    @FXML
+	    private ToggleButton S21_12;
 
-	@FXML
-	private ToggleButton s21_13;
+	    @FXML
+	    private ToggleButton S21_13;
 
-	@FXML
-	private ToggleButton s21_14;
+	    @FXML
+	    private ToggleButton S21_14;
 
-	@FXML
-	private ToggleButton s21_15;
+	    @FXML
+	    private ToggleButton S21_15;
 
-	@FXML
-	private ToggleButton s21_16;
+	    @FXML
+	    private ToggleButton S21_16;
 
-	@FXML
-	private ToggleButton s21_17;
+	    @FXML
+	    private ToggleButton S21_17;
 
-	@FXML
-	private ToggleButton s21_18;
+	    @FXML
+	    private ToggleButton S21_18;
 
-	@FXML
-	private ToggleButton s21_19;
+	    @FXML
+	    private ToggleButton S21_19;
 
-	@FXML
-	private ToggleButton s22_7;
+	    @FXML
+	    private ToggleButton S22_7;
 
-	@FXML
-	private ToggleButton s22_8;
+	    @FXML
+	    private ToggleButton S22_8;
 
-	@FXML
-	private ToggleButton s22_9;
+	    @FXML
+	    private ToggleButton S22_9;
 
-	@FXML
-	private ToggleButton s22_10;
+	    @FXML
+	    private ToggleButton S22_10;
 
-	@FXML
-	private ToggleButton s22_11;
+	    @FXML
+	    private ToggleButton S22_11;
 
-	@FXML
-	private ToggleButton s22_12;
+	    @FXML
+	    private ToggleButton S22_12;
 
-	@FXML
-	private ToggleButton s22_13;
+	    @FXML
+	    private ToggleButton S22_13;
 
-	@FXML
-	private ToggleButton s22_14;
+	    @FXML
+	    private ToggleButton S22_14;
 
-	@FXML
-	private ToggleButton s22_15;
+	    @FXML
+	    private ToggleButton S22_15;
 
-	@FXML
-	private ToggleButton s22_16;
+	    @FXML
+	    private ToggleButton S22_16;
 
-	@FXML
-	private ToggleButton s22_17;
+	    @FXML
+	    private ToggleButton S22_17;
 
-	@FXML
-	private ToggleButton s22_18;
+	    @FXML
+	    private ToggleButton S22_18;
 
-	@FXML
-	private ToggleButton s22_19;
-
+	    @FXML
+	    private ToggleButton S22_19;
+	    
 	// floor3
-	@FXML
-	private ToggleButton s1_7;
+	    @FXML
+	    private ToggleButton S1_8;
 
-	@FXML
-	private ToggleButton s1_8;
+	    @FXML
+	    private ToggleButton S1_9;
 
-	@FXML
-	private ToggleButton s1_9;
+	    @FXML
+	    private ToggleButton S1_10;
 
-	@FXML
-	private ToggleButton s1_10;
+	    @FXML
+	    private ToggleButton S1_11;
 
-	@FXML
-	private ToggleButton s1_11;
+	    @FXML
+	    private ToggleButton S1_12;
 
-	@FXML
-	private ToggleButton s1_12;
+	    @FXML
+	    private ToggleButton S1_13;
 
-	@FXML
-	private ToggleButton s1_13;
+	    @FXML
+	    private ToggleButton S1_14;
 
-	@FXML
-	private ToggleButton s1_14;
+	    @FXML
+	    private ToggleButton S1_15;
 
-	@FXML
-	private ToggleButton s1_15;
+	    @FXML
+	    private ToggleButton S1_16;
 
-	@FXML
-	private ToggleButton s1_16;
+	    @FXML
+	    private ToggleButton S1_17;
 
-	@FXML
-	private ToggleButton s1_17;
+	    @FXML
+	    private ToggleButton S1_18;
 
-	@FXML
-	private ToggleButton s1_18;
+	    @FXML
+	    private ToggleButton S1_19;
 
-	@FXML
-	private ToggleButton s1_19;
+	    @FXML
+	    private ToggleButton S2_7;
 
-	@FXML
-	private ToggleButton s2_7;
+	    @FXML
+	    private ToggleButton S2_8;
 
-	@FXML
-	private ToggleButton s2_8;
+	    @FXML
+	    private ToggleButton S2_9;
 
-	@FXML
-	private ToggleButton s2_9;
+	    @FXML
+	    private ToggleButton S2_10;
 
-	@FXML
-	private ToggleButton s2_10;
+	    @FXML
+	    private ToggleButton S2_11;
 
-	@FXML
-	private ToggleButton s2_11;
+	    @FXML
+	    private ToggleButton S2_12;
 
-	@FXML
-	private ToggleButton s2_12;
+	    @FXML
+	    private ToggleButton S2_13;
 
-	@FXML
-	private ToggleButton s2_13;
+	    @FXML
+	    private ToggleButton S2_14;
 
-	@FXML
-	private ToggleButton s2_14;
+	    @FXML
+	    private ToggleButton S2_15;
 
-	@FXML
-	private ToggleButton s2_15;
+	    @FXML
+	    private ToggleButton S2_16;
 
-	@FXML
-	private ToggleButton s2_16;
+	    @FXML
+	    private ToggleButton S2_17;
 
-	@FXML
-	private ToggleButton s2_17;
+	    @FXML
+	    private ToggleButton S2_18;
 
-	@FXML
-	private ToggleButton s2_18;
+	    @FXML
+	    private ToggleButton S2_19;
 
-	@FXML
-	private ToggleButton s2_19;
+	    @FXML
+	    private ToggleButton S3_7;
 
-	@FXML
-	private ToggleButton s3_7;
+	    @FXML
+	    private ToggleButton S3_8;
 
-	@FXML
-	private ToggleButton s3_8;
+	    @FXML
+	    private ToggleButton S3_9;
 
-	@FXML
-	private ToggleButton s3_9;
+	    @FXML
+	    private ToggleButton S3_10;
 
-	@FXML
-	private ToggleButton s3_10;
+	    @FXML
+	    private ToggleButton S3_11;
 
-	@FXML
-	private ToggleButton s3_11;
+	    @FXML
+	    private ToggleButton S3_12;
 
-	@FXML
-	private ToggleButton s3_12;
+	    @FXML
+	    private ToggleButton S3_13;
 
-	@FXML
-	private ToggleButton s3_13;
+	    @FXML
+	    private ToggleButton S3_14;
 
-	@FXML
-	private ToggleButton s3_14;
+	    @FXML
+	    private ToggleButton S3_15;
 
-	@FXML
-	private ToggleButton s3_15;
+	    @FXML
+	    private ToggleButton S3_16;
 
-	@FXML
-	private ToggleButton s3_16;
+	    @FXML
+	    private ToggleButton S3_17;
 
-	@FXML
-	private ToggleButton s3_17;
+	    @FXML
+	    private ToggleButton S3_18;
 
-	@FXML
-	private ToggleButton s3_18;
+	    @FXML
+	    private ToggleButton S3_19;
 
-	@FXML
-	private ToggleButton s3_19;
+	    @FXML
+	    private ToggleButton S4_7;
 
-	@FXML
-	private ToggleButton s4_7;
+	    @FXML
+	    private ToggleButton S4_8;
 
-	@FXML
-	private ToggleButton s4_8;
+	    @FXML
+	    private ToggleButton S4_9;
 
-	@FXML
-	private ToggleButton s4_9;
+	    @FXML
+	    private ToggleButton S4_10;
 
-	@FXML
-	private ToggleButton s4_10;
+	    @FXML
+	    private ToggleButton S4_11;
 
-	@FXML
-	private ToggleButton s4_11;
+	    @FXML
+	    private ToggleButton S4_12;
 
-	@FXML
-	private ToggleButton s4_12;
+	    @FXML
+	    private ToggleButton S4_13;
 
-	@FXML
-	private ToggleButton s4_13;
+	    @FXML
+	    private ToggleButton S4_14;
 
-	@FXML
-	private ToggleButton s4_14;
+	    @FXML
+	    private ToggleButton S4_15;
 
-	@FXML
-	private ToggleButton s4_15;
+	    @FXML
+	    private ToggleButton S4_16;
 
-	@FXML
-	private ToggleButton s4_16;
+	    @FXML
+	    private ToggleButton S4_17;
 
-	@FXML
-	private ToggleButton s4_17;
+	    @FXML
+	    private ToggleButton S4_18;
 
-	@FXML
-	private ToggleButton s4_18;
+	    @FXML
+	    private ToggleButton S4_19;
 
-	@FXML
-	private ToggleButton s4_19;
+	    @FXML
+	    private ToggleButton S5_7;
 
-	@FXML
-	private ToggleButton s5_7;
+	    @FXML
+	    private ToggleButton S5_8;
 
-	@FXML
-	private ToggleButton s5_8;
+	    @FXML
+	    private ToggleButton S5_9;
 
-	@FXML
-	private ToggleButton s5_9;
+	    @FXML
+	    private ToggleButton S5_10;
 
-	@FXML
-	private ToggleButton s5_10;
+	    @FXML
+	    private ToggleButton S5_11;
 
-	@FXML
-	private ToggleButton s5_11;
+	    @FXML
+	    private ToggleButton S5_12;
 
-	@FXML
-	private ToggleButton s5_12;
+	    @FXML
+	    private ToggleButton S5_13;
 
-	@FXML
-	private ToggleButton s5_13;
+	    @FXML
+	    private ToggleButton S5_14;
 
-	@FXML
-	private ToggleButton s5_14;
+	    @FXML
+	    private ToggleButton S5_15;
 
-	@FXML
-	private ToggleButton s5_15;
+	    @FXML
+	    private ToggleButton S5_16;
 
-	@FXML
-	private ToggleButton s5_16;
+	    @FXML
+	    private ToggleButton S5_17;
 
-	@FXML
-	private ToggleButton s5_17;
+	    @FXML
+	    private ToggleButton S5_18;
 
-	@FXML
-	private ToggleButton s5_18;
+	    @FXML
+	    private ToggleButton S5_19;
 
-	@FXML
-	private ToggleButton s5_19;
+	    @FXML
+	    private ToggleButton S6_7;
 
-	@FXML
-	private ToggleButton s6_7;
+	    @FXML
+	    private ToggleButton S6_8;
 
-	@FXML
-	private ToggleButton s6_8;
+	    @FXML
+	    private ToggleButton S6_9;
 
-	@FXML
-	private ToggleButton s6_9;
+	    @FXML
+	    private ToggleButton S6_10;
 
-	@FXML
-	private ToggleButton s6_10;
+	    @FXML
+	    private ToggleButton S6_11;
 
-	@FXML
-	private ToggleButton s6_11;
+	    @FXML
+	    private ToggleButton S6_12;
 
-	@FXML
-	private ToggleButton s6_12;
+	    @FXML
+	    private ToggleButton S6_13;
 
-	@FXML
-	private ToggleButton s6_13;
+	    @FXML
+	    private ToggleButton S6_14;
 
-	@FXML
-	private ToggleButton s6_14;
+	    @FXML
+	    private ToggleButton S6_15;
 
-	@FXML
-	private ToggleButton s6_15;
+	    @FXML
+	    private ToggleButton S6_16;
 
-	@FXML
-	private ToggleButton s6_16;
+	    @FXML
+	    private ToggleButton S6_17;
 
-	@FXML
-	private ToggleButton s6_17;
+	    @FXML
+	    private ToggleButton S6_18;
 
-	@FXML
-	private ToggleButton s6_18;
+	    @FXML
+	    private ToggleButton S6_19;
 
-	@FXML
-	private ToggleButton s6_19;
+	    @FXML
+	    private ToggleButton S7_7;
 
-	@FXML
-	private ToggleButton s7_7;
+	    @FXML
+	    private ToggleButton S7_8;
 
-	@FXML
-	private ToggleButton s7_8;
+	    @FXML
+	    private ToggleButton S7_9;
 
-	@FXML
-	private ToggleButton s7_9;
+	    @FXML
+	    private ToggleButton S7_10;
 
-	@FXML
-	private ToggleButton s7_10;
+	    @FXML
+	    private ToggleButton S7_11;
 
-	@FXML
-	private ToggleButton s7_11;
+	    @FXML
+	    private ToggleButton S7_12;
 
-	@FXML
-	private ToggleButton s7_12;
+	    @FXML
+	    private ToggleButton S7_13;
 
-	@FXML
-	private ToggleButton s7_13;
+	    @FXML
+	    private ToggleButton S7_14;
 
-	@FXML
-	private ToggleButton s7_14;
+	    @FXML
+	    private ToggleButton S7_15;
 
-	@FXML
-	private ToggleButton s7_15;
+	    @FXML
+	    private ToggleButton S7_16;
 
-	@FXML
-	private ToggleButton s7_16;
+	    @FXML
+	    private ToggleButton S7_17;
 
-	@FXML
-	private ToggleButton s7_17;
+	    @FXML
+	    private ToggleButton S7_18;
 
-	@FXML
-	private ToggleButton s7_18;
+	    @FXML
+	    private ToggleButton S7_19;
 
-	@FXML
-	private ToggleButton s7_19;
+	    @FXML
+	    private ToggleButton S8_7;
 
-	@FXML
-	private ToggleButton s8_7;
+	    @FXML
+	    private ToggleButton S8_8;
 
-	@FXML
-	private ToggleButton s8_8;
+	    @FXML
+	    private ToggleButton S8_9;
 
-	@FXML
-	private ToggleButton s8_9;
+	    @FXML
+	    private ToggleButton S8_10;
 
-	@FXML
-	private ToggleButton s8_10;
+	    @FXML
+	    private ToggleButton S8_11;
 
-	@FXML
-	private ToggleButton s8_11;
+	    @FXML
+	    private ToggleButton S8_12;
 
-	@FXML
-	private ToggleButton s8_12;
+	    @FXML
+	    private ToggleButton S8_13;
 
-	@FXML
-	private ToggleButton s8_13;
+	    @FXML
+	    private ToggleButton S8_14;
 
-	@FXML
-	private ToggleButton s8_14;
+	    @FXML
+	    private ToggleButton S8_15;
 
-	@FXML
-	private ToggleButton s8_15;
+	    @FXML
+	    private ToggleButton S8_16;
 
-	@FXML
-	private ToggleButton s8_16;
+	    @FXML
+	    private ToggleButton S8_17;
 
-	@FXML
-	private ToggleButton s8_17;
+	    @FXML
+	    private ToggleButton S8_18;
 
-	@FXML
-	private ToggleButton s8_18;
+	    @FXML
+	    private ToggleButton S8_19;
 
-	@FXML
-	private ToggleButton s8_19;
+	    @FXML
+	    private ToggleButton S9_7;
 
-	@FXML
-	private ToggleButton s9_7;
+	    @FXML
+	    private ToggleButton S9_8;
 
-	@FXML
-	private ToggleButton s9_8;
+	    @FXML
+	    private ToggleButton S9_9;
 
-	@FXML
-	private ToggleButton s9_9;
+	    @FXML
+	    private ToggleButton S9_10;
 
-	@FXML
-	private ToggleButton s9_10;
+	    @FXML
+	    private ToggleButton S9_11;
 
-	@FXML
-	private ToggleButton s9_11;
+	    @FXML
+	    private ToggleButton S9_12;
 
-	@FXML
-	private ToggleButton s9_12;
+	    @FXML
+	    private ToggleButton S9_13;
 
-	@FXML
-	private ToggleButton s9_13;
+	    @FXML
+	    private ToggleButton S9_14;
 
-	@FXML
-	private ToggleButton s9_14;
+	    @FXML
+	    private ToggleButton S9_15;
 
-	@FXML
-	private ToggleButton s9_15;
+	    @FXML
+	    private ToggleButton S9_16;
 
-	@FXML
-	private ToggleButton s9_16;
+	    @FXML
+	    private ToggleButton S9_17;
 
-	@FXML
-	private ToggleButton s9_17;
+	    @FXML
+	    private ToggleButton S9_18;
 
-	@FXML
-	private ToggleButton s9_18;
+	    @FXML
+	    private ToggleButton S9_19;
 
-	@FXML
-	private ToggleButton s9_19;
+	    @FXML
+	    private ToggleButton S10_7;
 
-	@FXML
-	private ToggleButton s10_7;
+	    @FXML
+	    private ToggleButton S10_8;
 
-	@FXML
-	private ToggleButton s10_8;
+	    @FXML
+	    private ToggleButton S10_9;
 
-	@FXML
-	private ToggleButton s10_9;
+	    @FXML
+	    private ToggleButton S10_10;
 
-	@FXML
-	private ToggleButton s10_10;
+	    @FXML
+	    private ToggleButton S10_11;
 
-	@FXML
-	private ToggleButton s10_11;
+	    @FXML
+	    private ToggleButton S10_12;
 
-	@FXML
-	private ToggleButton s10_12;
+	    @FXML
+	    private ToggleButton S10_13;
 
-	@FXML
-	private ToggleButton s10_13;
+	    @FXML
+	    private ToggleButton S10_14;
 
-	@FXML
-	private ToggleButton s10_14;
+	    @FXML
+	    private ToggleButton S10_15;
 
-	@FXML
-	private ToggleButton s10_15;
+	    @FXML
+	    private ToggleButton S10_16;
 
-	@FXML
-	private ToggleButton s10_16;
+	    @FXML
+	    private ToggleButton S10_17;
 
-	@FXML
-	private ToggleButton s10_17;
+	    @FXML
+	    private ToggleButton S10_18;
 
-	@FXML
-	private ToggleButton s10_18;
+	    @FXML
+	    private ToggleButton S10_19;
 
-	@FXML
-	private ToggleButton s10_19;
+	    @FXML
+	    private ToggleButton S11_7;
 
-	@FXML
-	private ToggleButton s11_7;
+	    @FXML
+	    private ToggleButton S11_8;
 
-	@FXML
-	private ToggleButton s11_8;
+	    @FXML
+	    private ToggleButton S11_9;
 
-	@FXML
-	private ToggleButton s11_9;
+	    @FXML
+	    private ToggleButton S11_10;
 
-	@FXML
-	private ToggleButton s11_10;
+	    @FXML
+	    private ToggleButton S11_11;
 
-	@FXML
-	private ToggleButton s11_11;
+	    @FXML
+	    private ToggleButton S11_12;
 
-	@FXML
-	private ToggleButton s11_12;
+	    @FXML
+	    private ToggleButton S11_13;
 
-	@FXML
-	private ToggleButton s11_13;
+	    @FXML
+	    private ToggleButton S11_14;
 
-	@FXML
-	private ToggleButton s11_14;
+	    @FXML
+	    private ToggleButton S11_15;
 
-	@FXML
-	private ToggleButton s11_15;
+	    @FXML
+	    private ToggleButton S11_16;
 
-	@FXML
-	private ToggleButton s11_16;
+	    @FXML
+	    private ToggleButton S11_17;
 
-	@FXML
-	private ToggleButton s11_17;
+	    @FXML
+	    private ToggleButton S11_18;
 
-	@FXML
-	private ToggleButton s11_18;
+	    @FXML
+	    private ToggleButton S11_19;
 
-	@FXML
-	private ToggleButton s11_19;
+	    @FXML
+	    private ToggleButton S12_7;
 
-	@FXML
-	private ToggleButton ext1_7;
+	    @FXML
+	    private ToggleButton S12_8;
 
-	@FXML
-	private ToggleButton ext1_8;
+	    @FXML
+	    private ToggleButton S12_9;
 
-	@FXML
-	private ToggleButton ext1_9;
+	    @FXML
+	    private ToggleButton S12_10;
 
-	@FXML
-	private ToggleButton ext1_10;
+	    @FXML
+	    private ToggleButton S12_11;
 
-	@FXML
-	private ToggleButton ext1_11;
+	    @FXML
+	    private ToggleButton S12_12;
 
-	@FXML
-	private ToggleButton ext1_12;
+	    @FXML
+	    private ToggleButton S12_13;
 
-	@FXML
-	private ToggleButton ext1_13;
+	    @FXML
+	    private ToggleButton S12_14;
 
-	@FXML
-	private ToggleButton ext1_14;
+	    @FXML
+	    private ToggleButton S12_15;
 
-	@FXML
-	private ToggleButton ext1_15;
+	    @FXML
+	    private ToggleButton S12_16;
 
-	@FXML
-	private ToggleButton ext1_16;
+	    @FXML
+	    private ToggleButton S12_17;
 
-	@FXML
-	private ToggleButton ext1_17;
+	    @FXML
+	    private ToggleButton S12_18;
 
-	@FXML
-	private ToggleButton ext1_18;
+	    @FXML
+	    private ToggleButton S12_19;
 
-	@FXML
-	private ToggleButton ext1_19;
+	    @FXML
+	    private ToggleButton EXT1_7;
 
-	@FXML
-	private ToggleButton ext2_7;
+	    @FXML
+	    private ToggleButton EXT1_8;
 
-	@FXML
-	private ToggleButton ext2_8;
+	    @FXML
+	    private ToggleButton EXT1_9;
 
-	@FXML
-	private ToggleButton ext2_9;
+	    @FXML
+	    private ToggleButton EXT1_10;
 
-	@FXML
-	private ToggleButton ext2_10;
+	    @FXML
+	    private ToggleButton EXT1_11;
 
-	@FXML
-	private ToggleButton ext2_11;
+	    @FXML
+	    private ToggleButton EXT1_12;
 
-	@FXML
-	private ToggleButton ext2_12;
+	    @FXML
+	    private ToggleButton EXT1_13;
 
-	@FXML
-	private ToggleButton ext2_13;
+	    @FXML
+	    private ToggleButton EXT1_14;
 
-	@FXML
-	private ToggleButton ext2_14;
+	    @FXML
+	    private ToggleButton EXT1_15;
 
-	@FXML
-	private ToggleButton ext2_15;
+	    @FXML
+	    private ToggleButton EXT1_16;
 
-	@FXML
-	private ToggleButton ext2_16;
+	    @FXML
+	    private ToggleButton EXT1_17;
 
-	@FXML
-	private ToggleButton ext2_17;
+	    @FXML
+	    private ToggleButton EXT1_18;
 
-	@FXML
-	private ToggleButton ext2_18;
+	    @FXML
+	    private ToggleButton EXT1_19;
 
-	@FXML
-	private ToggleButton ext2_19;
+	    @FXML
+	    private ToggleButton EXT2_7;
+
+	    @FXML
+	    private ToggleButton EXT2_8;
+
+	    @FXML
+	    private ToggleButton EXT2_9;
+
+	    @FXML
+	    private ToggleButton EXT2_10;
+
+	    @FXML
+	    private ToggleButton EXT2_11;
+
+	    @FXML
+	    private ToggleButton EXT2_12;
+
+	    @FXML
+	    private ToggleButton EXT2_13;
+
+	    @FXML
+	    private ToggleButton EXT2_14;
+
+	    @FXML
+	    private ToggleButton EXT2_15;
+
+	    @FXML
+	    private ToggleButton EXT2_16;
+
+	    @FXML
+	    private ToggleButton EXT2_17;
+
+	    @FXML
+	    private ToggleButton EXT2_18;
+
+	    @FXML
+	    private ToggleButton EXT2_19;
 
 	// floor5
-	@FXML
-	private ToggleButton ds1_7;
+	    @FXML
+	    private ToggleButton DS1_7;
 
-	@FXML
-	private ToggleButton ds1_8;
 
-	@FXML
-	private ToggleButton ds1_9;
+	    @FXML
+	    private ToggleButton DS1_8;
 
-	@FXML
-	private ToggleButton ds1_10;
+	    @FXML
+	    private ToggleButton DS1_9;
 
-	@FXML
-	private ToggleButton ds1_11;
+	    @FXML
+	    private ToggleButton DS1_10;
 
-	@FXML
-	private ToggleButton ds1_12;
+	    @FXML
+	    private ToggleButton DS1_11;
 
-	@FXML
-	private ToggleButton ds1_13;
+	    @FXML
+	    private ToggleButton DS1_12;
 
-	@FXML
-	private ToggleButton ds1_14;
+	    @FXML
+	    private ToggleButton DS1_13;
 
-	@FXML
-	private ToggleButton ds1_15;
+	    @FXML
+	    private ToggleButton DS1_14;
 
-	@FXML
-	private ToggleButton ds1_16;
+	    @FXML
+	    private ToggleButton DS1_15;
 
-	@FXML
-	private ToggleButton ds1_17;
+	    @FXML
+	    private ToggleButton DS1_16;
 
-	@FXML
-	private ToggleButton ds1_18;
+	    @FXML
+	    private ToggleButton DS1_17;
 
-	@FXML
-	private ToggleButton ds1_19;
+	    @FXML
+	    private ToggleButton DS1_18;
 
-	@FXML
-	private ToggleButton ds2_7;
+	    @FXML
+	    private ToggleButton DS1_19;
 
-	@FXML
-	private ToggleButton ds2_8;
+	    @FXML
+	    private ToggleButton DS2_7;
 
-	@FXML
-	private ToggleButton ds2_9;
+	    @FXML
+	    private ToggleButton DS2_8;
 
-	@FXML
-	private ToggleButton ds2_10;
+	    @FXML
+	    private ToggleButton DS2_9;
 
-	@FXML
-	private ToggleButton ds2_11;
+	    @FXML
+	    private ToggleButton DS2_10;
 
-	@FXML
-	private ToggleButton ds2_12;
+	    @FXML
+	    private ToggleButton DS2_11;
 
-	@FXML
-	private ToggleButton ds2_13;
+	    @FXML
+	    private ToggleButton DS2_12;
 
-	@FXML
-	private ToggleButton ds2_14;
+	    @FXML
+	    private ToggleButton DS2_13;
 
-	@FXML
-	private ToggleButton ds2_15;
+	    @FXML
+	    private ToggleButton DS2_14;
 
-	@FXML
-	private ToggleButton ds2_16;
+	    @FXML
+	    private ToggleButton DS2_15;
 
-	@FXML
-	private ToggleButton ds2_17;
+	    @FXML
+	    private ToggleButton DS2_16;
 
-	@FXML
-	private ToggleButton ds2_18;
+	    @FXML
+	    private ToggleButton DS2_17;
 
-	@FXML
-	private ToggleButton ds2_19;
+	    @FXML
+	    private ToggleButton DS2_18;
 
-	@FXML
-	private ToggleButton perc_7;
+	    @FXML
+	    private ToggleButton DS2_19;
 
-	@FXML
-	private ToggleButton perc_8;
+	    @FXML
+	    private ToggleButton PERC_7;
 
-	@FXML
-	private ToggleButton perc_9;
+	    @FXML
+	    private ToggleButton PERC_8;
 
-	@FXML
-	private ToggleButton perc_10;
+	    @FXML
+	    private ToggleButton PERC_9;
 
-	@FXML
-	private ToggleButton perc_11;
+	    @FXML
+	    private ToggleButton PERC_10;
 
-	@FXML
-	private ToggleButton perc_12;
+	    @FXML
+	    private ToggleButton PERC_11;
 
-	@FXML
-	private ToggleButton perc_13;
+	    @FXML
+	    private ToggleButton PERC_12;
 
-	@FXML
-	private ToggleButton perc_14;
+	    @FXML
+	    private ToggleButton PERC_13;
 
-	@FXML
-	private ToggleButton perc_15;
+	    @FXML
+	    private ToggleButton PERC_14;
 
-	@FXML
-	private ToggleButton perc_16;
+	    @FXML
+	    private ToggleButton PERC_15;
 
-	@FXML
-	private ToggleButton perc_17;
+	    @FXML
+	    private ToggleButton PERC_16;
 
-	@FXML
-	private ToggleButton perc_18;
+	    @FXML
+	    private ToggleButton PERC_17;
 
-	@FXML
-	private ToggleButton perc_19;
+	    @FXML
+	    private ToggleButton PERC_18;
 
-	@FXML
-	private ToggleButton opr1_7;
+	    @FXML
+	    private ToggleButton PERC_19;
 
-	@FXML
-	private ToggleButton opr1_8;
+	    @FXML
+	    private ToggleButton OPR1_7;
 
-	@FXML
-	private ToggleButton opr1_9;
+	    @FXML
+	    private ToggleButton OPR1_8;
 
-	@FXML
-	private ToggleButton opr1_10;
+	    @FXML
+	    private ToggleButton OPR1_9;
 
-	@FXML
-	private ToggleButton opr1_11;
+	    @FXML
+	    private ToggleButton OPR1_10;
 
-	@FXML
-	private ToggleButton opr1_12;
+	    @FXML
+	    private ToggleButton OPR1_11;
 
-	@FXML
-	private ToggleButton opr1_13;
+	    @FXML
+	    private ToggleButton OPR1_12;
 
-	@FXML
-	private ToggleButton opr1_14;
+	    @FXML
+	    private ToggleButton OPR1_13;
 
-	@FXML
-	private ToggleButton opr1_15;
+	    @FXML
+	    private ToggleButton OPR1_14;
 
-	@FXML
-	private ToggleButton opr1_16;
+	    @FXML
+	    private ToggleButton OPR1_15;
 
-	@FXML
-	private ToggleButton opr1_17;
+	    @FXML
+	    private ToggleButton OPR1_16;
 
-	@FXML
-	private ToggleButton opr1_18;
+	    @FXML
+	    private ToggleButton OPR1_17;
 
-	@FXML
-	private ToggleButton opr1_19;
+	    @FXML
+	    private ToggleButton OPR1_18;
 
-	@FXML
-	private ToggleButton opr2_7;
+	    @FXML
+	    private ToggleButton OPR1_19;
 
-	@FXML
-	private ToggleButton opr2_8;
+	    @FXML
+	    private ToggleButton OPR2_7;
 
-	@FXML
-	private ToggleButton opr2_9;
+	    @FXML
+	    private ToggleButton OPR2_8;
 
-	@FXML
-	private ToggleButton opr2_10;
+	    @FXML
+	    private ToggleButton OPR2_9;
 
-	@FXML
-	private ToggleButton opr2_11;
+	    @FXML
+	    private ToggleButton OPR2_10;
 
-	@FXML
-	private ToggleButton opr2_12;
+	    @FXML
+	    private ToggleButton OPR2_11;
 
-	@FXML
-	private ToggleButton opr2_13;
+	    @FXML
+	    private ToggleButton OPR2_12;
 
-	@FXML
-	private ToggleButton opr2_14;
+	    @FXML
+	    private ToggleButton OPR2_13;
 
-	@FXML
-	private ToggleButton opr2_15;
+	    @FXML
+	    private ToggleButton OPR2_14;
 
-	@FXML
-	private ToggleButton opr2_16;
+	    @FXML
+	    private ToggleButton OPR2_15;
 
-	@FXML
-	private ToggleButton opr2_17;
+	    @FXML
+	    private ToggleButton OPR2_16;
 
-	@FXML
-	private ToggleButton opr2_18;
+	    @FXML
+	    private ToggleButton OPR2_17;
 
-	@FXML
-	private ToggleButton opr2_19;
+	    @FXML
+	    private ToggleButton OPR2_18;
+
+	    @FXML
+	    private ToggleButton OPR2_19;
 
 	// floor6
 
@@ -905,9 +943,6 @@ public class AdminViewFloor implements Initializable{
 	@FXML
 	private ToggleButton rm6B_9;
 	
-    @FXML
-    private ToggleGroup toggleGroup;
-
 	@FXML
 	private ToggleButton rm6B_10;
 
@@ -1249,7 +1284,7 @@ public class AdminViewFloor implements Initializable{
 
 	@FXML
 	private ToggleButton rm6J_19;
-	
+
 	@FXML
 	private Button btn_exit;
 	
@@ -1422,6 +1457,7 @@ public class AdminViewFloor implements Initializable{
 		try {
 		newRoom = null;
 		newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+		System.out.println(newRoom.getId());
 		roomInfo = newRoom.getId().split("_");
 		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation.fxml"));
 		SceneUtil.openWindow(root);
@@ -1605,6 +1641,8 @@ public class AdminViewFloor implements Initializable{
 	
 	@FXML
 	void remove(ActionEvent event) throws IOException {
+		newRoom = null;
+		newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 		roomInfo = newRoom.getId().split("_");
 		
 		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
@@ -1625,10 +1663,9 @@ public class AdminViewFloor implements Initializable{
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 			lbl_day.setText(day.format(now));
-
+			
 			ObservableList<Toggle> rooms = toggleGroup.getToggles();
 			System.out.println(rooms.size());
-		
 			reload();
 		}
 		
@@ -1698,7 +1735,6 @@ public class AdminViewFloor implements Initializable{
 			ResultSet rs = ps.executeQuery();
 			ObservableList<Toggle> rooms = toggleGroup.getToggles();
 
-			System.out.println(rooms.size());
 			while(rs.next()) {
 				
 				StringBuffer sb = new StringBuffer("");

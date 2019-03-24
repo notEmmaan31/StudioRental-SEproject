@@ -14,7 +14,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
 //        Pane root = (Pane) FXMLLoader.load(getClass().getResource("/fxml/Manage.fxml"));
-    	Pane root = (Pane) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
+    	Pane root = (Pane) FXMLLoader.load(getClass().getResource("/fxml/Main3F_Admin.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Manage");
         primaryStage.setScene(scene);
