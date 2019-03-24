@@ -77,6 +77,14 @@
     -fx-background-color: transparent;
 }
 
+.button-headerMin{
+	-fx-background-color: #000000;
+	-fx-text-fill:#ffffff;
+	-fx-font-size:10px;
+	-fx-font-weight:lighter;
+	-fx-font-family:Calibri;
+}
+
 .button-header{
 	-fx-background-color: #000000;
 	-fx-text-fill:#ffffff;
@@ -113,6 +121,16 @@
     -fx-background-color: derive(#ff878e,30%);
 }
 
+
+.label-dayMin{
+	-fx-background-color: transparent;
+	-fx-text-fill:#f2f2f2;
+	-fx-font-size:30px;
+	-fx-font-weight:900;
+	-fx-font-family: Cambria;
+	
+}
+
 .label-day{
 	-fx-background-color: transparent;
 	-fx-text-fill:#f2f2f2;
@@ -122,6 +140,20 @@
 	
 }
 
+.label-1Min{
+	-fx-background-color: transparent;
+	-fx-text-fill:#eb777f;
+	-fx-font-size:13px;
+	-fx-font-weight:800;
+	-fx-font-family: Arial;
+}
+
+.label-2Min{
+	-fx-background-color: transparent;
+	-fx-text-fill:#eb777f;
+	-fx-font-size:28px;
+	-fx-font-weight:900;
+}
 
 .label-1{
 	-fx-background-color: transparent;
@@ -142,6 +174,23 @@
 	-fx-text-fill: #ffffff;
 }
 
+.button-floorMin{
+	-fx-background-color: transparent;
+	-fx-text-fill:#e99197;
+	-fx-font-size:14px;
+	-fx-font-family: Calibri;
+	-fx-font-weight:700;
+}
+
+.button-floorMin:hover{
+	-fx-text-fill:#ebbfc2;
+}
+
+.button-floorMin:focused{
+	-fx-text-fill:#616161;
+}
+
+
 .button-floor{
 	-fx-background-color: transparent;
 	-fx-text-fill:#e99197;
@@ -156,6 +205,24 @@
 
 .button-floor:focused{
 	-fx-text-fill:#616161;
+}
+
+
+
+.button-functionMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 20px;
+	-fx-font-family:  Arial;
+	-fx-font-weight: 900;
+}
+
+.button-functionMin:hover{
+	-fx-text-fill:#ebbfc2;
+}
+
+.button-functionMin:focused{
+	-fx-text-fill:#ca525b;
 }
 
 

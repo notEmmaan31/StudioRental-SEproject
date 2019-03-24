@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -10,6 +12,14 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import util.SceneUtil;
 
@@ -1280,6 +1291,15 @@ public class AdminViewFloor implements Initializable{
     
     @FXML
     private Button btn_manage;
+    
+    @FXML
+    private Button btn_open;
+    
+    @FXML
+    private Button btn_confirmUpdate;
+    
+    @FXML
+    private Label lbl_file;
 
 	@FXML
 	void floor2(ActionEvent event) throws IOException {
@@ -1399,11 +1419,15 @@ public class AdminViewFloor implements Initializable{
 	
 	@FXML
 	void rent(ActionEvent event) throws IOException {
-		
+		try {
+		newRoom = null;
+		newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 		roomInfo = newRoom.getId().split("_");
 		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation.fxml"));
 		SceneUtil.openWindow(root);
-		
+		} catch(NullPointerException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	 @FXML
@@ -1477,11 +1501,108 @@ public class AdminViewFloor implements Initializable{
 
 	@FXML
 	void update(ActionEvent event) throws IOException {
-		Stage stage = (Stage) btn_update.getScene().getWindow();
-		stage.close();
+		
+		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update.fxml"));
+		SceneUtil.openWindow(root);
 
 	}
-
+	
+	@FXML
+	void confirmUpdate(ActionEvent event) {
+		
+		
+		
+		
+	}
+	
+	@FXML
+	void openFile(ActionEvent event) throws IOException {
+		
+		FileChooser fc = new FileChooser();
+		File file = fc.showOpenDialog(null);
+		System.out.println(file.getPath());
+		
+		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
+		
+		XSSFSheet sheet = null;
+		XSSFRow row = null;
+		try {
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
+			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			PreparedStatement ps = con.prepareStatement("DELETE FROM APP.SCHEDULED_RENT WHERE 1=1");
+			ps.executeUpdate();
+			
+			ps.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		for(int i = 0; i < 6; i++) {
+			sheet = workbook.getSheetAt(i);
+			for (int j = 6; j < 36; j++) {
+				if(j == 20) {
+					j += 3;
+					continue;
+				}
+				for(int k = 1; k < 17 ; k++) {
+					if(j < 20 && k == 12) {
+						continue;
+					}
+					if (j < 20) {
+						if (sheet.getRow(j).getCell(k).toString().isEmpty() == false) {
+							try {
+								Class.forName("org.apache.derby.jdbc.ClientDriver");
+								Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+								PreparedStatement ps = con.prepareStatement("INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
+								ps.setString(1, workbook.getSheetAt(i).getSheetName());
+								ps.setString(2, sheet.getRow(j).getCell(k).toString());
+								ps.setString(3, sheet.getRow(4).getCell(k).toString().replaceAll(" ", ""));
+								ps.setString(4, sheet.getRow(j).getCell(0).toString().replaceAll(":00", ""));
+								ps.executeUpdate();
+								ps.close();
+								con.close();
+								
+							} catch (ClassNotFoundException e) {
+								e.printStackTrace();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+						
+						}
+					}
+					else {
+						if (sheet.getRow(j).getCell(k).toString().isEmpty() == false) {
+							try {
+								Class.forName("org.apache.derby.jdbc.ClientDriver");
+								Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+								PreparedStatement ps = con.prepareStatement("INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
+								ps.setString(1, workbook.getSheetAt(i).getSheetName());
+								ps.setString(2, sheet.getRow(j).getCell(k).toString());
+								ps.setString(3, sheet.getRow(21).getCell(k).toString().replaceAll(" ", ""));
+								ps.setString(4, sheet.getRow(j).getCell(0).toString().replaceAll(":00", ""));
+								ps.executeUpdate();
+								ps.close();
+								con.close();
+							
+							} catch (ClassNotFoundException e) {
+								e.printStackTrace();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		
+		workbook.close();
+		}
+	
+	
 	@FXML
 	void remove(ActionEvent event) throws IOException {
 		roomInfo = newRoom.getId().split("_");
@@ -1582,6 +1703,35 @@ public class AdminViewFloor implements Initializable{
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
 				int size = rooms.size();
+				
+				for(int i = 0; i < size; i++)
+					if(rooms.get(i).toString().contains(sb)) {
+						
+						rooms.get(i).setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.setSelected(false);
+						break;
+						
+					}
+					
+				}
+			
+			Date now = new Date();
+			SimpleDateFormat day = new SimpleDateFormat("EEEE");
+			
+			ps = con.prepareStatement("SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? ORDER BY ROOM_RENTED");
+			ps.setString(1, day.format(now).toUpperCase());
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				
+				StringBuffer sb = new StringBuffer("");
+				sb.append(rs.getString("ROOM_RENTED"));
+				sb.append("_");
+				sb.append(rs.getString("TIME_RENTED"));
+				int size = rooms.size();
+				System.out.println(sb);
 				
 				for(int i = 0; i < size; i++)
 					if(rooms.get(i).toString().contains(sb)) {
