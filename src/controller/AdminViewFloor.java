@@ -1310,6 +1310,9 @@ public class AdminViewFloor implements Initializable{
     private Label lbl_firstName;
     
     @FXML
+    private Button btn_updateConfirmed;
+    
+    @FXML
     private Button btn_checkRent;
     
     @FXML
@@ -1335,7 +1338,9 @@ public class AdminViewFloor implements Initializable{
     
     @FXML
     private Label lbl_file;
-
+    
+    static ObservableList<Toggle> rooms = null;
+    static File file = null;
 	@FXML
 	void floor2(ActionEvent event) throws IOException {
 		Stage oldStage = (Stage) btn_floor2.getScene().getWindow();
@@ -1544,21 +1549,22 @@ public class AdminViewFloor implements Initializable{
 	}
 	
 	@FXML
-	void confirmUpdate(ActionEvent event) {
-		
-		
-		
-		
+	void confirmUpdate(ActionEvent event) throws IOException {
+		if(file != null) {
+		oldStage = (Stage) btn_exit.getScene().getWindow();
+		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation.fxml"));
+		SceneUtil.nextScene(root,"Confirmation",oldStage);
+		} else {
+			lbl_file.setText("Please choose a vaild excel file");
+		}
 	}
 	
 	@FXML
-	void openFile(ActionEvent event) throws IOException {
+	void updateConfirmed(ActionEvent event) throws IOException {
+		XSSFWorkbook workbook;
+		try {
+			workbook = new XSSFWorkbook(new FileInputStream(file));
 		
-		FileChooser fc = new FileChooser();
-		File file = fc.showOpenDialog(null);
-		System.out.println(file.getPath());
-		
-		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
 		
 		XSSFSheet sheet = null;
 		XSSFRow row = null;
@@ -1636,6 +1642,26 @@ public class AdminViewFloor implements Initializable{
 		
 		
 		workbook.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		oldStage = (Stage) btn_exit.getScene().getWindow();
+		root = (Parent) (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation_Success.fxml"));
+		SceneUtil.nextScene(root, "Success", oldStage);
+	}
+	
+	
+	@FXML
+	void openFile(ActionEvent event) throws IOException {
+		
+		file = null;
+		FileChooser fc = new FileChooser();
+		file = fc.showOpenDialog(null);
+		lbl_file.setText(file.getPath());
+		
+		
 		}
 	
 	
@@ -1657,15 +1683,15 @@ public class AdminViewFloor implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		curLocation = location.toString();
 		
 		if(location.toString().contains("Main")) {
+			curLocation = location.toString();
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 			lbl_day.setText(day.format(now));
 			
-			ObservableList<Toggle> rooms = toggleGroup.getToggles();
-			System.out.println(rooms.size());
+			rooms = toggleGroup.getToggles();
+			System.out.print(rooms.size());
 			reload();
 		}
 		
@@ -1772,7 +1798,7 @@ public class AdminViewFloor implements Initializable{
 				int size = rooms.size();
 				
 				for(int i = 0; i < size; i++)
-					if(rooms.get(i).toString().contains(sb)) {
+					if(rooms.get(i).toString().contains(sb.toString().toLowerCase()) || rooms.get(i).toString().contains(sb.toString())) {
 						
 						rooms.get(i).setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();

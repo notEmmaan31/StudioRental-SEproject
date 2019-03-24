@@ -15,20 +15,20 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
       <AnchorPane prefHeight="255.0" prefWidth="1920.0" style="-fx-background-color: transparent;" stylesheets="@../styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="BOTTOM_LEFT" layoutX="200.0" layoutY="96.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="28.0">
+            <HBox alignment="BOTTOM_LEFT" layoutX="232.0" layoutY="141.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="-4.0">
                <children>
-                  <VBox prefHeight="69.0" prefWidth="485.0">
+                  <VBox prefHeight="107.0" prefWidth="431.0">
                      <children>
                         <Label alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="223.0" style="-fx-font-family: Arial; -fx-text-fill: #ffffff; -fx-font-size: 9px;" text="AND">
                            <graphic>
                               <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="132.0" style="-fx-font-family: Arial; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-style: italic; -fx-font-weight: 900;" text="PRESENT YOUR ID" />
                            </graphic>
                         </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="454.0" style="-fx-font-family: Arial; -fx-text-fill: #e6e430; -fx-font-weight: 900; -fx-font-size: 9px;" text="AT THE STUDENT ASSISTANT FOR THE RESERVATION TO BE CONFIRMED.">
+                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="745.0" style="-fx-font-family: Arial; -fx-text-fill: #e6e430; -fx-font-weight: 900; -fx-font-size: 9px;" text="AT THE STUDENT ASSISTANT FOR THE RESERVATION TO BE CONFIRMED.">
                            <graphic>
                               <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-style: italic;" text="₱15/HR">
                                  <graphic>
@@ -43,107 +43,104 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <Label fx:id="lbl_day" alignment="BOTTOM_CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="293.0" styleClass="label-dayMin" text="MONDAY">
+                  <Label fx:id="lbl_day" alignment="TOP_CENTER" contentDisplay="TOP" styleClass="label-day" text="MONDAY">
                      <HBox.margin>
-                        <Insets bottom="20.0" right="230.0" />
+                        <Insets bottom="20.0" left="200.0" right="540.0" />
                      </HBox.margin>
                   </Label>
                   <HBox alignment="TOP_RIGHT">
                      <children>
-                        <Button fx:id="btn_logout" mnemonicParsing="false" onAction="#logout" prefHeight="65.0" prefWidth="114.0" styleClass="button-functionMin" text="LOGOUT" />
+                        <Button fx:id="btn_logout" mnemonicParsing="false" onAction="#logout" styleClass="button-function" text="LOGOUT" />
                      </children>
                   </HBox>
                </children>
             </HBox>
-            <ImageView fitHeight="90.0" fitWidth="361.0" preserveRatio="true">
+            <ImageView fitHeight="172.0" fitWidth="642.0" preserveRatio="true">
                <image>
                   <Image url="@../images/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="btn_transaction" layoutX="1520.0" layoutY="42.0" mnemonicParsing="false" styleClass="button-functionMin" text="TRANSACTION LOGS" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
+            <Button fx:id="btn_transaction" layoutX="1520.0" layoutY="42.0" mnemonicParsing="false" styleClass="button-function" text="TRANSACTION LOGS" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
          </children>
       </AnchorPane>
-      <VBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="260.0" prefHeight="350.0" prefWidth="130.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0">
+      <VBox alignment="TOP_RIGHT" layoutX="-36.0" layoutY="410.0" prefHeight="428.0" prefWidth="198.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="242.0" AnchorPane.leftAnchor="-36.0">
          <children>
-            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floorMin" stylesheets="@../styles.css" text="SIXTH FLOOR">
+            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floor" stylesheets="@../styles.css" text="SIXTH FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floorMin" stylesheets="@../styles.css" text="FIFTH FLOOR">
+            <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floor" stylesheets="@../styles.css" text="FIFTH FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floorMin" stylesheets="@../styles.css" text="THIRD FLOOR">
+            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floor" stylesheets="@../styles.css" text="THIRD FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floorMin" stylesheets="@../styles.css" text="SECOND FLOOR">
+            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floor" stylesheets="@../styles.css" text="SECOND FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="91.0" style="-fx-text-fill: #eb777f; -fx-font-size: 10pt; -fx-font-weight: 900; -fx-font-family: Arial;" text="RENTED">
-               <graphic>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
-               </graphic>
-               <VBox.margin>
-                  <Insets top="40.0" />
-               </VBox.margin>
-            </Label>
          </children>
       </VBox>
-      <Line endX="-100.0" endY="388.0" layoutX="250.0" layoutY="228.0" startX="-100.0" startY="-6.0" stroke="WHITE" />
-      <HBox alignment="TOP_CENTER" layoutX="344.0" layoutY="990.0" prefHeight="71.0" prefWidth="1192.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Line endX="-100.0" endY="540.0" layoutX="267.0" layoutY="379.0" startX="-100.0" startY="-50.0" stroke="WHITE" />
+      <Label layoutX="66.0" layoutY="842.0" prefHeight="24.0" prefWidth="91.0" style="-fx-text-fill: #eb777f; -fx-font-size: 10pt; -fx-font-weight: 900; -fx-font-family: Arial;" text="RENTED">
+         <graphic>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+         </graphic>
+      </Label>
+      <HBox alignment="TOP_CENTER" layoutX="344.0" layoutY="990.0" prefHeight="101.0" prefWidth="1726.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="btn_rent" alignment="CENTER" mnemonicParsing="false" onAction="#rent" styleClass="button-functionMin" text="RENT">
+            <Button fx:id="btn_rent" alignment="CENTER" mnemonicParsing="false" onAction="#rent" styleClass="button-function" text="RENT">
                <HBox.margin>
                   <Insets right="80.0" />
                </HBox.margin></Button>
-            <Button fx:id="btn_remove" alignment="CENTER" mnemonicParsing="false" onAction="#remove" styleClass="button-functionMin" text="REMOVE">
+            <Button fx:id="btn_remove" alignment="CENTER" mnemonicParsing="false" onAction="#remove" styleClass="button-function" text="REMOVE">
                <HBox.margin>
                   <Insets right="150.0" />
                </HBox.margin></Button>
-            <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" onAction="#update" styleClass="button-functionMin" text="UPDATE SCHEDULE">
+            <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" onAction="#update" styleClass="button-function" text="UPDATE SCHEDULE">
                <HBox.margin>
                   <Insets />
                </HBox.margin></Button>
          </children>
       </HBox>
-      <ScrollPane fx:id="roomsPane" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="165.0" pannable="true" prefHeight="523.0" prefWidth="1192.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.0">
+      <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="239.0" pannable="true" prefHeight="725.0" prefWidth="1740.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="239.0">
          <content>
             <StackPane styleClass="scrollPane-UI">
                <children>
                   <VBox>
                      <children>
-                        <HBox prefHeight="1300.0" prefWidth="768.0">
+                        <HBox>
                            <children>
-                              <VBox alignment="CENTER" prefWidth="120.0">
+                              <VBox alignment="CENTER" prefWidth="140.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="7:00-8:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="8:00-9:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="9:00-10:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="10:00-11:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="11:00-12:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="12:00-1:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="1:00-2:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="2:00-3:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="3:00-4:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="4:00-5:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="5:00-6:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="6:00-7:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="7:00-8:00 PM" />
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="7:00-8:00 AM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="8:00-9:00 AM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="9:00-10:00 AM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="10:00-11:00 AM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="11:00-12:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="12:00-1:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="1:00-2:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="2:00-3:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="3:00-4:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="4:00-5:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="5:00-6:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="6:00-7:00 PM" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="7:00-8:00 PM" />
                                  </children>
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="DS1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                    <ToggleButton fx:id="ds1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -151,234 +148,110 @@
                                           <ToggleGroup fx:id="toggleGroup" />
                                        </toggleGroup>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="DS1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="DS1" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                 </children>
-                              </VBox>
-                              <VBox prefWidth="150.0">
-                                 <children>
-                                    <ToggleButton fx:id="DS2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="DS2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="DS2" />
+                                                <Label styleClass="label-2" text="DS1" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -387,125 +260,119 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="PERC_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="ds2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="ds2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="PERC_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="ds2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="Perc" />
+                                                <Label styleClass="label-2" text="DS2" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -514,125 +381,119 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="OPR1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="perc_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="perc_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="perc_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR1" />
+                                                <Label styleClass="label-2" text="Perc" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -641,125 +502,240 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="OPR2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="opr1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="opr1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
                                              </children>
                                           </HBox>
                                        </graphic>
                                     </ToggleButton>
-                                    <ToggleButton fx:id="OPR2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                    <ToggleButton fx:id="opr1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-2Min" text="OPR2" />
+                                                <Label styleClass="label-2" text="OPR1" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="150.0">
+                                 <children>
+                                    <ToggleButton fx:id="opr2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="opr2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label styleClass="label-2" text="OPR2" />
                                              </children>
                                           </HBox>
                                        </graphic>
