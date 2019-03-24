@@ -1559,7 +1559,7 @@ public class AdminViewFloor implements Initializable{
 								PreparedStatement ps = con.prepareStatement("INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
 								ps.setString(1, workbook.getSheetAt(i).getSheetName());
 								ps.setString(2, sheet.getRow(j).getCell(k).toString());
-								ps.setString(3, sheet.getRow(4).getCell(k).toString().replaceAll(" ", ""));
+								ps.setString(3, sheet.getRow(4).getCell(k).toString().replaceAll(" ", "").replaceAll("rm", ""));
 								ps.setString(4, sheet.getRow(j).getCell(0).toString().replaceAll(":00", ""));
 								ps.executeUpdate();
 								ps.close();
@@ -1621,11 +1621,13 @@ public class AdminViewFloor implements Initializable{
 		
 		curLocation = location.toString();
 		
-		
 		if(location.toString().contains("Main")) {
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 			lbl_day.setText(day.format(now));
+
+			ObservableList<Toggle> rooms = toggleGroup.getToggles();
+			System.out.println(rooms.size());
 		
 			reload();
 		}
@@ -1695,7 +1697,8 @@ public class AdminViewFloor implements Initializable{
 			ps.setString(2, "false");
 			ResultSet rs = ps.executeQuery();
 			ObservableList<Toggle> rooms = toggleGroup.getToggles();
-			
+
+			System.out.println(rooms.size());
 			while(rs.next()) {
 				
 				StringBuffer sb = new StringBuffer("");
@@ -1731,7 +1734,6 @@ public class AdminViewFloor implements Initializable{
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
 				int size = rooms.size();
-				System.out.println(sb);
 				
 				for(int i = 0; i < size; i++)
 					if(rooms.get(i).toString().contains(sb)) {

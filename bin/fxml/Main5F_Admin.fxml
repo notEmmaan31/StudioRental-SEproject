@@ -106,7 +106,7 @@
                <HBox.margin>
                   <Insets right="150.0" />
                </HBox.margin></Button>
-            <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" styleClass="button-functionMin" text="UPDATE SCHEDULE">
+            <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" onAction="#update" styleClass="button-functionMin" text="UPDATE SCHEDULE">
                <HBox.margin>
                   <Insets />
                </HBox.margin></Button>
@@ -263,10 +263,7 @@
                               </VBox>
                               <VBox prefWidth="150.0">
                                  <children>
-                                    <ToggleButton fx:id="DS2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
+                                    <ToggleButton fx:id="DS2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
