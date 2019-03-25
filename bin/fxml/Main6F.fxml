@@ -15,20 +15,20 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
       <AnchorPane prefHeight="255.0" prefWidth="1920.0" style="-fx-background-color: transparent;" stylesheets="@../styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="BOTTOM_LEFT" layoutX="232.0" layoutY="141.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="-4.0">
+            <HBox alignment="BOTTOM_LEFT" layoutX="200.0" layoutY="96.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="28.0">
                <children>
-                  <VBox prefHeight="107.0" prefWidth="431.0">
+                  <VBox prefHeight="69.0" prefWidth="485.0">
                      <children>
                         <Label alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="223.0" style="-fx-font-family: Arial; -fx-text-fill: #ffffff; -fx-font-size: 9px;" text="AND">
                            <graphic>
                               <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="132.0" style="-fx-font-family: Arial; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-style: italic; -fx-font-weight: 900;" text="PRESENT YOUR ID" />
                            </graphic>
                         </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="745.0" style="-fx-font-family: Arial; -fx-text-fill: #e6e430; -fx-font-weight: 900; -fx-font-size: 9px;" text="AT THE STUDENT ASSISTANT FOR THE RESERVATION TO BE CONFIRMED.">
+                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="454.0" style="-fx-font-family: Arial; -fx-text-fill: #e6e430; -fx-font-weight: 900; -fx-font-size: 9px;" text="AT THE STUDENT ASSISTANT FOR THE RESERVATION TO BE CONFIRMED.">
                            <graphic>
                               <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-style: italic;" text="₱15/HR">
                                  <graphic>
@@ -43,78 +43,81 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <Label fx:id="lbl_day" alignment="TOP_CENTER" contentDisplay="TOP" styleClass="label-day" text="lbl_day">
+                  <Label fx:id="lbl_day" alignment="BOTTOM_CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="293.0" styleClass="label-dayMin" text="MONDAY">
                      <HBox.margin>
-                        <Insets bottom="20.0" left="200.0" right="540.0" />
+                        <Insets bottom="20.0" right="230.0" />
                      </HBox.margin>
                   </Label>
                   <HBox alignment="TOP_RIGHT">
                      <children>
-                        <Button fx:id="btn_manage" mnemonicParsing="false" onAction="#manage" styleClass="button-function" text="MANAGE" />
+                        <Button fx:id="btn_manage" mnemonicParsing="false" onAction="#manage" prefHeight="65.0" prefWidth="134.0" styleClass="button-functionMin" text="MANAGE" />
                      </children>
                   </HBox>
                </children>
             </HBox>
-            <ImageView fitHeight="172.0" fitWidth="642.0" preserveRatio="true">
+            <ImageView fitHeight="90.0" fitWidth="361.0" preserveRatio="true">
                <image>
                   <Image url="@../images/logo.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <VBox alignment="TOP_RIGHT" layoutX="-36.0" layoutY="410.0" prefHeight="428.0" prefWidth="198.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="242.0" AnchorPane.leftAnchor="-36.0">
+      <VBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="260.0" prefHeight="350.0" prefWidth="130.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0">
          <children>
-            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floor" stylesheets="@../styles.css" text="SIXTH FLOOR">
+            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floorMin" stylesheets="@../styles.css" text="SIXTH FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floor" stylesheets="@../styles.css" text="FIFTH FLOOR">
+            <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floorMin" stylesheets="@../styles.css" text="FIFTH FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floor" stylesheets="@../styles.css" text="THIRD FLOOR">
+            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floorMin" stylesheets="@../styles.css" text="THIRD FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floor" stylesheets="@../styles.css" text="SECOND FLOOR">
+            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floorMin" stylesheets="@../styles.css" text="SECOND FLOOR">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin>
             </Button>
+            <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="91.0" style="-fx-text-fill: #eb777f; -fx-font-size: 10pt; -fx-font-weight: 900; -fx-font-family: Arial;" text="RENTED">
+               <graphic>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+               </graphic>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Label>
          </children>
       </VBox>
-      <Line endX="-100.0" endY="540.0" layoutX="267.0" layoutY="379.0" startX="-100.0" startY="-50.0" stroke="WHITE" />
-      <Label layoutX="66.0" layoutY="842.0" prefHeight="24.0" prefWidth="91.0" style="-fx-text-fill: #eb777f; -fx-font-size: 10pt; -fx-font-weight: 900; -fx-font-family: Arial;" text="RENTED">
-         <graphic>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
-         </graphic>
-      </Label>
-      <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="239.0" pannable="true" prefHeight="844.0" prefWidth="1740.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="239.0">
+      <Line endX="-100.0" endY="388.0" layoutX="250.0" layoutY="228.0" startX="-100.0" startY="-6.0" stroke="WHITE" />
+      <ScrollPane fx:id="roomsPane" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="165.0" pannable="true" prefHeight="605.0" prefWidth="1192.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.0">
          <content>
             <StackPane styleClass="scrollPane-UI">
                <children>
                   <VBox>
                      <children>
-                        <HBox>
+                        <HBox prefHeight="1300.0" prefWidth="768.0">
                            <children>
-                              <VBox alignment="CENTER" prefWidth="140.0">
+                              <VBox alignment="CENTER" prefWidth="120.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="7:00-8:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="8:00-9:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="9:00-10:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="10:00-11:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="11:00-12:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="12:00-1:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="1:00-2:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="2:00-3:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="3:00-4:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="4:00-5:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="5:00-6:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="6:00-7:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-header" text="7:00-8:00 PM" />
+                                    <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="7:00-8:00 AM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="8:00-9:00 AM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="9:00-10:00 AM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="10:00-11:00 AM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="11:00-12:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="12:00-1:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="1:00-2:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="2:00-3:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="3:00-4:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="4:00-5:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="5:00-6:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="6:00-7:00 PM" />
+                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="7:00-8:00 PM" />
                                  </children>
                               </VBox>
                               <VBox prefWidth="131.5">
@@ -123,12 +126,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -140,12 +143,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -154,12 +157,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -168,12 +171,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -182,12 +185,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -196,12 +199,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -210,12 +213,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -224,12 +227,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -238,12 +241,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -252,12 +255,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -266,12 +269,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -280,12 +283,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -294,12 +297,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6A" />
+                                                <Label styleClass="label-2Min" text="6A" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -312,12 +315,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -326,12 +329,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -340,12 +343,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -354,12 +357,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -368,12 +371,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -382,12 +385,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -396,12 +399,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -410,12 +413,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -424,12 +427,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -438,12 +441,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -452,12 +455,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -466,12 +469,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -480,12 +483,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6B" />
+                                                <Label styleClass="label-2Min" text="6B" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -498,12 +501,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -512,12 +515,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -526,12 +529,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -540,12 +543,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -554,12 +557,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -568,12 +571,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -582,12 +585,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -596,12 +599,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -610,12 +613,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -624,12 +627,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -638,12 +641,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -652,12 +655,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -666,12 +669,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6C" />
+                                                <Label styleClass="label-2Min" text="6C" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -684,12 +687,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -698,12 +701,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -712,12 +715,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -726,12 +729,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -740,12 +743,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -754,12 +757,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -768,12 +771,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -782,12 +785,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -796,12 +799,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -810,12 +813,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -824,12 +827,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -838,12 +841,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -852,12 +855,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6D" />
+                                                <Label styleClass="label-2Min" text="6D" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -870,12 +873,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -884,12 +887,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -898,12 +901,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -912,12 +915,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -926,12 +929,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -940,12 +943,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -954,12 +957,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -968,12 +971,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -982,12 +985,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -996,12 +999,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1010,12 +1013,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1024,12 +1027,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1038,12 +1041,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6E" />
+                                                <Label styleClass="label-2Min" text="6E" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1056,12 +1059,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1070,12 +1073,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1084,12 +1087,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1098,12 +1101,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1112,12 +1115,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1126,12 +1129,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1140,12 +1143,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1154,12 +1157,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1168,12 +1171,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1182,12 +1185,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1196,12 +1199,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1210,12 +1213,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1224,12 +1227,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6F" />
+                                                <Label styleClass="label-2Min" text="6F" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1242,12 +1245,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1256,12 +1259,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1270,12 +1273,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1284,12 +1287,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1298,12 +1301,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1312,12 +1315,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1326,12 +1329,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1340,12 +1343,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1354,12 +1357,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1368,12 +1371,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1382,12 +1385,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1396,12 +1399,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1410,12 +1413,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6G" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1428,12 +1431,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1442,12 +1445,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1456,12 +1459,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1470,12 +1473,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1484,12 +1487,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1498,12 +1501,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1512,12 +1515,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1526,12 +1529,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1540,12 +1543,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6G" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1554,12 +1557,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1568,12 +1571,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1582,12 +1585,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1596,12 +1599,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6H" />
+                                                <Label styleClass="label-2Min" text="6H" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1614,12 +1617,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1628,12 +1631,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1642,12 +1645,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1656,12 +1659,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1670,12 +1673,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1684,12 +1687,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1698,12 +1701,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1712,12 +1715,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1726,12 +1729,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1740,12 +1743,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1754,12 +1757,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1768,12 +1771,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1782,12 +1785,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6I" />
+                                                <Label styleClass="label-2Min" text="6I" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1800,12 +1803,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1814,12 +1817,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1828,12 +1831,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1842,12 +1845,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1856,12 +1859,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1870,12 +1873,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1884,12 +1887,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1898,12 +1901,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1912,12 +1915,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1926,12 +1929,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1940,12 +1943,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1954,12 +1957,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
@@ -1968,12 +1971,12 @@
                                        <graphic>
                                           <HBox alignment="CENTER">
                                              <children>
-                                                <Label styleClass="label-1" text="ROOM">
+                                                <Label styleClass="label-1Min" text="ROOM">
                                                    <HBox.margin>
                                                       <Insets right="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <Label styleClass="label-2" text="6J" />
+                                                <Label styleClass="label-2Min" text="6J" />
                                              </children>
                                           </HBox>
                                        </graphic>
