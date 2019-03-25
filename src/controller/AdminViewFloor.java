@@ -1490,7 +1490,7 @@ public class AdminViewFloor implements Initializable{
 	}
 	
 	 @FXML
-	 void checkRent(ActionEvent event) {
+	 void checkRent(ActionEvent event) throws IOException {
 		 
 		 if(tf_studNum.getText().trim().isEmpty() == false && tf_firstName.getText().trim().isEmpty() == false && tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText()) ){
 			 studNum = tf_studNum.getText().trim();
@@ -1505,6 +1505,11 @@ public class AdminViewFloor implements Initializable{
 				 // TODO Auto-generated catch block
 				 e.printStackTrace();
 			 }
+		} else {
+			
+			alert = "Please input a valid information";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+			SceneUtil.openWindow(root);
 		}
 
 	 }
@@ -1734,9 +1739,14 @@ public class AdminViewFloor implements Initializable{
 			lbl_lastName.setText(lastName);
 		}
 		
+		if(location.toString().contains("Rent_Confirmation_Success.fxml")) {
+			lbl_rm.setText(roomInfo[0].replaceAll("rm", "").toUpperCase());
+		}
+		
 		if(location.toString().contains("alert.fxml")) {
 			lbl_alert.setText(alert);
 		}
+		
 		if(location.toString().contains("Remove_Confirmation.fxml")) {
 			try {
 
@@ -1754,10 +1764,14 @@ public class AdminViewFloor implements Initializable{
 						lastName = rs.getString("LAST_NAME");
 						firstName = rs.getString("FIRST_NAME");
 						studNum = rs.getString("STUDENT_NUMBER");
+						
+					
 					if(lastName.trim().isEmpty() == false) {
+						
 						lbl_lastName.setText(lastName);
 						lbl_firstName.setText(firstName);
 						lbl_studNum.setText(studNum);
+						
 					} 
 					}
 					
@@ -1776,11 +1790,11 @@ public class AdminViewFloor implements Initializable{
 							lbl_lastName.setText(lastName);
 							
 						}
-						lbl_rm.setText(roomInfo[0]);
-						lbl_time.setText(roomInfo[1]);
 				}
 			
-				
+
+				lbl_rm.setText(roomInfo[0]);
+				lbl_time.setText(roomInfo[1]);
 
 				rs.close();
 				ps.close();

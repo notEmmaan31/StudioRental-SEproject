@@ -36,7 +36,7 @@
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Rental Fee: " />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="₱15.00" />
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="| Name of Room/s:" />
-                                    <Label fx:id="lbl_rm" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="6A" />
+                                    <Label fx:id="lbl_rm" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_CENTER">
