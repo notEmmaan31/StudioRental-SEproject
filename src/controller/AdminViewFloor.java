@@ -1689,16 +1689,22 @@ public class AdminViewFloor implements Initializable{
 	try {
 		newRoom = null;
 		newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
-		roomInfo = newRoom.getId().split("_");
+		if(newRoom.getStyleClass().toString().contains("toggle-button-UI-rented") == false) {
+			alert = "Please select a rented room";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+			
+			SceneUtil.openWindow(root);
+			
+		} else {
+			roomInfo = newRoom.getId().split("_");
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
+			SceneUtil.openWindow(root);}
+		} catch(NullPointerException e) {
+			alert = "Please select a rented room";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 		
-		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
-		SceneUtil.openWindow(root);
-	} catch(NullPointerException e) {
-		alert = "Please select a rented room";
-		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
-		
-		SceneUtil.openWindow(root);
-	}
+			SceneUtil.openWindow(root);
+		}
 	}
 
 	@Override
