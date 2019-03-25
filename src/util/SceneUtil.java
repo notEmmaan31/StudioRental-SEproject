@@ -24,5 +24,13 @@ public class SceneUtil {
 		primaryStage.showAndWait();
 	}
 	
+	public static void alert(Parent root,String text) {
+		Stage primaryStage = new Stage();
+		primaryStage.initModality(Modality.APPLICATION_MODAL);
+		primaryStage.setScene(new Scene(root));
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		primaryStage.showAndWait();
+	}
+	
 	
 }
