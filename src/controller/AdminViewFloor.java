@@ -36,100 +36,40 @@ import services.UpdateScheduledRoomService;
 import util.SceneUtil;
 
 public class AdminViewFloor implements Initializable {
-
-	static String curLocation;
-
-	@FXML
-	private Label lbl_day;
+	
+	private static final String CONNECTION_URL = "jdbc:derby://localhost:1527/srmsDB;create=true";
+	private static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
 
 	@FXML
-	private Button btn_logout;
-
-	@FXML
-	private Button btn_transaction;
-
-	@FXML
-	private Button btn_floor2;
-
-	@FXML
-	private Button btn_floor3;
-
-	@FXML
-	private Button btn_floor5;
-
-	@FXML
-	private Button btn_floor6;
-
-	@FXML
-	private Button btn_rent;
-
-	@FXML
-	private Button btn_remove;
-
-	@FXML
-	private Button btn_update;
+	private Label lbl_day, lbl_rm, lbl_time, lbl_alert;
 
 	@FXML
 	private ToggleGroup toggleGroup;
 
 	@FXML
-	private Button btn_exit;
-
-	@FXML
-	private Label lbl_rm;
-
-	@FXML
-	private TextField tf_studNum;
-
-	@FXML
-	private TextField tf_firstName;
-
-	@FXML
-	private TextField tf_lastName;
-
-	@FXML
-	private Label lbl_studNum;
-
-	@FXML
-	private Label lbl_lastName;
-
-	@FXML
-	private Label lbl_firstName;
-
-	@FXML
-	private Button btn_updateConfirmed;
-
-	@FXML
-	private Button btn_checkRent;
-
-	@FXML
-	private Button btn_confirmRent;
-
-	@FXML
-	private Button btn_toMain;
-
-	@FXML
-	private Label lbl_time;
-
-	@FXML
-	private Label lbl_alert;
-
-	@FXML
-	private Button btn_confirmRemove;
-
-	@FXML
-	private Button btn_manage;
-
-	@FXML
-	private Button btn_open;
-
-	@FXML
-	private Button btn_confirmUpdate;
-
+	private TextField tf_studNum, tf_firstName, tf_lastName;
+	
 	@FXML
 	private Label lbl_file;
 
-	static String alert;
+	@FXML
+	private Label lbl_studNum, lbl_lastName, lbl_firstName;
+	
+	@FXML
+	private Button btn_checkRent, btn_rent;
+
+	@FXML
+	private Button btn_floor2, btn_floor3, btn_floor5, btn_floor6;
+	
+	@FXML
+	private Button btn_logout, btn_transaction, btn_remove, btn_update, btn_exit, btn_toMain, btn_manage;
+
+	@FXML
+	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open;
+
+	private String alert;
+	private String curLocation;
+	
 	static File file = null;
 
 	@FXML
@@ -234,7 +174,6 @@ public class AdminViewFloor implements Initializable {
 	}
 
 	static Parent root;
-	static Date now = new Date();
 	static Stage oldStage;
 	static String[] roomInfo;
 	static String studNum, firstName, lastName;
@@ -294,8 +233,8 @@ public class AdminViewFloor implements Initializable {
 	@FXML
 	void confirmRent(ActionEvent event) {
 		try {
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			Class.forName(DRIVER);
+			Connection con = DriverManager.getConnection(CONNECTION_URL);
 			PreparedStatement ps = con.prepareStatement("SELECT OID FROM APP.ORDERS ORDER BY OID DESC ");
 			ResultSet rs = ps.executeQuery();
 			int oid = 1;
@@ -359,8 +298,8 @@ public class AdminViewFloor implements Initializable {
 
 			XSSFSheet sheet = null;
 			try {
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
-				Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+				Class.forName(DRIVER);
+				Connection con = DriverManager.getConnection(CONNECTION_URL);
 				PreparedStatement ps = con.prepareStatement("DELETE FROM APP.SCHEDULED_RENT WHERE 1=1");
 				ps.executeUpdate();
 
@@ -386,9 +325,9 @@ public class AdminViewFloor implements Initializable {
 						if (j < 20) {
 							if (sheet.getRow(j).getCell(k).toString().isEmpty() == false) {
 								try {
-									Class.forName("org.apache.derby.jdbc.ClientDriver");
+									Class.forName(DRIVER);
 									Connection con = DriverManager
-											.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+											.getConnection(CONNECTION_URL);
 									PreparedStatement ps = con.prepareStatement(
 											"INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
 									ps.setString(1, workbook.getSheetAt(i).getSheetName());
@@ -410,9 +349,9 @@ public class AdminViewFloor implements Initializable {
 						} else {
 							if (sheet.getRow(j).getCell(k).toString().isEmpty() == false) {
 								try {
-									Class.forName("org.apache.derby.jdbc.ClientDriver");
+									Class.forName(DRIVER);
 									Connection con = DriverManager
-											.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+											.getConnection(CONNECTION_URL);
 									PreparedStatement ps = con.prepareStatement(
 											"INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
 									ps.setString(1, workbook.getSheetAt(i).getSheetName());
@@ -515,8 +454,8 @@ public class AdminViewFloor implements Initializable {
 
 				System.out.println(roomInfo[1]);
 				System.out.println(roomInfo[0].replaceAll("rm", "").toUpperCase());
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
-				Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+				Class.forName(DRIVER);
+				Connection con = DriverManager.getConnection(CONNECTION_URL);
 				PreparedStatement ps = con.prepareStatement(
 						"SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ? ");
 				ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
@@ -580,8 +519,8 @@ public class AdminViewFloor implements Initializable {
 
 	public void reload() {
 		try {
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			Class.forName(DRIVER);
+			Connection con = DriverManager.getConnection(CONNECTION_URL);
 			PreparedStatement ps = con
 					.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? ");
 			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
@@ -664,7 +603,7 @@ public class AdminViewFloor implements Initializable {
 		});
 		service.start();
 	}
-	
+
 	// So eto yung part para doon sa
 	// "SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? ORDER BY ROOM_RENTED"
 	// na statement
@@ -692,8 +631,8 @@ public class AdminViewFloor implements Initializable {
 	void confirmRemove(ActionEvent event) throws IOException {
 		try {
 
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			Class.forName(DRIVER);
+			Connection con = DriverManager.getConnection(CONNECTION_URL);
 			PreparedStatement ps = con.prepareStatement(
 					"UPDATE APP.ORDERS SET CANCELLED = ? WHERE STUDENT_NUMBER = ? AND DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
 			ps.setString(1, "true");
