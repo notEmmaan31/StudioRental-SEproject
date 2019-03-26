@@ -10,16 +10,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,6 +30,9 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import services.UpdateRoomService;
+import services.UpdateScheduledRoomService;
 import util.SceneUtil;
 
 public class AdminViewFloor implements Initializable {
@@ -593,7 +593,7 @@ public class AdminViewFloor implements Initializable {
 				sb.append(rs.getString("ROOM_RENTED"));
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
-				
+
 				for (Toggle toggle : toggleGroup.getToggles()) {
 					if (toggle.toString().contains(sb)) {
 						toggle.setSelected(true);
@@ -605,7 +605,6 @@ public class AdminViewFloor implements Initializable {
 					}
 				}
 			}
-			
 
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
@@ -641,6 +640,52 @@ public class AdminViewFloor implements Initializable {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	// So eto yung part para doon sa
+	// "SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? "
+	// na statement
+	public void updateRentedRoom() {
+		UpdateRoomService service = new UpdateRoomService();
+		service.setPeriod(Duration.millis(1000));
+		service.setOnSucceeded((t) -> {
+			for (Toggle toggle : toggleGroup.getToggles()) {
+				for (String rentRoom : service.getValue()) {
+					if (toggle.toString().contains(rentRoom)) {
+						toggle.setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+		});
+		service.start();
+	}
+	
+	// So eto yung part para doon sa
+	// "SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? ORDER BY ROOM_RENTED"
+	// na statement
+	public void updateScheduledRoom() {
+		UpdateScheduledRoomService service = new UpdateScheduledRoomService();
+		service.setPeriod(Duration.millis(1000));
+		service.setOnSucceeded((t) -> {
+			for (Toggle toggle : toggleGroup.getToggles()) {
+				for (String rentRoom : service.getValue()) {
+					if (toggle.toString().contains(rentRoom.toLowerCase()) || toggle.toString().contains(rentRoom)) {
+						toggle.setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+		});
+		service.start();
 	}
 
 	@FXML
