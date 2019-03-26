@@ -48,7 +48,7 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </PasswordField>
-                        <PasswordField fx:id="pf_newPassRetype" prefHeight="26.0" prefWidth="469.0" promptText="Current Password" />
+                        <PasswordField fx:id="pf_newPassRetype" prefHeight="26.0" prefWidth="469.0" promptText="Retype New Password" />
                      </children>
                   </VBox>
                </children>
