@@ -175,37 +175,50 @@ public class LoginManage {
     
     @FXML
     void changePass(ActionEvent event) throws IOException {
-    	if (pf_newPass.getText().equals(pf_newPassRetype.getText())) {
-    		System.out.print(pf_newPass.getText());
-    		System.out.print(pf_newPassRetype.getText());
-    		System.out.print(email);
-    		try {
-        		Class.forName("org.apache.derby.jdbc.ClientDriver");
-        		Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
-    			PreparedStatement ps = con.prepareStatement("UPDATE ACCOUNT.USERS SET PASSWORD = ? WHERE EMAIL = ?");
-    			ps.setString(1, Encryption.encrypt(pf_newPass.getText()));
-    			ps.setString(2, email);
-    			ps.executeUpdate();
-    			ps.close();
-    			connection.close();
-    			
-    			Stage oldStage = (Stage)btn_exit.getScene().getWindow();
-        		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Success.fxml"));
-        		SceneUtil.nextScene(root, "Password changed", oldStage);
-    		} catch (SQLException e) {
-    			e.printStackTrace();
-    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
-        		SceneUtil.openWindow(root);
-    		} catch (ClassNotFoundException e) {
-    			e.printStackTrace();
-    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
-        		SceneUtil.openWindow(root);
-    		} catch (IOException e) {
-    			e.printStackTrace();
-    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
-        		SceneUtil.openWindow(root);
-        		
-			}
+    	//test password strength
+    	String pendingNewPassword = pf_newPass.getText();
+    	boolean checkUpperCase = !pendingNewPassword.equals(pendingNewPassword.toLowerCase());
+		boolean checkLowerCase = !pendingNewPassword.equals(pendingNewPassword.toUpperCase());
+		boolean checkhasNumbers = pendingNewPassword.matches(".*\\d.*");
+		int len = pendingNewPassword.length();
+		
+		if(checkUpperCase == true && checkLowerCase == true && checkhasNumbers == true && len > 8 && len < 20) {
+			
+	    	if (pf_newPass.getText().equals(pf_newPassRetype.getText())) {
+	    		System.out.print(pf_newPass.getText());
+	    		System.out.print(pf_newPassRetype.getText());
+	    		System.out.print(email);
+	    		try {
+	        		Class.forName("org.apache.derby.jdbc.ClientDriver");
+	        		Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+	    			PreparedStatement ps = con.prepareStatement("UPDATE ACCOUNT.USERS SET PASSWORD = ? WHERE EMAIL = ?");
+	    			ps.setString(1, Encryption.encrypt(pf_newPass.getText()));
+	    			ps.setString(2, email);
+	    			ps.executeUpdate();
+	    			ps.close();
+	    			connection.close();
+	    			
+	    			Stage oldStage = (Stage)btn_exit.getScene().getWindow();
+	        		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Success.fxml"));
+	        		SceneUtil.nextScene(root, "Password changed", oldStage);
+	    		} catch (SQLException e) {
+	    			e.printStackTrace();
+	    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
+	        		SceneUtil.openWindow(root);
+	    		} catch (ClassNotFoundException e) {
+	    			e.printStackTrace();
+	    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
+	        		SceneUtil.openWindow(root);
+	    		} catch (IOException e) {
+	    			e.printStackTrace();
+	    			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Error.fxml"));
+	        		SceneUtil.openWindow(root);
+	        		
+				}
+    	}else {
+    		//display generic error requesting better password
+    		System.out.println("n");
+    	}
     		
     		
     		
