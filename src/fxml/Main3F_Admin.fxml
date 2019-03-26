@@ -60,7 +60,7 @@
                   <Image url="@../images/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="btn_transaction" layoutX="1520.0" layoutY="42.0" mnemonicParsing="false" styleClass="button-functionMin" text="TRANSACTION LOGS" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
+            <Button fx:id="btn_transaction" layoutX="1520.0" layoutY="42.0" mnemonicParsing="false" onAction="#transact" styleClass="button-functionMin" text="TRANSACTION LOGS" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
          </children>
       </AnchorPane>
       <VBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="260.0" prefHeight="350.0" prefWidth="130.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0">
