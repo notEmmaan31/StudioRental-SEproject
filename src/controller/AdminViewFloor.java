@@ -10,7 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import org.apache.commons.lang3.math.NumberUtils;
@@ -128,7 +130,6 @@ public class AdminViewFloor implements Initializable {
 	private Label lbl_file;
 
 	static String alert;
-	static ObservableList<Toggle> rooms = null;
 	static File file = null;
 
 	@FXML
@@ -486,9 +487,6 @@ public class AdminViewFloor implements Initializable {
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 			lbl_day.setText(day.format(now));
-
-			rooms = toggleGroup.getToggles();
-			System.out.print(rooms.size());
 			reload();
 		}
 
@@ -589,29 +587,25 @@ public class AdminViewFloor implements Initializable {
 			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
 			ps.setString(2, "false");
 			ResultSet rs = ps.executeQuery();
-			ObservableList<Toggle> rooms = toggleGroup.getToggles();
 
 			while (rs.next()) {
-
 				StringBuffer sb = new StringBuffer("");
 				sb.append(rs.getString("ROOM_RENTED"));
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
-				int size = rooms.size();
-
-				for (int i = 0; i < size; i++)
-					if (rooms.get(i).toString().contains(sb)) {
-
-						rooms.get(i).setSelected(true);
+				
+				for (Toggle toggle : toggleGroup.getToggles()) {
+					if (toggle.toString().contains(sb)) {
+						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
 						newRoom.getStyleClass().add("toggle-button-UI-rented");
 						newRoom.setSelected(false);
 						break;
-
 					}
-
+				}
 			}
+			
 
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
@@ -619,27 +613,25 @@ public class AdminViewFloor implements Initializable {
 			ps = con.prepareStatement("SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? ORDER BY ROOM_RENTED");
 			ps.setString(1, day.format(now).toUpperCase());
 			rs = ps.executeQuery();
-			while (rs.next()) {
 
+			while (rs.next()) {
 				StringBuffer sb = new StringBuffer("");
 				sb.append(rs.getString("ROOM_RENTED"));
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
-				int size = rooms.size();
 
-				for (int i = 0; i < size; i++)
-					if (rooms.get(i).toString().contains(sb.toString().toLowerCase())
-							|| rooms.get(i).toString().contains(sb.toString())) {
+				for (Toggle toggle : toggleGroup.getToggles()) {
+					if (toggle.toString().contains(sb.toString().toLowerCase())
+							|| toggle.toString().contains(sb.toString())) {
 
-						rooms.get(i).setSelected(true);
+						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
 						newRoom.getStyleClass().add("toggle-button-UI-rented");
 						newRoom.setSelected(false);
 						break;
-
 					}
-
+				}
 			}
 			rs.close();
 			ps.close();
