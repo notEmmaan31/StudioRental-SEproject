@@ -17,7 +17,6 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,104 +30,46 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import services.UpdateRoomService;
+import services.UpdateScheduledRoomService;
 import util.SceneUtil;
 
 public class AdminViewFloor implements Initializable {
-
-	static String curLocation;
-
-	@FXML
-	private Label lbl_day;
+	
+	private static final String CONNECTION_URL = "jdbc:derby://localhost:1527/srmsDB;create=true";
+	private static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
 
 	@FXML
-	private Button btn_logout;
-
-	@FXML
-	private Button btn_transaction;
-
-	@FXML
-	private Button btn_floor2;
-
-	@FXML
-	private Button btn_floor3;
-
-	@FXML
-	private Button btn_floor5;
-
-	@FXML
-	private Button btn_floor6;
-
-	@FXML
-	private Button btn_rent;
-
-	@FXML
-	private Button btn_remove;
-
-	@FXML
-	private Button btn_update;
+	private Label lbl_day, lbl_rm, lbl_time, lbl_alert;
 
 	@FXML
 	private ToggleGroup toggleGroup;
 
 	@FXML
-	private Button btn_exit;
-
-	@FXML
-	private Label lbl_rm;
-
-	@FXML
-	private TextField tf_studNum;
-
-	@FXML
-	private TextField tf_firstName;
-
-	@FXML
-	private TextField tf_lastName;
-
-	@FXML
-	private Label lbl_studNum;
-
-	@FXML
-	private Label lbl_lastName;
-
-	@FXML
-	private Label lbl_firstName;
-
-	@FXML
-	private Button btn_updateConfirmed;
-
-	@FXML
-	private Button btn_checkRent;
-
-	@FXML
-	private Button btn_confirmRent;
-
-	@FXML
-	private Button btn_toMain;
-
-	@FXML
-	private Label lbl_time;
-
-	@FXML
-	private Label lbl_alert;
-
-	@FXML
-	private Button btn_confirmRemove;
-
-	@FXML
-	private Button btn_manage;
-
-	@FXML
-	private Button btn_open;
-
-	@FXML
-	private Button btn_confirmUpdate;
-
+	private TextField tf_studNum, tf_firstName, tf_lastName;
+	
 	@FXML
 	private Label lbl_file;
 
-	static String alert;
-	static ObservableList<Toggle> rooms = null;
+	@FXML
+	private Label lbl_studNum, lbl_lastName, lbl_firstName;
+	
+	@FXML
+	private Button btn_checkRent, btn_rent;
+
+	@FXML
+	private Button btn_floor2, btn_floor3, btn_floor5, btn_floor6;
+	
+	@FXML
+	private Button btn_logout, btn_transaction, btn_remove, btn_update, btn_exit, btn_toMain, btn_manage;
+
+	@FXML
+	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open;
+
+	private String alert;
+	private String curLocation;
+	
 	static File file = null;
 
 	@FXML
@@ -233,7 +174,6 @@ public class AdminViewFloor implements Initializable {
 	}
 
 	static Parent root;
-	static Date now = new Date();
 	static Stage oldStage;
 	static String[] roomInfo;
 	static String studNum, firstName, lastName;
@@ -293,8 +233,8 @@ public class AdminViewFloor implements Initializable {
 	@FXML
 	void confirmRent(ActionEvent event) {
 		try {
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			Class.forName(DRIVER);
+			Connection con = DriverManager.getConnection(CONNECTION_URL);
 			PreparedStatement ps = con.prepareStatement("SELECT OID FROM APP.ORDERS ORDER BY OID DESC ");
 			ResultSet rs = ps.executeQuery();
 			int oid = 1;
@@ -358,8 +298,8 @@ public class AdminViewFloor implements Initializable {
 
 			XSSFSheet sheet = null;
 			try {
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
-				Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+				Class.forName(DRIVER);
+				Connection con = DriverManager.getConnection(CONNECTION_URL);
 				PreparedStatement ps = con.prepareStatement("DELETE FROM APP.SCHEDULED_RENT WHERE 1=1");
 				ps.executeUpdate();
 
@@ -385,9 +325,9 @@ public class AdminViewFloor implements Initializable {
 						if (j < 20) {
 							if (sheet.getRow(j).getCell(k).toString().isEmpty() == false) {
 								try {
-									Class.forName("org.apache.derby.jdbc.ClientDriver");
+									Class.forName(DRIVER);
 									Connection con = DriverManager
-											.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+											.getConnection(CONNECTION_URL);
 									PreparedStatement ps = con.prepareStatement(
 											"INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
 									ps.setString(1, workbook.getSheetAt(i).getSheetName());
@@ -409,9 +349,9 @@ public class AdminViewFloor implements Initializable {
 						} else {
 							if (sheet.getRow(j).getCell(k).toString().isEmpty() == false) {
 								try {
-									Class.forName("org.apache.derby.jdbc.ClientDriver");
+									Class.forName(DRIVER);
 									Connection con = DriverManager
-											.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+											.getConnection(CONNECTION_URL);
 									PreparedStatement ps = con.prepareStatement(
 											"INSERT INTO APP.SCHEDULED_RENT (DAY_RENTED, NAME, ROOM_RENTED, TIME_RENTED) VALUES (?, ?, ?, ?)");
 									ps.setString(1, workbook.getSheetAt(i).getSheetName());
@@ -486,9 +426,6 @@ public class AdminViewFloor implements Initializable {
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 			lbl_day.setText(day.format(now));
-
-			rooms = toggleGroup.getToggles();
-			System.out.print(rooms.size());
 			reload();
 		}
 
@@ -517,8 +454,8 @@ public class AdminViewFloor implements Initializable {
 
 				System.out.println(roomInfo[1]);
 				System.out.println(roomInfo[0].replaceAll("rm", "").toUpperCase());
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
-				Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+				Class.forName(DRIVER);
+				Connection con = DriverManager.getConnection(CONNECTION_URL);
 				PreparedStatement ps = con.prepareStatement(
 						"SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ? ");
 				ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
@@ -582,35 +519,30 @@ public class AdminViewFloor implements Initializable {
 
 	public void reload() {
 		try {
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			Class.forName(DRIVER);
+			Connection con = DriverManager.getConnection(CONNECTION_URL);
 			PreparedStatement ps = con
 					.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? ");
 			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
 			ps.setString(2, "false");
 			ResultSet rs = ps.executeQuery();
-			ObservableList<Toggle> rooms = toggleGroup.getToggles();
 
 			while (rs.next()) {
-
 				StringBuffer sb = new StringBuffer("");
 				sb.append(rs.getString("ROOM_RENTED"));
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
-				int size = rooms.size();
 
-				for (int i = 0; i < size; i++)
-					if (rooms.get(i).toString().contains(sb)) {
-
-						rooms.get(i).setSelected(true);
+				for (Toggle toggle : toggleGroup.getToggles()) {
+					if (toggle.toString().contains(sb)) {
+						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
 						newRoom.getStyleClass().add("toggle-button-UI-rented");
 						newRoom.setSelected(false);
 						break;
-
 					}
-
+				}
 			}
 
 			Date now = new Date();
@@ -619,27 +551,25 @@ public class AdminViewFloor implements Initializable {
 			ps = con.prepareStatement("SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? ORDER BY ROOM_RENTED");
 			ps.setString(1, day.format(now).toUpperCase());
 			rs = ps.executeQuery();
-			while (rs.next()) {
 
+			while (rs.next()) {
 				StringBuffer sb = new StringBuffer("");
 				sb.append(rs.getString("ROOM_RENTED"));
 				sb.append("_");
 				sb.append(rs.getString("TIME_RENTED"));
-				int size = rooms.size();
 
-				for (int i = 0; i < size; i++)
-					if (rooms.get(i).toString().contains(sb.toString().toLowerCase())
-							|| rooms.get(i).toString().contains(sb.toString())) {
+				for (Toggle toggle : toggleGroup.getToggles()) {
+					if (toggle.toString().contains(sb.toString().toLowerCase())
+							|| toggle.toString().contains(sb.toString())) {
 
-						rooms.get(i).setSelected(true);
+						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
 						newRoom.getStyleClass().add("toggle-button-UI-rented");
 						newRoom.setSelected(false);
 						break;
-
 					}
-
+				}
 			}
 			rs.close();
 			ps.close();
@@ -651,12 +581,58 @@ public class AdminViewFloor implements Initializable {
 		}
 	}
 
+	// So eto yung part para doon sa
+	// "SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? "
+	// na statement
+	public void updateRentedRoom() {
+		UpdateRoomService service = new UpdateRoomService();
+		service.setPeriod(Duration.millis(1000));
+		service.setOnSucceeded((t) -> {
+			for (Toggle toggle : toggleGroup.getToggles()) {
+				for (String rentRoom : service.getValue()) {
+					if (toggle.toString().contains(rentRoom)) {
+						toggle.setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+		});
+		service.start();
+	}
+
+	// So eto yung part para doon sa
+	// "SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? ORDER BY ROOM_RENTED"
+	// na statement
+	public void updateScheduledRoom() {
+		UpdateScheduledRoomService service = new UpdateScheduledRoomService();
+		service.setPeriod(Duration.millis(1000));
+		service.setOnSucceeded((t) -> {
+			for (Toggle toggle : toggleGroup.getToggles()) {
+				for (String rentRoom : service.getValue()) {
+					if (toggle.toString().contains(rentRoom.toLowerCase()) || toggle.toString().contains(rentRoom)) {
+						toggle.setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+		});
+		service.start();
+	}
+
 	@FXML
 	void confirmRemove(ActionEvent event) throws IOException {
 		try {
 
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			Class.forName(DRIVER);
+			Connection con = DriverManager.getConnection(CONNECTION_URL);
 			PreparedStatement ps = con.prepareStatement(
 					"UPDATE APP.ORDERS SET CANCELLED = ? WHERE STUDENT_NUMBER = ? AND DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
 			ps.setString(1, "true");
