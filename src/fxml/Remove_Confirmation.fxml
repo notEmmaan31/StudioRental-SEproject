@@ -38,7 +38,7 @@
                               <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please confirm your room reservation cancellation. " />
                               <VBox alignment="CENTER">
                                  <children>
-                                    <Label fx:id="lbl_studNum" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 24px; -fx-font-weight: lighter; -fx-text-fill: #515151;" text="2014066529">
+                                    <Label fx:id="lbl_studNum" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 24px; -fx-font-weight: lighter; -fx-text-fill: #515151;">
                                        <VBox.margin>
                                           <Insets bottom="10.0" top="20.0" />
                                        </VBox.margin>
@@ -46,13 +46,13 @@
                                     <HBox alignment="BOTTOM_CENTER">
                                        <children>
                                           <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Last Name: " />
-                                          <Label fx:id="lbl_lastName" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #515151;" text="Madla" />
+                                          <Label fx:id="lbl_lastName" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #515151;" />
                                           <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="| First Name: ">
                                              <HBox.margin>
                                                 <Insets left="60.0" />
                                              </HBox.margin>
                                           </Label>
-                                          <Label fx:id="lbl_firstName" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #515151;" text="Herrell Wayne" />
+                                          <Label fx:id="lbl_firstName" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #515151;" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -73,7 +73,7 @@
                                                 <Insets right="20.0" />
                                              </HBox.margin>
                                           </Label>
-                                          <Label fx:id="lbl_rm" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #ca525b;" text="6A" />
+                                          <Label fx:id="lbl_rm" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #ca525b;" />
                                        </children>
                                     </HBox>
                                     <HBox>
@@ -83,7 +83,7 @@
                                                 <Insets right="44.0" />
                                              </HBox.margin>
                                           </Label>
-                                          <Label fx:id="lbl_time" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #ca525b;" text="7:00 - 8:00AM" />
+                                          <Label fx:id="lbl_time" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #ca525b;" />
                                        </children>
                                        <VBox.margin>
                                           <Insets top="5.0" />

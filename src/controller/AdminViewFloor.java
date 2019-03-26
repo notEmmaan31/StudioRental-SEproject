@@ -13,10 +13,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.sun.xml.internal.ws.util.StringUtils;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -1325,6 +1327,9 @@ public class AdminViewFloor implements Initializable{
     private Label lbl_time;
     
     @FXML
+    private Label lbl_alert;
+    
+    @FXML
     private Button btn_confirmRemove;
     
     @FXML
@@ -1339,6 +1344,7 @@ public class AdminViewFloor implements Initializable{
     @FXML
     private Label lbl_file;
     
+    static String alert;
     static ObservableList<Toggle> rooms = null;
     static File file = null;
 	@FXML
@@ -1462,31 +1468,49 @@ public class AdminViewFloor implements Initializable{
 		try {
 		newRoom = null;
 		newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
-		System.out.println(newRoom.getId());
-		roomInfo = newRoom.getId().split("_");
-		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation.fxml"));
-		SceneUtil.openWindow(root);
+		if(newRoom.getStyleClass().toString().contains("toggle-button-UI-rented")) {
+			alert = "Please select a vacant room";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+			
+			SceneUtil.openWindow(root);
+			
+		} else {
+			System.out.println(newRoom.getId());
+			roomInfo = newRoom.getId().split("_");
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation.fxml"));
+			SceneUtil.openWindow(root);
+			
+			}
 		} catch(NullPointerException e) {
-			e.printStackTrace();
+			alert = "Please select a vacant room";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+		
+			SceneUtil.openWindow(root);
 		}
 	}
 	
 	 @FXML
-	 void checkRent(ActionEvent event) {
+	 void checkRent(ActionEvent event) throws IOException {
 		 
-		 studNum = tf_studNum.getText().trim();
-		 firstName = tf_firstName.getText().trim();
-		 lastName = tf_lastName.getText().trim();
+		 if(tf_studNum.getText().trim().isEmpty() == false && tf_firstName.getText().trim().isEmpty() == false && tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText()) ){
+			 studNum = tf_studNum.getText().trim();
+			 firstName = tf_firstName.getText().trim();
+			 lastName = tf_lastName.getText().trim();
 		 
-		 try {
-			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Check.fxml"));
-			oldStage = (Stage) btn_exit.getScene().getWindow();
-			SceneUtil.nextScene(root, "Rent confirmation", oldStage);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			 try {
+				 root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Check.fxml"));
+				 oldStage = (Stage) btn_exit.getScene().getWindow();
+				 SceneUtil.nextScene(root, "Rent confirmation", oldStage);
+			 } catch (IOException e) {
+				 // TODO Auto-generated catch block
+				 e.printStackTrace();
+			 }
+		} else {
+			
+			alert = "Please input a valid information";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+			SceneUtil.openWindow(root);
 		}
-		 
 
 	 }
 		
@@ -1667,17 +1691,25 @@ public class AdminViewFloor implements Initializable{
 	
 	@FXML
 	void remove(ActionEvent event) throws IOException {
+	try {
 		newRoom = null;
 		newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
-		roomInfo = newRoom.getId().split("_");
+		if(newRoom.getStyleClass().toString().contains("toggle-button-UI-rented") == false) {
+			alert = "Please select a rented room";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+			
+			SceneUtil.openWindow(root);
+			
+		} else {
+			roomInfo = newRoom.getId().split("_");
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
+			SceneUtil.openWindow(root);}
+		} catch(NullPointerException e) {
+			alert = "Please select a rented room";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 		
-		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
-		SceneUtil.openWindow(root);
-		
-//		newRoom.getStyleClass().clear();
-//		newRoom.getStyleClass().add("toggle-button-UI");
-//		newRoom.setSelected(false);
-//		newRoom = null;
+			SceneUtil.openWindow(root);
+		}
 	}
 
 	@Override
@@ -1707,8 +1739,19 @@ public class AdminViewFloor implements Initializable{
 			lbl_lastName.setText(lastName);
 		}
 		
+		if(location.toString().contains("Rent_Confirmation_Success.fxml")) {
+			lbl_rm.setText(roomInfo[0].replaceAll("rm", "").toUpperCase());
+		}
+		
+		if(location.toString().contains("alert.fxml")) {
+			lbl_alert.setText(alert);
+		}
+		
 		if(location.toString().contains("Remove_Confirmation.fxml")) {
 			try {
+
+				System.out.println(roomInfo[1]);
+				System.out.println(roomInfo[0].replaceAll("rm", "").toUpperCase());
 				Class.forName("org.apache.derby.jdbc.ClientDriver");
 				Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
 				PreparedStatement ps = con.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ? ");
@@ -1717,15 +1760,41 @@ public class AdminViewFloor implements Initializable{
 				ps.setString(3, roomInfo[0]);
 				ResultSet rs = ps.executeQuery();
 				if(rs.next()) {
-					lastName = rs.getString("LAST_NAME");
-					firstName = rs.getString("FIRST_NAME");
-					studNum = rs.getString("STUDENT_NUMBER");
-					lbl_lastName.setText(lastName);
-					lbl_firstName.setText(firstName);
-					lbl_studNum.setText(studNum);
-					lbl_rm.setText(roomInfo[0]);
-					lbl_time.setText(roomInfo[1]);
+					
+						lastName = rs.getString("LAST_NAME");
+						firstName = rs.getString("FIRST_NAME");
+						studNum = rs.getString("STUDENT_NUMBER");
+						
+					
+					if(lastName.trim().isEmpty() == false) {
+						
+						lbl_lastName.setText(lastName);
+						lbl_firstName.setText(firstName);
+						lbl_studNum.setText(studNum);
+						
+					} 
+					}
+					
+					else {
+						
+						Date now = new Date();
+						SimpleDateFormat day = new SimpleDateFormat("EEEE");
+						System.out.println(day.format(now).toUpperCase());
+						ps = con.prepareStatement("SELECT * FROM APP.SCHEDULED_RENT WHERE DAY_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
+						ps.setString(1, day.format(now).toUpperCase());
+						ps.setString(2, roomInfo[1]);
+						ps.setString(3, roomInfo[0].replaceAll("rm", "").toUpperCase());
+						rs = ps.executeQuery();
+						while(rs.next()) {
+							lastName = rs.getString("NAME");
+							lbl_lastName.setText(lastName);
+							
+						}
 				}
+			
+
+				lbl_rm.setText(roomInfo[0]);
+				lbl_time.setText(roomInfo[1]);
 
 				rs.close();
 				ps.close();
@@ -1826,6 +1895,7 @@ public class AdminViewFloor implements Initializable{
 	@FXML
 	void confirmRemove(ActionEvent event) throws IOException {
 		try {
+			
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
 			PreparedStatement ps = con.prepareStatement("UPDATE APP.ORDERS SET CANCELLED = ? WHERE STUDENT_NUMBER = ? AND DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
