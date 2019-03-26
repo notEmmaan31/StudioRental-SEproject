@@ -58,6 +58,10 @@ public class LoginManage {
 
 	@FXML
 	private PasswordField pf_newPassRetype;
+	
+	//error alert
+	@FXML
+	private Label lbl_alert;
 
 	private final static String CONNECTION_URL = "jdbc:derby://localhost:1527/srmsDB;create=true";
 	private final static String DRIVER = "org.apache.derby.jdbc.ClientDriver";
@@ -66,6 +70,7 @@ public class LoginManage {
 	private static PreparedStatement ps;
 	private static ResultSet rs;
 	private static String email = "";
+	
 
 	// LoginFXML
 	@FXML
@@ -161,7 +166,6 @@ public class LoginManage {
 	}
 
 	// Forgot password email match FXML
-
 	@FXML
 	void changePass(ActionEvent event) throws IOException {
 		// test password strength
@@ -206,10 +210,18 @@ public class LoginManage {
 
 				}
 			} else {
-				// display generic error requesting better password
+				
+				//passwords doesnt match each other
 				System.out.println("n");
+				
 			}
 
+		}else {
+			
+			//doesn't meet requirements
+			System.out.println("n");
+			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_UnacceptedPass.fxml"));
+			SceneUtil.openWindow(root);
 		}
 
 	}
