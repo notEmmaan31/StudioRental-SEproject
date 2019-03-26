@@ -212,14 +212,14 @@ public class LoginManage {
 			} else {
 				
 				//passwords doesnt match each other
-				System.out.println("n");
+				Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_NotMatch.fxml"));
+				SceneUtil.openWindow(root);
 				
 			}
 
 		}else {
 			
 			//doesn't meet requirements
-			System.out.println("n");
 			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_UnacceptedPass.fxml"));
 			SceneUtil.openWindow(root);
 		}
