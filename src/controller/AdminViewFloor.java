@@ -54,7 +54,7 @@ public class AdminViewFloor implements Initializable {
     private DatePicker dp_datepicker;
     
     @FXML
-    private Button btn_saveDaily, btn_saveMonthly;
+    private Button btn_saveDaily;
         
 	@FXML
 	private Label lbl_day, lbl_rm, lbl_time, lbl_alert ,lbl_daily, lbl_monthly;
@@ -389,7 +389,6 @@ public class AdminViewFloor implements Initializable {
 					}
 				}
 			}
-			reload();
 			workbook.close();
 			
 			oldStage = (Stage) btn_exit.getScene().getWindow();
