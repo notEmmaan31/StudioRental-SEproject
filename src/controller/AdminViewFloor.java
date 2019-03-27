@@ -225,7 +225,7 @@ public class AdminViewFloor implements Initializable {
 	void checkRent(ActionEvent event) throws IOException {
 		
 		if (tf_studNum.getText().trim().isEmpty() == false && tf_firstName.getText().trim().isEmpty() == false
-				&& tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText()) && tf_studNum.getText().toString().length() >= 10) {
+				&& tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText())) {
 			studNum = tf_studNum.getText().trim();
 			firstName = tf_firstName.getText().trim();
 			lastName = tf_lastName.getText().trim();			
