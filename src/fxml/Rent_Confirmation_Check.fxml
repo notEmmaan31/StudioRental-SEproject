@@ -20,16 +20,11 @@
             </HBox>
             <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
                <children>
-                  <VBox alignment="CENTER" layoutX="236.0" layoutY="14.0">
+                  <VBox alignment="CENTER" layoutX="280.0" layoutY="14.0">
                      <children>
-                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
+                        <Label contentDisplay= "CENTER" style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
                         <VBox alignment="CENTER">
                            <children>
-                              <HBox alignment="TOP_CENTER">
-                                 <children>
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required records for rental information." />
-                                 </children>
-                              </HBox>
                               <HBox alignment="TOP_CENTER">
                                  <children>
                                     <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Rental Fee: " />

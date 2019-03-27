@@ -211,7 +211,7 @@ public class LoginManage {
 				}
 			} else {
 				
-				//passwords doesnt match each other
+				//passwords doesn't match each other
 				Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_NotMatch.fxml"));
 				SceneUtil.openWindow(root);
 				
