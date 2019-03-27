@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,1);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -20,7 +20,7 @@
             </HBox>
             <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
                <children>
-                  <VBox alignment="CENTER" layoutX="119.0" layoutY="26.0">
+                  <VBox alignment="CENTER" layoutX="120.0" layoutY="25.0">
                      <children>
                         <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 900; -fx-text-fill: #9c0000;" text="ERROR" />
                         <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: 700; -fx-text-fill: #515151;" text="Rooms selected did not match the same recorded file reservation.">

@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,1);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -21,10 +20,10 @@
             </HBox>
             <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
                <children>
-                  <VBox alignment="CENTER" layoutX="263.0" layoutY="19.0">
+                  <VBox alignment="CENTER" layoutX="186.0" layoutY="21.0">
                      <children>
                         <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Selection" />
-                        <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 21px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please select which schedule to load:" />
+                        <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 21px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please select through open file which schedule to load:" />
                      </children>
                   </VBox>
                   <HBox layoutX="164.0" layoutY="323.0">
@@ -41,25 +40,16 @@
                         </Button>
                      </children>
                   </HBox>
-                  <TilePane layoutX="130.0" layoutY="97.0" prefHeight="193.0" prefWidth="576.0" style="-fx-border-width: 2px; -fx-border-radius: 2px; -fx-border-color: #acacac;">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="580.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ca525b; -fx-font-weight: 800; -fx-font-size: 16px; -fx-alignment: left;" wrapText="true">
-                           <graphic>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
-                                 <children>
-                                    <Label focusTraversable="false" style="-fx-text-fill: #656565;" text="STUDIO ASSIGNMENTS " />
-                                    <Label fx:id="lbl_file" focusTraversable="false" style="-fx-text-fill: #ca525b;" text="STUDIO-ASSIGNMENTS-2ND-TERM-2018-2019.xlsx" />
-                                 </children>
-                              </VBox>
-                           </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="580.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ca525b; -fx-font-weight: 800; -fx-font-size: 16px; -fx-alignment: left;" wrapText="true">
-                           <graphic>
-                              <VBox prefHeight="200.0" prefWidth="100.0" />
-                           </graphic>
-                        </Button>
-                     </children>
-                  </TilePane>
+                  <Button alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="133.0" layoutY="116.0" mnemonicParsing="false" prefHeight="133.0" prefWidth="580.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ca525b; -fx-font-weight: 800; -fx-font-size: 16px; -fx-alignment: left;" wrapText="true">
+                     <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label focusTraversable="false" style="-fx-text-fill: #656565; -fx-font-size: 14px;" text="STUDIO ASSIGNMENTS " />
+                              <Label fx:id="lbl_file" focusTraversable="false" style="-fx-text-fill: #ca525b; -fx-font-size: 18px;" text="STUDIO-ASSIGNMENTS-2ND-TERM-2018-2019.xlsx" />
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </Button>
                </children>
             </Pane>
          </children>
