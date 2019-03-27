@@ -225,19 +225,28 @@ public class AdminViewFloor implements Initializable {
 	void checkRent(ActionEvent event) throws IOException {
 
 		if (tf_studNum.getText().trim().isEmpty() == false && tf_firstName.getText().trim().isEmpty() == false
-				&& tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText()) && tf_studNum.getText().toString().length() >= 10) {
-			studNum = tf_studNum.getText().trim();
+				&& tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText())) {	studNum = tf_studNum.getText().trim();
 			firstName = tf_firstName.getText().trim();
-			lastName = tf_lastName.getText().trim();
-
-			try {
-				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Check.fxml"));
-				oldStage = (Stage) btn_exit.getScene().getWindow();
-				SceneUtil.nextScene(root, "Rent confirmation", oldStage);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			lastName = tf_lastName.getText().trim();			
+			int studNumLength = studNum.length();
+			//Check if student number is 10 digits long
+			if (studNumLength == 10) {
+				
+				try {
+					root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Check.fxml"));
+					oldStage = (Stage) btn_exit.getScene().getWindow();
+					SceneUtil.nextScene(root, "Rent confirmation", oldStage);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}else {
+				
+				alert = "Input a 10-digit student number.";
+				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+				SceneUtil.openWindow(root);
 			}
+
 		} else {
 
 			alert = "Please fill out requirements";
