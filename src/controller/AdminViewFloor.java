@@ -230,16 +230,24 @@ public class AdminViewFloor implements Initializable {
 			firstName = tf_firstName.getText().trim();
 			lastName = tf_lastName.getText().trim();			
 			int studNumLength = studNum.length();
+			boolean checkFNhasNum = firstName.matches(".*\\d.*");
+			boolean checkLNhasNum = lastName.matches(".*\\d.*");
 			//Check if student number is 10 digits long
 			if (studNumLength == 10) {
 				
-				try {
-					root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Check.fxml"));
-					oldStage = (Stage) btn_exit.getScene().getWindow();
-					SceneUtil.nextScene(root, "Rent confirmation", oldStage);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				if (checkFNhasNum == false || checkLNhasNum == false) {
+					try {
+						root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Check.fxml"));
+						oldStage = (Stage) btn_exit.getScene().getWindow();
+						SceneUtil.nextScene(root, "Rent confirmation", oldStage);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}else {
+					alert = "Please enter a valid name.";
+					root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+					SceneUtil.openWindow(root);
 				}
 			}else {
 				
