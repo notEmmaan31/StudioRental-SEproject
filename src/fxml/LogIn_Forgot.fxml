@@ -7,52 +7,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginManage">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginManage">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
+      <HBox alignment="BOTTOM_CENTER" layoutX="-7.0" prefHeight="146.0" prefWidth="731.0" AnchorPane.bottomAnchor="454.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="BOTTOM_CENTER" layoutX="-7.0" prefHeight="146.0" prefWidth="731.0" AnchorPane.bottomAnchor="454.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label contentDisplay="CENTER" style="-fx-text-fill: #ca525b; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="MANAGE ROOMS" textAlignment="CENTER" />
+         </children>
+      </HBox>
+      <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <VBox layoutX="157.0" layoutY="22.0">
                <children>
-                  <Label contentDisplay="CENTER" style="-fx-text-fill: #ca525b; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="MANAGE ROOMS" textAlignment="CENTER" />
-               </children>
-            </HBox>
-            <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
-               <children>
-                  <VBox layoutX="157.0" layoutY="22.0">
+                  <VBox alignment="CENTER">
                      <children>
-                        <VBox alignment="CENTER">
-                           <children>
-                              <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Forgot Password" />
-                              <Label style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required administrator email information.">
-                                 <VBox.margin>
-                                    <Insets top="20.0" />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <TextField fx:id="tf_email" prefHeight="26.0" prefWidth="468.0" promptText="Email">
+                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Forgot Password" />
+                        <Label style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required administrator email information.">
                            <VBox.margin>
-                              <Insets top="60.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </TextField>
+                        </Label>
                      </children>
                   </VBox>
-                  <HBox layoutX="215.0" layoutY="300.0">
-                     <children>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" />
-                        <Button fx:id="btn_confirm" mnemonicParsing="false" onAction="#emailMatch" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="CONFIRM">
-                           <HBox.margin>
-                              <Insets left="200.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
+                  <TextField fx:id="tf_email" prefHeight="26.0" prefWidth="468.0" promptText="Email">
+                     <VBox.margin>
+                        <Insets top="60.0" />
+                     </VBox.margin>
+                  </TextField>
                </children>
-            </Pane>
+            </VBox>
+            <HBox layoutX="215.0" layoutY="300.0">
+               <children>
+                  <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" />
+                  <Button fx:id="btn_confirm" mnemonicParsing="false" onAction="#emailMatch" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="CONFIRM">
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </AnchorPane>
+      </Pane>
    </children>
-</StackPane>
+</AnchorPane>
