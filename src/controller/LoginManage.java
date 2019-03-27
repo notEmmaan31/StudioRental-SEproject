@@ -90,7 +90,8 @@ public class LoginManage {
 			if (rs.next()) {
 				oldStage = (Stage) btn_exit.getScene().getWindow();
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Manage_Success.fxml"));
-				SceneUtil.nextScene(root, "Login Successful", oldStage);
+				SceneUtil.openWindow(root);
+				oldStage.close();
 			} else {
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Manage_Failed.fxml"));
 				SceneUtil.openWindow(root);

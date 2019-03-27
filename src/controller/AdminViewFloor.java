@@ -38,7 +38,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -57,6 +59,9 @@ public class AdminViewFloor implements Initializable {
     
     @FXML
     private Button btn_saveDaily,toMain;
+    
+    @FXML
+    private AnchorPane rootPane;
         
 	@FXML
 	private Label lbl_day, lbl_rm, lbl_time, lbl_alert, lbl_monthly;
@@ -156,9 +161,12 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	void manage(ActionEvent event) throws IOException {
+		rootPane.setEffect(new GaussianBlur());
 		Stage oldStage = (Stage) btn_manage.getScene().getWindow();
 		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Manage.fxml"));
-		SceneUtil.nextScene(root, "Login", oldStage);
+		SceneUtil.openWindow(root);
+		rootPane.setEffect(null);
+		oldStage.close();
 	}
 
 	@FXML
