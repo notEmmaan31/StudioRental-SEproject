@@ -2,6 +2,8 @@ package controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -14,6 +16,11 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.derby.drda.NetworkServerControl;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -23,12 +30,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import services.UpdateRoomService;
@@ -41,7 +51,13 @@ public class AdminViewFloor implements Initializable {
 	private static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
 
 	@FXML
-	private Label lbl_day, lbl_rm, lbl_time, lbl_alert;
+    private DatePicker dp_datepicker;
+    
+    @FXML
+    private Button btn_saveDaily, btn_saveMonthly;
+        
+	@FXML
+	private Label lbl_day, lbl_rm, lbl_time, lbl_alert ,lbl_daily, lbl_monthly;
 
 	@FXML
 	private ToggleGroup toggleGroup;
@@ -67,8 +83,8 @@ public class AdminViewFloor implements Initializable {
 	@FXML
 	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open;
 
-	private String alert;
-	private String curLocation;
+	private static String alert;
+	private static String curLocation;
 	
 	static File file = null;
 
@@ -148,6 +164,7 @@ public class AdminViewFloor implements Initializable {
 
 	static ToggleButton oldRoom;
 	static ToggleButton newRoom;
+	static ToggleButton updateRoom;
 
 	@FXML
 	void select(ActionEvent event) throws IOException {
@@ -208,7 +225,7 @@ public class AdminViewFloor implements Initializable {
 	void checkRent(ActionEvent event) throws IOException {
 
 		if (tf_studNum.getText().trim().isEmpty() == false && tf_firstName.getText().trim().isEmpty() == false
-				&& tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText())) {
+				&& tf_lastName.getText().trim().isEmpty() == false && NumberUtils.isParsable(tf_studNum.getText()) && tf_studNum.getText().toString().length() >= 10) {
 			studNum = tf_studNum.getText().trim();
 			firstName = tf_firstName.getText().trim();
 			lastName = tf_lastName.getText().trim();
@@ -223,7 +240,7 @@ public class AdminViewFloor implements Initializable {
 			}
 		} else {
 
-			alert = "Please input a valid information";
+			alert = "Please fill out requirements";
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 			SceneUtil.openWindow(root);
 		}
@@ -372,16 +389,21 @@ public class AdminViewFloor implements Initializable {
 					}
 				}
 			}
-
+			reload();
 			workbook.close();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			
+			oldStage = (Stage) btn_exit.getScene().getWindow();
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation_Success.fxml"));
+			SceneUtil.nextScene(root, "Success", oldStage);
+		} catch (Exception e) {
+			// TODO Auto-generated catch blockE
+			e.printStackTrace();
+			alert = "Please take the correct template";
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+			SceneUtil.alert(root, alert);
 		}
-
-		oldStage = (Stage) btn_exit.getScene().getWindow();
-		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation_Success.fxml"));
-		SceneUtil.nextScene(root, "Success", oldStage);
+		
+		
 	}
 
 	@FXML
@@ -396,9 +418,16 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	void remove(ActionEvent event) throws IOException {
-		try {
+		
 			newRoom = null;
 			newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+			if(newRoom == null) {
+				alert = "Please select a rented room";
+				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
+
+				SceneUtil.openWindow(root);
+				return;
+			}
 			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented") == false) {
 				alert = "Please select a rented room";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
@@ -410,23 +439,101 @@ public class AdminViewFloor implements Initializable {
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
 				SceneUtil.openWindow(root);
 			}
-		} catch (NullPointerException e) {
-			alert = "Please select a rented room";
-			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
-
-			SceneUtil.openWindow(root);
-		}
+		
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		if (location.toString().contains("Main")) {
+		try {
+			NetworkServerControl server = new NetworkServerControl();
+			server.start(null);
+			System.out.println();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    
+		try {
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
+			Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
+			PreparedStatement ps = null;
+			ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSSCHEMAS WHERE   SCHEMANAME = 'ACCOUNT'");
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next() == false) {
+			ps = connection.prepareStatement("create SCHEMA account");
+			ps.executeUpdate();
+			}
+			
+			
+			ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSTABLES WHERE   TABLENAME = 'ORDERS'");
+			rs = ps.executeQuery();
+			if(!rs.next()) {
+			ps = connection.prepareStatement("    	CREATE TABLE orders (\r\n" + 
+					"    			OID INTEGER NOT NULL,\r\n" + 
+					"    			STUDENT_NUMBER VARCHAR(20) ,\r\n" + 
+					"    			LAST_NAME VARCHAR(30) ,\r\n" + 
+					"    			FIRST_NAME VARCHAR(30) ,\r\n" + 
+					"    			ROOM_RENTED VARCHAR(10) ,\r\n" + 
+					"    			DATE_RENTED VARCHAR(20) ,\r\n" + 
+					"    			TIME_RENTED VARCHAR(4) ,\r\n" + 
+					"    			CANCELLED VARCHAR(5) ,\r\n" + 
+					"    			PAYMENT INTEGER ,\r\n" + 
+					"    			PRIMARY KEY (OID)\r\n" + 
+					"    		)");
+			ps.executeUpdate();
+			}
+			
+			ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSTABLES WHERE   TABLENAME = 'USERS'");
+			rs = ps.executeQuery();
+			if(!rs.next()) {
+			ps = connection.prepareStatement("    	create TABLE account.users(\r\n" + 
+					"    			id integer not NULL,\r\n" + 
+					"    			username VARCHAR(120) not NULL,\r\n" + 
+					"    			password VARCHAR(300) not NULL,\r\n" + 
+					"    			email VARCHAR(120) not NULL,\r\n" + 
+					"    			PRIMARY KEY (id)\r\n" + 
+					"    		)");
+			ps.executeUpdate();
+			}
+			
+			ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSTABLES WHERE   TABLENAME = 'SCHEDULED_RENT'");
+			rs = ps.executeQuery();
+			if(!rs.next()) {
+			ps = connection.prepareStatement("create table scheduled_rent (\r\n" + 
+					"	DAY_RENTED VARCHAR(20) NOT NULL,\r\n" + 
+					"	NAME VARCHAR(30) NOT NULL,\r\n" + 
+					"	ROOM_RENTED VARCHAR(10) NOT NULL,\r\n" + 
+					"	TIME_RENTED VARCHAR(10) NOT NULL\r\n" + 
+					")");
+			ps.executeUpdate();
+			}
+		} catch (Exception e) {
+			
+		}
+
+		if (location.toString().contains("Main") && !location.toString().contains("Admin")) {
 			curLocation = location.toString();
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 			lbl_day.setText(day.format(now));
 			reload();
+//			updateRentedRoom();
+//			updateScheduledRoom();
+//			updateRemovedRoom();
+			
+		}
+		
+		if (location.toString().contains("Main") && location.toString().contains("Admin")) {
+			curLocation = location.toString();
+			Date now = new Date();
+			SimpleDateFormat day = new SimpleDateFormat("EEEE");
+			lbl_day.setText(day.format(now));
+			reload();
+//			updateRentedRoom();
+//			updateScheduledRoom();
+			
 		}
 
 		if (location.toString().contains("Rent_Confirmation.fxml")) {
@@ -446,10 +553,13 @@ public class AdminViewFloor implements Initializable {
 		}
 
 		if (location.toString().contains("alert.fxml")) {
+			System.out.print(location);
+			System.out.print(alert);
 			lbl_alert.setText(alert);
 		}
 
 		if (location.toString().contains("Remove_Confirmation.fxml")) {
+			
 			try {
 
 				System.out.println(roomInfo[1]);
@@ -496,7 +606,7 @@ public class AdminViewFloor implements Initializable {
 				}
 
 				lbl_rm.setText(roomInfo[0]);
-				lbl_time.setText(roomInfo[1]);
+				lbl_time.setText(roomInfo[1] + ":00");
 
 				rs.close();
 				ps.close();
@@ -508,16 +618,28 @@ public class AdminViewFloor implements Initializable {
 			}
 
 		}
+		
 		if (location.toString().contains("Remove_Confirmation_Success.fxml")) {
 			lbl_lastName.setText(lastName);
 			lbl_firstName.setText(firstName);
 			lbl_studNum.setText(studNum);
 			lbl_rm.setText(roomInfo[0]);
-			lbl_time.setText(roomInfo[1]);
+			lbl_time.setText(roomInfo[1]+":00");
 		}
 	}
+	
 
 	public void reload() {
+		for (Toggle toggle : toggleGroup.getToggles()) {
+			
+				toggle.setSelected(true);
+				newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+				newRoom.getStyleClass().clear();
+				newRoom.getStyleClass().add("toggle-button-UI");
+				newRoom.setSelected(false);
+				break;
+			
+		}
 		try {
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(CONNECTION_URL);
@@ -571,6 +693,34 @@ public class AdminViewFloor implements Initializable {
 					}
 				}
 			}
+			
+			ps = con.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? ");
+			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
+			ps.setString(2, "true");
+			rs = ps.executeQuery();
+			
+
+			while(rs.next()) {
+				
+				StringBuffer sb = new StringBuffer("");
+				sb.append(rs.getString("ROOM_RENTED"));
+				sb.append("_");
+				sb.append(rs.getString("TIME_RENTED"));
+				
+				for (Toggle toggle : toggleGroup.getToggles()) {
+					if (toggle.toString().contains(sb.toString().toLowerCase())
+							|| toggle.toString().contains(sb.toString())) {
+
+						toggle.setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI");
+						newRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+			
 			rs.close();
 			ps.close();
 			con.close();
@@ -586,16 +736,16 @@ public class AdminViewFloor implements Initializable {
 	// na statement
 	public void updateRentedRoom() {
 		UpdateRoomService service = new UpdateRoomService();
-		service.setPeriod(Duration.millis(1000));
+		service.setPeriod(Duration.millis(3001));
 		service.setOnSucceeded((t) -> {
 			for (Toggle toggle : toggleGroup.getToggles()) {
 				for (String rentRoom : service.getValue()) {
 					if (toggle.toString().contains(rentRoom)) {
 						toggle.setSelected(true);
-						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
-						newRoom.getStyleClass().clear();
-						newRoom.getStyleClass().add("toggle-button-UI-rented");
-						newRoom.setSelected(false);
+						updateRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						updateRoom.getStyleClass().clear();
+						updateRoom.getStyleClass().add("toggle-button-UI-rented");
+						updateRoom.setSelected(false);
 						break;
 					}
 				}
@@ -609,15 +759,35 @@ public class AdminViewFloor implements Initializable {
 	// na statement
 	public void updateScheduledRoom() {
 		UpdateScheduledRoomService service = new UpdateScheduledRoomService();
-		service.setPeriod(Duration.millis(1000));
+		service.setPeriod(Duration.millis(3001));
 		service.setOnSucceeded((t) -> {
 			for (Toggle toggle : toggleGroup.getToggles()) {
 				for (String rentRoom : service.getValue()) {
 					if (toggle.toString().contains(rentRoom.toLowerCase()) || toggle.toString().contains(rentRoom)) {
 						toggle.setSelected(true);
+						updateRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						updateRoom.getStyleClass().clear();
+						updateRoom.getStyleClass().add("toggle-button-UI-rented");
+						updateRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+		});
+		service.start();
+	}
+	
+	public void updateRemovedRoom() {
+		UpdateScheduledRoomService service = new UpdateScheduledRoomService();
+		service.setPeriod(Duration.millis(500));
+		service.setOnSucceeded((t) -> {
+			for (Toggle toggle : toggleGroup.getToggles()) {
+				for (String removedRoomed : service.getValue()) {
+					if (toggle.toString().contains(removedRoomed.toLowerCase()) || toggle.toString().contains(removedRoomed)) {
+						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
-						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.getStyleClass().add("toggle-button-UI");
 						newRoom.setSelected(false);
 						break;
 					}
@@ -630,31 +800,202 @@ public class AdminViewFloor implements Initializable {
 	@FXML
 	void confirmRemove(ActionEvent event) throws IOException {
 		try {
-
+			
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(CONNECTION_URL);
-			PreparedStatement ps = con.prepareStatement(
-					"UPDATE APP.ORDERS SET CANCELLED = ? WHERE STUDENT_NUMBER = ? AND DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
-			ps.setString(1, "true");
-			ps.setString(2, studNum);
-			ps.setString(3, new java.sql.Date(System.currentTimeMillis()).toString());
-			ps.setString(4, roomInfo[1]);
-			ps.setString(5, roomInfo[0]);
-			ps.executeUpdate();
-			newRoom.getStyleClass().clear();
-			newRoom.getStyleClass().add("toggle-button-UI");
-			newRoom.setSelected(false);
-
-			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation_Success.fxml"));
-			oldStage = (Stage) btn_exit.getScene().getWindow();
-			SceneUtil.nextScene(root, "Room removed successfully", oldStage);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM APP.ORDERS WHERE STUDENT_NUMBER = ? AND DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
+			ps.setString(1, studNum);
+			ps.setString(2, new java.sql.Date(System.currentTimeMillis()).toString());
+			ps.setString(3, roomInfo[1]);
+			ps.setString(4, roomInfo[0]);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+			
+				ps = con.prepareStatement("UPDATE APP.ORDERS SET CANCELLED = ? WHERE STUDENT_NUMBER = ? AND DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ?");
+				ps.setString(1, "true");
+				ps.setString(2, studNum);
+				ps.setString(3, new java.sql.Date(System.currentTimeMillis()).toString());
+				ps.setString(4, roomInfo[1]);
+				ps.setString(5, roomInfo[0]);
+				ps.executeUpdate();
+				newRoom.getStyleClass().clear();
+				newRoom.getStyleClass().add("toggle-button-UI");
+				newRoom.setSelected(false);
+			
+				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation_Success.fxml"));
+				oldStage = (Stage) btn_exit.getScene().getWindow();
+				SceneUtil.nextScene(root, "Room removed successfully", oldStage);
+				
+			} else {
+				String name = null;
+				Date now = new Date();
+				SimpleDateFormat day = new SimpleDateFormat("EEEE");
+				
+				ps = con.prepareStatement("SELECT OID FROM APP.ORDERS ORDER BY OID DESC ");
+				rs = ps.executeQuery();
+				int oid = 1;
+				if(rs.next()) {
+					oid = Integer.parseInt(rs.getString("OID")) + 1;
+				}
+				ps = con.prepareStatement("SELECT * FROM APP.SCHEDULED_RENT WHERE ROOM_RENTED = ? AND DAY_RENTED = ? AND TIME_RENTED = ?");
+				ps.setString(1, roomInfo[0].toUpperCase());
+				ps.setString(2, day.format(now).toUpperCase());
+				ps.setString(3, roomInfo[1]);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					name = rs.getString("NAME");
+				}
+				ps = con.prepareStatement("INSERT INTO APP.ORDERS (OID,STUDENT_NUMBER, LAST_NAME, FIRST_NAME, ROOM_RENTED, DATE_RENTED, TIME_RENTED, CANCELLED, PAYMENT) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				ps.setString(1, Integer.toString(oid));
+				ps.setString(2, "");
+				ps.setString(3, name);
+				ps.setString(4, "");
+				ps.setString(5, roomInfo[0].toUpperCase());
+				ps.setString(6, new java.sql.Date(System.currentTimeMillis()).toString());
+				ps.setString(7, roomInfo[1]);
+				ps.setString(8, "true");
+				ps.setString(9, "0");
+				ps.executeUpdate();
+				rs.close();
+				ps.close();
+				newRoom.getStyleClass().clear();
+				newRoom.getStyleClass().add("toggle-button-UI");
+				newRoom.setSelected(false);
+				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation_Success.fxml"));
+				oldStage = (Stage) btn_exit.getScene().getWindow();
+				SceneUtil.nextScene(root, "Room removed successfully", oldStage);
+				
+			}
+			rs.close();
 			ps.close();
 			con.close();
+			
+			
+			//INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 
+		@FXML
+	void transact(ActionEvent event) {
+		try {
+			
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Transaction.fxml"));
+			SceneUtil.openWindow(root);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	void toDaily(MouseEvent event) {
+		try {
+			
+			oldStage = (Stage) btn_exit.getScene().getWindow();
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Transaction_Daily.fxml"));
+			SceneUtil.nextScene(root, "Print Daily", oldStage);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@FXML
+	void toMonthly(MouseEvent event) {
+		try {
+			
+			//mn_month.
+			oldStage = (Stage) btn_exit.getScene().getWindow();
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Transaction_Monthly.fxml"));
+			SceneUtil.nextScene(root, "Print Monthly", oldStage);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	@FXML
+	void save(ActionEvent event) {
+		if(event.getSource().toString().contains("Daily")) {
+			//dp_datepicker.getValue();
+			try {
+				Class.forName(DRIVER);
+				Connection con = DriverManager.getConnection(CONNECTION_URL);
+				PreparedStatement ps = con.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ?");
+				ps.setString(1, dp_datepicker.getValue().toString());
+				ResultSet rs = ps.executeQuery();
+				if(rs.next()) {
+					XSSFWorkbook workbook = new XSSFWorkbook();
+					XSSFSheet sheet = workbook.createSheet("Transactions");
+					XSSFRow row = sheet.createRow(2);
+					CellStyle cs = workbook.createCellStyle();
+					cs.setAlignment(HorizontalAlignment.CENTER);
+					Cell cell = sheet.createRow(0).createCell(3);
+					cell.setCellStyle(cs);
+					cell.setCellValue("CONSERVATORY OF MUSIC");
+					cell = sheet.createRow(1).createCell(3);
+					cell.setCellValue("STUDIO RENTAL MONITORING SYSTEM");
+					row.createCell(1).setCellValue("Order ID");
+					row.createCell(2).setCellValue("Student number");
+					row.createCell(3).setCellValue("Last name");
+					row.createCell(4).setCellValue("First name");
+					row.createCell(5).setCellValue("Room rented");
+					row.createCell(6).setCellValue("Time rented");
+					row.createCell(7).setCellValue("Date rented");
+					row.createCell(8).setCellValue("Rent cancelled");
+					row.createCell(9).setCellValue("Payment");
+					int i = 3;
+					while(rs.next()) {
+						if(!rs.getString("STUDENT_NUMBER").isEmpty()) {
+							row = sheet.createRow(i);
+							row.createCell(1).setCellValue(rs.getString("OID"));
+							row.createCell(2).setCellValue(rs.getString("STUDENT_NUMBER"));
+							row.createCell(3).setCellValue(rs.getString("LAST_NAME"));
+							row.createCell(4).setCellValue(rs.getString("FIRST_NAME"));
+							row.createCell(5).setCellValue(rs.getString("ROOM_RENTED"));
+							row.createCell(6).setCellValue(rs.getString("TIME_RENTED"));
+							row.createCell(7).setCellValue(rs.getString("DATE_RENTED"));
+							row.createCell(8).setCellValue(rs.getString("CANCELLED"));
+							row.createCell(9).setCellValue(rs.getString("PAYMENT"));
+							i++;
+						}
+					}
+					sheet.autoSizeColumn(1);
+					file = null;
+					FileChooser fc = new FileChooser();
+					fc.getExtensionFilters().add(new ExtensionFilter("Microsoft Excel", "*.xlsx"));
+					file = fc.showSaveDialog(null);
+
+//					lbl_file.setText(file.getPath());
+					
+					workbook.write(new FileOutputStream(file));
+					workbook.close();
+					Stage stage = (Stage) btn_exit.getScene().getWindow();
+					stage.close();
+				}
+			} catch (SQLException | ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+	}
 }
