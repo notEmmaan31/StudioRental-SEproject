@@ -1,5 +1,4 @@
-
-
+/*Rooms Scrollpane */
 .scroll-pane{
     -fx-background: #000000;
     -fx-border-color: #000000;
@@ -73,10 +72,13 @@
 }
 
 
+/*Container within Scrollpane */
 .stackPane-UI{
     -fx-background-color: transparent;
 }
 
+
+/*time header in Scrollpane */
 .button-headerMin{
 	-fx-background-color: #000000;
 	-fx-text-fill:#ffffff;
@@ -93,6 +95,8 @@
 	-fx-font-family:Calibri;
 }
 
+
+/*Rooms Toggle-Button */
 .toggle-button-UI{
     -fx-background-color: #ffffff;
     /*-fx-border-width: .2;
@@ -121,7 +125,11 @@
     -fx-background-color: derive(#ff878e,30%);
 }
 
-
+/*Label of Current Day
+ * Names with Min is for resolution 1366 x 768
+ * Preferred Resolution: 1080p
+ *
+ */
 .label-dayMin{
 	-fx-background-color: transparent;
 	-fx-text-fill:#f2f2f2;
@@ -140,6 +148,12 @@
 	
 }
 
+
+/*Label of Rooms
+ * Names with Min is for resolution 1366 x 768
+ * Preferred Resolution: 1080p
+ *
+ */
 .label-1Min{
 	-fx-background-color: transparent;
 	-fx-text-fill:#eb777f;
@@ -173,6 +187,12 @@
 .label-rented{
 	-fx-text-fill: #ffffff;
 }
+
+/* Floor Buttons
+ * Names with Min is for resolution 1366 x 768
+ * Preferred Resolution: 1080p
+ *
+ */
 
 .button-floorMin{
 	-fx-background-color: transparent;
@@ -208,7 +228,12 @@
 }
 
 
-
+/* Function Buttons (Rent, Remove, Transaction)
+ * Names with Min is for resolution 1366 x 768
+ * Preferred Resolution: 1080p
+ *
+ */
+ 
 .button-functionMin{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
@@ -244,7 +269,9 @@
 }
 
 
-
+/* Generic Buttons (Prompt buttons)
+ *
+ */
 
 .button-cancel{
     -fx-text-fill:#ffffff;
@@ -341,6 +368,7 @@
 .button-back:pressed{
     -fx-background-color: #ca525a;
 }
+
 
 
 .button-Tile1{
