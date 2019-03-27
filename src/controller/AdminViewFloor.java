@@ -24,6 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +33,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
@@ -49,7 +51,7 @@ public class AdminViewFloor implements Initializable {
 	
 	private static final String CONNECTION_URL = "jdbc:derby://localhost:1527/srmsDB;create=true";
 	private static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
-
+	
 	@FXML
     private DatePicker dp_datepicker;
     
@@ -61,6 +63,9 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	private ToggleGroup toggleGroup;
+	
+	@FXML
+	private ScrollPane roomsPane;
 
 	@FXML
 	private TextField tf_studNum, tf_firstName, tf_lastName;
@@ -528,6 +533,7 @@ public class AdminViewFloor implements Initializable {
 					")");
 			ps.executeUpdate();
 			}
+			fadeIn(roomsPane);
 		} catch (Exception e) {
 			
 		}
@@ -1016,5 +1022,14 @@ public class AdminViewFloor implements Initializable {
 			
 			
 		}
+	}
+	
+	private void fadeIn(ScrollPane scroll) {
+		FadeTransition fadeIn = new FadeTransition();
+		fadeIn.setDuration(Duration.millis(700));
+		fadeIn.setNode(scroll);
+		fadeIn.setFromValue(0);
+		fadeIn.setToValue(1);
+		fadeIn.play();
 	}
 }
