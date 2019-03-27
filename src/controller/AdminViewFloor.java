@@ -639,8 +639,8 @@ public class AdminViewFloor implements Initializable {
 				newRoom.getStyleClass().add("toggle-button-UI");
 				newRoom.setSelected(false);
 				break;
-			
 		}
+		
 		try {
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(CONNECTION_URL);
@@ -657,7 +657,7 @@ public class AdminViewFloor implements Initializable {
 				sb.append(rs.getString("TIME_RENTED"));
 
 				for (Toggle toggle : toggleGroup.getToggles()) {
-					if (toggle.toString().contains(sb)) {
+					if (toggle.toString().contains(sb.toString().toLowerCase())|| toggle.toString().contains(sb.toString().toUpperCase())) {
 						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
@@ -683,7 +683,7 @@ public class AdminViewFloor implements Initializable {
 
 				for (Toggle toggle : toggleGroup.getToggles()) {
 					if (toggle.toString().contains(sb.toString().toLowerCase())
-							|| toggle.toString().contains(sb.toString())) {
+							|| toggle.toString().contains(sb.toString().toUpperCase())) {
 
 						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
@@ -710,7 +710,7 @@ public class AdminViewFloor implements Initializable {
 				
 				for (Toggle toggle : toggleGroup.getToggles()) {
 					if (toggle.toString().contains(sb.toString().toLowerCase())
-							|| toggle.toString().contains(sb.toString())) {
+							|| toggle.toString().contains(sb.toString().toUpperCase())) {
 
 						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
@@ -851,7 +851,7 @@ public class AdminViewFloor implements Initializable {
 				ps.setString(2, "");
 				ps.setString(3, name);
 				ps.setString(4, "");
-				ps.setString(5, roomInfo[0].toUpperCase());
+				ps.setString(5, roomInfo[0].replaceAll("rm", "").toUpperCase());
 				ps.setString(6, new java.sql.Date(System.currentTimeMillis()).toString());
 				ps.setString(7, roomInfo[1]);
 				ps.setString(8, "true");
