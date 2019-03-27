@@ -370,6 +370,18 @@
 }
 
 
+/*Transaction Buttons */
+.button-selection{
+	-fx-background-color: transparent;
+	-fx-text-fill: #8b8b8b;
+	-fx-font-family: Arial;
+	-fx-font-weight: 800;
+	-fx-font-size: 24px;
+}
+
+.button-selection:hover{
+	-fx-font-fill: #dfdfdf;
+}
 
 .button-Tile1{
 	-fx-background-color: #000000;

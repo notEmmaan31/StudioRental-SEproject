@@ -28,7 +28,7 @@
                   </VBox>
                   <VBox alignment="CENTER" layoutX="243.0" layoutY="93.0" prefHeight="200.0" prefWidth="355.0">
                      <children>
-                        <Label fx:id="lbl_daily" contentDisplay="CENTER" onMouseClicked="#toDaily" style="-fx-text-fill: #8b8b8b; -fx-font-family: arial; -fx-font-weight: 800; -fx-font-size: 24px;" text="DAILY" textAlignment="CENTER">
+                        <Label fx:id="lbl_daily" contentDisplay="CENTER" onMouseClicked="#toDaily" styleClass="button-selection" stylesheets="@../styles.css" text="DAILY" textAlignment="CENTER">
                            <VBox.margin>
                               <Insets bottom="20.0" />
                            </VBox.margin>
