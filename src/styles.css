@@ -1,5 +1,4 @@
-
-
+/* Rooms Scrollpane */
 .scroll-pane{
     -fx-background: #000000;
     -fx-border-color: #000000;
@@ -72,11 +71,12 @@
     -fx-background-radius: 2em;
 }
 
-
+/*Rooms container for Scrollpane */
 .stackPane-UI{
     -fx-background-color: transparent;
 }
 
+/*Time Header Buttons */
 .button-headerMin{
 	-fx-background-color: #000000;
 	-fx-text-fill:#ffffff;
@@ -93,6 +93,7 @@
 	-fx-font-family:Calibri;
 }
 
+/*Rooms Toggle-buttons */
 .toggle-button-UI{
     -fx-background-color: #ffffff;
     /*-fx-border-width: .2;
@@ -122,6 +123,11 @@
 }
 
 
+/*Label day
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
 .label-dayMin{
 	-fx-background-color: transparent;
 	-fx-text-fill:#f2f2f2;
@@ -140,6 +146,11 @@
 	
 }
 
+/*Label Rooms (within ToggleButton UI)
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
 .label-1Min{
 	-fx-background-color: transparent;
 	-fx-text-fill:#eb777f;
@@ -174,6 +185,12 @@
 	-fx-text-fill: #ffffff;
 }
 
+
+/*Button Floor
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
 .button-floorMin{
 	-fx-background-color: transparent;
 	-fx-text-fill:#e99197;
@@ -208,7 +225,11 @@
 }
 
 
-
+/*Button functions (Rent, Remove, Update, Transaction, Manage, Logout)
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
 .button-functionMin{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
@@ -244,7 +265,9 @@
 }
 
 
-
+/*Generic buttons
+ *	
+ *	*/
 
 .button-cancel{
     -fx-text-fill:#ffffff;
@@ -340,6 +363,21 @@
 
 .button-back:pressed{
     -fx-background-color: #ca525a;
+}
+
+
+/*Transaction Buttons */
+.button-daily{
+	-fx-background-color: transparent;
+	-fx-text-fill: #8b8b8b;
+	-fx-font-family: arial;
+	-fx-font-weight: 800;
+	-fx-font-size: 24px;
+}
+
+.button-daily:hover{
+	-fx-text-fill: #b0b0b0;
+	
 }
 
 

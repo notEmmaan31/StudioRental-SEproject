@@ -59,7 +59,7 @@ public class AdminViewFloor implements Initializable {
     private Button btn_saveDaily,toMain;
         
 	@FXML
-	private Label lbl_day, lbl_rm, lbl_time, lbl_alert ,lbl_daily, lbl_monthly;
+	private Label lbl_day, lbl_rm, lbl_time, lbl_alert, lbl_monthly;
 
 	@FXML
 	private ToggleGroup toggleGroup;
@@ -86,7 +86,7 @@ public class AdminViewFloor implements Initializable {
 	private Button btn_logout, btn_transaction, btn_remove, btn_update, btn_exit, btn_toMain, btn_manage;
 
 	@FXML
-	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open;
+	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open, btn_daily;
 
 	private static String alert;
 	private static String curLocation;

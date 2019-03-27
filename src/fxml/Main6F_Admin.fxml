@@ -37,7 +37,7 @@
                               </Label>
                            </graphic>
                         </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="741.0" style="-fx-font-family: Arial; -fx-text-fill: #eb777f; -fx-font-size: 9px; -fx-font-weight: 900;" text="*ROOMS CAN ONLY BE RENTED FOR A MAXIMUM OF 2 HOURS PER DAY." />
+                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="741.0" style="-fx-font-family: Arial; -fx-text-fill: #eb777f; -fx-font-size: 9px; -fx-font-weight: 900;" text="*ROOMS CAN ONLY BE RENTED FOR A MAXIMUM OF 2 HOURS PER RENT." />
                      </children>
                      <HBox.margin>
                         <Insets />
