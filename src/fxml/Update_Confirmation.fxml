@@ -41,7 +41,7 @@
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="NO" textFill="WHITE">
+                        <Button fx:id="btn_toMain" mnemonicParsing="false" onAction="#toMain" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="NO" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="200.0" />
                            </HBox.margin>

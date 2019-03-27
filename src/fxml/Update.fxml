@@ -30,7 +30,7 @@
                   <HBox layoutX="164.0" layoutY="323.0">
                      <children>
                         <Button fx:id="btn_open" mnemonicParsing="false" onAction="#openFile" prefHeight="38.0" prefWidth="108.0" styleClass="button-confirm" stylesheets="@../styles.css" text="OPEN FILE" textFill="WHITE" />
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE">
+                        <Button fx:id="btn_toMain" mnemonicParsing="false" onAction="#toMain" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="100.0" />
                            </HBox.margin></Button>
