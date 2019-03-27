@@ -240,7 +240,7 @@ public class AdminViewFloor implements Initializable {
 			}
 		} else {
 
-			alert = "Please input a valid information";
+			alert = "Please fill out requirements";
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 			SceneUtil.openWindow(root);
 		}
