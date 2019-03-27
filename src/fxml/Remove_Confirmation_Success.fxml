@@ -24,7 +24,7 @@
                      <children>
                         <VBox alignment="CENTER">
                            <children>
-                              <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
+                              <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Rent Removed" />
                               <VBox alignment="CENTER">
                                  <children>
                                     <Label fx:id="lbl_studNum" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 24px; -fx-font-weight: lighter; -fx-text-fill: #515151;">

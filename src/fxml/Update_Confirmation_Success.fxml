@@ -22,7 +22,7 @@
                <children>
                   <VBox alignment="CENTER" layoutX="292.0" layoutY="14.0">
                      <children>
-                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation">
+                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Successful">
                            <VBox.margin>
                               <Insets bottom="70.0" />
                            </VBox.margin>

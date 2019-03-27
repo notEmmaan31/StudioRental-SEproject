@@ -23,7 +23,7 @@
                   <Button fx:id="btn_exit" layoutX="370.0" layoutY="294.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" textFill="WHITE" />
                   <VBox alignment="CENTER" layoutX="234.0" layoutY="27.0">
                      <children>
-                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
+                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Rent confirmed" />
                         <VBox alignment="CENTER">
                            <children>
                               <HBox alignment="TOP_CENTER">
