@@ -34,7 +34,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Button fx:id="btn_exit" layoutX="370.0" layoutY="264.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" textFill="WHITE" />
+                  <Button fx:id="btn_toMain" layoutX="370.0" layoutY="264.0" mnemonicParsing="false" onAction="#toMain" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" textFill="WHITE" />
                </children>
             </Pane>
          </children>

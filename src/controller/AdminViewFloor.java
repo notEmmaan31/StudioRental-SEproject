@@ -54,7 +54,7 @@ public class AdminViewFloor implements Initializable {
     private DatePicker dp_datepicker;
     
     @FXML
-    private Button btn_saveDaily;
+    private Button btn_saveDaily,toMain;
         
 	@FXML
 	private Label lbl_day, lbl_rm, lbl_time, lbl_alert ,lbl_daily, lbl_monthly;
@@ -292,14 +292,15 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	void update(ActionEvent event) throws IOException {
+		oldStage = (Stage) btn_update.getScene().getWindow();
 		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update.fxml"));
-		SceneUtil.openWindow(root);
+		SceneUtil.nextScene(root,"Update",oldStage);
 	}
 
 	@FXML
 	void confirmUpdate(ActionEvent event) throws IOException {
-		if (file != null) {
-			oldStage = (Stage) btn_exit.getScene().getWindow();
+		if (file != null && file.toString().contains("STUDIO-ASSIGNMENTS")) {
+			oldStage = (Stage) btn_toMain.getScene().getWindow();
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation.fxml"));
 			SceneUtil.nextScene(root, "Confirmation", oldStage);
 		} else {
@@ -391,9 +392,10 @@ public class AdminViewFloor implements Initializable {
 			}
 			workbook.close();
 			
-			oldStage = (Stage) btn_exit.getScene().getWindow();
+			oldStage = (Stage) btn_toMain.getScene().getWindow();
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation_Success.fxml"));
 			SceneUtil.nextScene(root, "Success", oldStage);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch blockE
 			e.printStackTrace();
@@ -908,13 +910,13 @@ public class AdminViewFloor implements Initializable {
 	}
 
 	@FXML
-	void toMonthly(MouseEvent event) {
+	void toMain(ActionEvent event) {
 		try {
 			
 			//mn_month.
-			oldStage = (Stage) btn_exit.getScene().getWindow();
-			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Transaction_Monthly.fxml"));
-			SceneUtil.nextScene(root, "Print Monthly", oldStage);
+			oldStage = (Stage) btn_toMain.getScene().getWindow();
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
+			SceneUtil.nextScene(root, "6th Floor", oldStage);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
