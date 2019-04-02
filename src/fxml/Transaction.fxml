@@ -3,45 +3,63 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,1);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutY="190.0" prefHeight="410.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
          <children>
-            <HBox alignment="BOTTOM_CENTER" layoutX="-7.0" prefHeight="146.0" prefWidth="731.0" AnchorPane.bottomAnchor="454.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="CENTER" layoutX="283.0" layoutY="19.0">
                <children>
-                  <Label contentDisplay="CENTER" style="-fx-text-fill: #c0ac00; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="TRANSACTION LOGS" textAlignment="CENTER" />
+                  <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Selection" />
+                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 21px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please select the report to view:" />
                </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="243.0" layoutY="92.0" prefHeight="200.0" prefWidth="355.0">
+               <children>
+                  <Button fx:id="btn_daily" mnemonicParsing="false" onMouseClicked="#toDaily" styleClass="button-daily" stylesheets="@../styles.css" text="DAILY" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutX="192.0" layoutY="271.0" prefHeight="100.0" prefWidth="458.0">
+               <children>
+                  <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </HBox>
-            <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
-               <children>
-                  <VBox alignment="CENTER" layoutX="283.0" layoutY="19.0">
-                     <children>
-                        <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Selection" />
-                        <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 21px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please select the report to view:" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" layoutX="243.0" layoutY="92.0" prefHeight="200.0" prefWidth="355.0">
-                     <children>
-                        <Button fx:id="btn_daily" mnemonicParsing="false" onMouseClicked="#toDaily" styleClass="button-daily" stylesheets="@../styles.css" text="DAILY" />
-                     </children>
-                  </VBox>
-                  <HBox alignment="CENTER" layoutX="192.0" layoutY="271.0" prefHeight="100.0" prefWidth="458.0">
-                     <children>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../styles.css" text="CANCEL" textFill="WHITE" />
-                     </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </HBox>
-               </children>
-            </Pane>
          </children>
-      </AnchorPane>
+      </Pane>
+      <VBox alignment="TOP_CENTER" prefHeight="199.0" prefWidth="840.0">
+         <children>
+            <ImageView fitHeight="99.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox alignment="BOTTOM_CENTER" prefWidth="840.0">
+               <children>
+                  <Label contentDisplay="CENTER" styleClass="label-promptHeader" stylesheets="@../styles.css" text="TRANSACTION LOGS" textAlignment="CENTER" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Line endX="400.0" startX="-100.0" stroke="#b2b2b2">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Line>
+         </children>
+      </VBox>
    </children>
-</StackPane>
+</AnchorPane>

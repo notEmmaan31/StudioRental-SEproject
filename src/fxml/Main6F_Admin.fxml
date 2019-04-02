@@ -135,7 +135,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" onAction="#update" styleClass="button-functionMin" text="UPDATE SCHEDULE">
+                  <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" onAction="#update" styleClass="button-functionMin" text="UPDATE ROOM SCHEDULE">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>

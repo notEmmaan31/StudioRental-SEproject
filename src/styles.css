@@ -71,6 +71,54 @@
     -fx-background-radius: 2em;
 }
 
+/*Alert */
+
+.label-alert{
+	-fx-text-fill: #323232;
+	-fx-font-family: Calibri;
+	-fx-font-size: 30px;
+}
+
+/*Prompt */
+.label-promptHeader{
+	-fx-text-fill: #323232;
+	-fx-font-family: Calibri;
+	-fx-font-size: 36px;
+	-fx-font-weight: 900;
+}
+
+.label-promptRent{
+	-fx-text-fill: #333333;
+	-fx-font-family: Calibri;
+	-fx-font-size: 18px;
+
+}
+.label-promptRemove{
+	-fx-text-fill: #333333;
+	-fx-font-family: Calibri;
+	-fx-font-size: 18px;
+
+}
+
+.label-promptConfirm{
+	-fx-text-fill: #333333;
+	-fx-font-family: Calibri;
+	-fx-font-size: 21px;
+
+}
+
+.button-terms{
+	-fx-background-color: transparent;
+	-fx-text-fill:  #ca525a;
+	-fx-font-family: Calibri;
+	-fx-font-weight: 900;
+	-fx-text
+	
+}
+
+.button-terms:hover{
+	-fx-text-fill:  #ee626c;
+}
 /*Rooms container for Scrollpane */
 .stackPane-UI{
     -fx-background-color: transparent;
