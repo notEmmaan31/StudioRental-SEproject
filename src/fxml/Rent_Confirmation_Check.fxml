@@ -3,90 +3,122 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.8);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutY="190.0" prefHeight="410.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
          <children>
-            <HBox alignment="BOTTOM_CENTER" layoutX="-7.0" prefHeight="146.0" prefWidth="731.0" AnchorPane.bottomAnchor="454.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="CENTER" prefHeight="369.0" prefWidth="840.0">
                <children>
-                  <Label contentDisplay="CENTER" style="-fx-text-fill: #ca525b; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="RENT ROOMS" textAlignment="CENTER" />
-               </children>
-            </HBox>
-            <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
-               <children>
-                  <VBox alignment="CENTER" layoutX="280.0" layoutY="14.0">
+                  <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-font-weight: 900;" text="Are you sure you want to confirm rent reservation?">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox alignment="CENTER" prefWidth="840.0">
                      <children>
-                        <Label contentDisplay= "CENTER" style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
-                        <VBox alignment="CENTER">
+                        <HBox alignment="TOP_CENTER">
                            <children>
+                              <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text="Rental Fee: " />
+                              <Label contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" text="₱15.00" />
+                              <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text=" | Name of Room/s: " />
+                              <Label fx:id="lbl_rm1" contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" />
                               <HBox alignment="TOP_CENTER">
                                  <children>
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Rental Fee: " />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="₱15.00" />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="| Name of Room:" />
-                                    <Label fx:id="lbl_rm" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="6A" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="TOP_CENTER">
-                                 <children>
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="No. of Hour: " />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="1" />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: lighter; -fx-text-fill: #107400;" text="| Total: " />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 16px; -fx-font-weight: 900; -fx-text-fill: #107400;" text="₱15.00" />
+                                    <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text=" | No. of Hour: " />
+                                    <Label contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" text="1" />
+                                    <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text=" | Total: " />
+                                    <Label contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" text="₱15.00" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
-                        </VBox>
+                        </HBox>
                      </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="10.0" />
+                     </VBox.margin>
                   </VBox>
-                  <VBox alignment="CENTER" layoutX="269.0" layoutY="143.0">
+                  <VBox>
                      <children>
-                        <VBox alignment="CENTER">
+                        <VBox alignment="CENTER" prefHeight="81.0" prefWidth="840.0">
                            <children>
-                              <Label fx:id="lbl_studNum" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-text-fill: #6c6c6c;" text="2014123456" />
-                              <HBox>
+                              <VBox alignment="CENTER">
                                  <children>
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 18px; -fx-text-fill: #6c6c6c;" text="Last Name: " />
-                                    <Label fx:id="lbl_lastName" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 18px; -fx-text-fill: #000000;" text="Madla" />
-                                    <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 18px; -fx-text-fill: #6c6c6c;" text="First Name: ">
-                                       <HBox.margin>
-                                          <Insets left="30.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label fx:id="lbl_firstName" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 18px; -fx-text-fill: #000000;" text="Herrell" />
+                                    <Label fx:id="lbl_studNum" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-text-fill: #6c6c6c;" text="2014123456" />
+                                    <HBox alignment="TOP_CENTER">
+                                       <children>
+                                          <Label contentDisplay="CENTER" styleClass="label-promptConfirm" stylesheets="@../styles.css" text="Last Name: " />
+                                          <Label fx:id="lbl_lastName" contentDisplay="CENTER" style="-fx-font-weight: 900;" styleClass="label-promptConfirm" stylesheets="@../styles.css" text="Madla" />
+                                          <Label contentDisplay="CENTER" styleClass="label-promptConfirm" stylesheets="@../styles.css" text="First Name: ">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lbl_firstName" contentDisplay="CENTER" style="-fx-font-weight: 900;" styleClass="label-promptConfirm" stylesheets="@../styles.css" text="Herrell" />
+                                       </children>
+                                    </HBox>
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
-                        <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-font-weight: 600;" text="Confirm rent reservation?">
                            <VBox.margin>
-                              <Insets top="20.0" />
+                              <Insets bottom="40.0" />
                            </VBox.margin>
-                        </Label>
+                        </VBox>
+                        <HBox alignment="TOP_CENTER">
+                           <children>
+                              <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-back" stylesheets="@../styles.css" text="NO" textFill="WHITE" />
+                              <Button fx:id="btn_confirmRent" mnemonicParsing="false" onAction="#confirmRent" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="YES" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="200.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
-                  <HBox layoutX="216.0" layoutY="303.0">
-                     <children>
-                        <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-back" stylesheets="@../styles.css" text="NO" textFill="WHITE" />
-                        <Button fx:id="btn_confirmRent" mnemonicParsing="false" onAction="#confirmRent" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="YES" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets left="200.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
                </children>
-            </Pane>
+            </VBox>
          </children>
-      </AnchorPane>
+      </Pane>
+      <VBox alignment="TOP_CENTER" prefHeight="199.0" prefWidth="840.0">
+         <children>
+            <ImageView fitHeight="99.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox alignment="BOTTOM_CENTER" prefWidth="840.0">
+               <children>
+                  <Label contentDisplay="CENTER" styleClass="label-promptHeader" stylesheets="@../styles.css" text="RENT ROOMS" textAlignment="CENTER" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Line endX="400.0" startX="-100.0" stroke="#b2b2b2">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Line>
+         </children>
+      </VBox>
    </children>
-</StackPane>
+</AnchorPane>

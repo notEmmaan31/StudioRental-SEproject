@@ -38,7 +38,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -57,9 +59,12 @@ public class AdminViewFloor implements Initializable {
     
     @FXML
     private Button btn_saveDaily,toMain;
+    
+    @FXML
+    private AnchorPane rootPane;
         
 	@FXML
-	private Label lbl_day, lbl_rm, lbl_time, lbl_alert ,lbl_daily, lbl_monthly;
+	private Label lbl_day, lbl_rm, lbl_time, lbl_alert, lbl_monthly;
 
 	@FXML
 	private ToggleGroup toggleGroup;
@@ -86,7 +91,7 @@ public class AdminViewFloor implements Initializable {
 	private Button btn_logout, btn_transaction, btn_remove, btn_update, btn_exit, btn_toMain, btn_manage;
 
 	@FXML
-	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open;
+	private Button btn_updateConfirmed, btn_confirmRent, btn_confirmRemove, btn_confirmUpdate, btn_open, btn_daily;
 
 	private static String alert;
 	private static String curLocation;
@@ -156,9 +161,12 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	void manage(ActionEvent event) throws IOException {
+		rootPane.setEffect(new GaussianBlur());
 		Stage oldStage = (Stage) btn_manage.getScene().getWindow();
 		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Manage.fxml"));
-		SceneUtil.nextScene(root, "Login", oldStage);
+		SceneUtil.openWindow(root);
+		rootPane.setEffect(null);
+		oldStage.close();
 	}
 
 	@FXML
@@ -206,23 +214,29 @@ public class AdminViewFloor implements Initializable {
 			newRoom = null;
 			newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented")) {
-				alert = "Please select a vacant room";
+				rootPane.setEffect(new GaussianBlur());
+				alert = "Please select a vacant room.";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 
 				SceneUtil.openWindow(root);
+				rootPane.setEffect(null);
 
 			} else {
+				rootPane.setEffect(new GaussianBlur());
 				System.out.println(newRoom.getId());
 				roomInfo = newRoom.getId().split("_");
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation.fxml"));
 				SceneUtil.openWindow(root);
+				rootPane.setEffect(null);
 
 			}
 		} catch (NullPointerException e) {
-			alert = "Please select a vacant room";
+			rootPane.setEffect(new GaussianBlur());
+			alert = "Please select a vacant room.";
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 
 			SceneUtil.openWindow(root);
+			rootPane.setEffect(null);
 		}
 	}
 
@@ -255,15 +269,13 @@ public class AdminViewFloor implements Initializable {
 					SceneUtil.openWindow(root);
 				}
 			}else {
-				
 				alert = "Input a 10-digit student number.";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 				SceneUtil.openWindow(root);
 			}
 
 		} else {
-
-			alert = "Please fill out requirements";
+			alert = "Please fill out requirements.";
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 			SceneUtil.openWindow(root);
 		}
@@ -315,9 +327,11 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	void update(ActionEvent event) throws IOException {
+		rootPane.setEffect(new GaussianBlur());
 		oldStage = (Stage) btn_update.getScene().getWindow();
 		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update.fxml"));
-		SceneUtil.nextScene(root,"Update",oldStage);
+		SceneUtil.openWindow(root);
+		rootPane.setEffect(null);
 	}
 
 	@FXML
@@ -327,7 +341,7 @@ public class AdminViewFloor implements Initializable {
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update_Confirmation.fxml"));
 			SceneUtil.nextScene(root, "Confirmation", oldStage);
 		} else {
-			lbl_file.setText("Please choose a vaild excel file");
+			lbl_file.setText("Please choose a vaild excel file.");
 		}
 	}
 
@@ -422,7 +436,7 @@ public class AdminViewFloor implements Initializable {
 		} catch (Exception e) {
 			// TODO Auto-generated catch blockE
 			e.printStackTrace();
-			alert = "Please take the correct template";
+			alert = "Please take the correct template.";
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 			SceneUtil.alert(root, alert);
 		}
@@ -446,22 +460,28 @@ public class AdminViewFloor implements Initializable {
 			newRoom = null;
 			newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 			if(newRoom == null) {
-				alert = "Please select a rented room";
+				rootPane.setEffect(new GaussianBlur());
+				alert = "Please select a rented room.";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 
 				SceneUtil.openWindow(root);
+				rootPane.setEffect(null);
 				return;
 			}
 			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented") == false) {
-				alert = "Please select a rented room";
+				rootPane.setEffect(new GaussianBlur());
+				alert = "Please select a rented room.";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
 
 				SceneUtil.openWindow(root);
+				rootPane.setEffect(null);
 
 			} else {
+				rootPane.setEffect(new GaussianBlur());
 				roomInfo = newRoom.getId().split("_");
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
 				SceneUtil.openWindow(root);
+				rootPane.setEffect(null);
 			}
 		
 	}
@@ -908,10 +928,10 @@ public class AdminViewFloor implements Initializable {
 		@FXML
 	void transact(ActionEvent event) {
 		try {
-			
+			rootPane.setEffect(new GaussianBlur());
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Transaction.fxml"));
 			SceneUtil.openWindow(root);
-			
+			rootPane.setEffect(null);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -923,9 +943,9 @@ public class AdminViewFloor implements Initializable {
 		try {
 			
 			oldStage = (Stage) btn_exit.getScene().getWindow();
+			
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Transaction_Daily.fxml"));
 			SceneUtil.nextScene(root, "Print Daily", oldStage);
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

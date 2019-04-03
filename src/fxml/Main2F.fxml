@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -15,357 +17,342 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
-      <AnchorPane prefHeight="255.0" prefWidth="1920.0" style="-fx-background-color: transparent;" stylesheets="@../styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="307.0" prefWidth="1366.0" style="-fx-background-color: transparent;" stylesheets="@../styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="BOTTOM_LEFT" layoutX="200.0" layoutY="96.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="28.0">
+            <HBox alignment="CENTER" prefHeight="143.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <VBox prefHeight="69.0" prefWidth="485.0">
+                  <VBox alignment="TOP_CENTER">
                      <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="223.0" style="-fx-font-family: Arial; -fx-text-fill: #ffffff; -fx-font-size: 9px;" text="AND">
-                           <graphic>
-                              <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="132.0" style="-fx-font-family: Arial; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-style: italic; -fx-font-weight: 900;" text="PRESENT YOUR ID" />
-                           </graphic>
-                        </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="454.0" style="-fx-font-family: Arial; -fx-text-fill: #e6e430; -fx-font-weight: 900; -fx-font-size: 9px;" text="AT THE STUDENT ASSISTANT FOR THE RESERVATION TO BE CONFIRMED.">
-                           <graphic>
-                              <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-style: italic;" text="₱15/HR">
-                                 <graphic>
-                                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px;" text="PAY" />
-                                 </graphic>
-                              </Label>
-                           </graphic>
-                        </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="741.0" style="-fx-font-family: Arial; -fx-text-fill: #eb777f; -fx-font-size: 9px; -fx-font-weight: 900;" text="*ROOMS CAN ONLY BE RENTED FOR A MAXIMUM OF 2 HOURS PER DAY." />
+                        <ImageView fitHeight="127.0" fitWidth="501.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="290.0" stroke="#b2b2b2">
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+                        </Line>
+                        <Label fx:id="lbl_day" alignment="TOP_LEFT" contentDisplay="TOP" styleClass="label-functionMin" stylesheets="@../styles.css" text="DATE" />
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floorMin" stylesheets="@../styles.css" text="6TH FLOOR" />
+                              <Line endX="100.0" startX="100.0" startY="30.0" stroke="#949494">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Line>
+                              <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floorMin" stylesheets="@../styles.css" text="5TH FLOOR" />
+                              <Line endX="100.0" startX="100.0" startY="30.0" stroke="#949494">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Line>
+                              <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floorMin" stylesheets="@../styles.css" text="3RD FLOOR" />
+                              <Line endX="100.0" startX="100.0" startY="30.0" stroke="#949494">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Line>
+                              <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floorMin" stylesheets="@../styles.css" text="5TH FLOOR" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
                   </VBox>
-                  <Label fx:id="lbl_day" alignment="BOTTOM_CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="293.0" styleClass="label-dayMin" text="MONDAY">
-                     <HBox.margin>
-                        <Insets bottom="20.0" right="230.0" />
-                     </HBox.margin>
-                  </Label>
-                  <HBox alignment="TOP_RIGHT" />
-                  <Button fx:id="btn_manage" mnemonicParsing="false" onAction="#manage" prefHeight="65.0" prefWidth="134.0" styleClass="button-functionMin" text="MANAGE" />
                </children>
             </HBox>
-            <ImageView fitHeight="90.0" fitWidth="361.0" preserveRatio="true">
-               <image>
-                  <Image url="@../images/logo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <VBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="260.0" prefHeight="350.0" prefWidth="130.0" stylesheets="@../styles.css" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0">
-         <children>
-            <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floorMin" stylesheets="@../styles.css" text="SIXTH FLOOR">
-               <VBox.margin>
-                  <Insets bottom="40.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floorMin" stylesheets="@../styles.css" text="FIFTH FLOOR">
-               <VBox.margin>
-                  <Insets bottom="40.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floorMin" stylesheets="@../styles.css" text="THIRD FLOOR">
-               <VBox.margin>
-                  <Insets bottom="40.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floorMin" stylesheets="@../styles.css" text="SECOND FLOOR">
-               <VBox.margin>
-                  <Insets bottom="40.0" />
-               </VBox.margin>
-            </Button>
-            <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="91.0" style="-fx-text-fill: #eb777f; -fx-font-size: 10pt; -fx-font-weight: 900; -fx-font-family: Arial;" text="RENTED">
-               <graphic>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
-               </graphic>
-               <VBox.margin>
-                  <Insets top="40.0" />
-               </VBox.margin>
-            </Label>
-         </children>
-      </VBox>
-      <Line endX="-100.0" endY="388.0" layoutX="250.0" layoutY="228.0" startX="-100.0" startY="-6.0" stroke="WHITE" />
-      <ScrollPane fx:id="roomsPane" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="165.0" pannable="true" prefHeight="605.0" prefWidth="1192.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.0">
-         <content>
-            <StackPane styleClass="scrollPane-UI">
+            <VBox alignment="BOTTOM_RIGHT" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <VBox>
+                  <Button fx:id="btn_manage" mnemonicParsing="false" onAction="#manage" styleClass="button-functionMin" text="MANAGE" />
+               </children>
+            </VBox>
+            <HBox prefHeight="54.0" prefWidth="1366.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="150.0" styleClass="button-timeMin" stylesheets="@../styles.css" />
+                  <Button mnemonicParsing="false" prefWidth="600.0" styleClass="button-3subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="600.0" styleClass="button-3subMin" stylesheets="@../styles.css" text="STUDIO" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="988.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox fx:id="vboxHeader" alignment="CENTER" prefHeight="56.0" prefWidth="1434.0">
                      <children>
-                        <HBox prefHeight="1300.0" prefWidth="768.0">
+                        <HBox prefHeight="54.0" prefWidth="1366.0">
                            <children>
-                              <VBox alignment="CENTER" prefWidth="120.0">
-                                 <children>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="7:00-8:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="8:00-9:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="9:00-10:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="10:00-11:00 AM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="11:00-12:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="12:00-1:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="1:00-2:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="2:00-3:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="3:00-4:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="4:00-5:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="5:00-6:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="6:00-7:00 PM" />
-                                    <Button alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="button-headerMin" text="7:00-8:00 PM" />
-                                 </children>
-                              </VBox>
-                              <VBox prefWidth="150.0">
-                                 <children>
-                                    <ToggleButton fx:id="S21_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toggleGroup" />
-                                       </toggleGroup>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S21_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S21" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                 </children>
-                              </VBox>
-                              <VBox prefWidth="150.0">
-                                 <children>
-                                    <ToggleButton fx:id="S22_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="S22_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup">
-                                       <graphic>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Label styleClass="label-2Min" text="S22" />
-                                             </children>
-                                          </HBox>
-                                       </graphic>
-                                    </ToggleButton>
-                                 </children>
-                              </VBox>
+                              <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="150.0" styleClass="button-timeMin" stylesheets="@../styles.css" text="TIME SLOT" />
+                              <Button mnemonicParsing="false" prefWidth="600.0" styleClass="button-1Min" stylesheets="@../styles.css" text="21" />
+                              <Button mnemonicParsing="false" prefWidth="600.0" styleClass="button-1Min" stylesheets="@../styles.css" text="22" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-17.0" layoutY="686.0" prefHeight="82.0" prefWidth="1383.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="686.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="33.0" styleClass="label-bottom" stylesheets="@../styles.css" text="RENTED">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="roomsPane" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="292.0" pannable="true" prefHeight="404.0" prefWidth="1366.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="292.0">
+         <content>
+            <StackPane prefHeight="962.0" prefWidth="1352.0" style="-fx-border-width: 0;" styleClass="stackPane-UI" stylesheets="@../styles.css">
+               <children>
+                  <HBox prefHeight="1300.0" prefWidth="768.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 0;">
+                     <children>
+                        <VBox alignment="CENTER" prefWidth="150.0" style="-fx-background-color: #323232;">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="7:00-8:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic></Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="8:00-9:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="9:00-10:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="10:00-11:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="11:00-12:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="12:00-1:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="1:00-2:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="2:00-3:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="3:00-4:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="4:00-5:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="5:00-6:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="6:00-7:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="7:00-8:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="600.0">
+                           <children>
+                              <ToggleButton fx:id="S21_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="toggleGroup" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <ToggleButton fx:id="S21_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S21_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="600.0">
+                           <children>
+                              <ToggleButton fx:id="S22_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S22_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="600.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
             </StackPane>
          </content>
