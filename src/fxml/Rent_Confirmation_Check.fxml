@@ -34,7 +34,7 @@
                               <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text="Rental Fee: " />
                               <Label contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" text="₱15.00" />
                               <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text=" | Name of Room/s: " />
-                              <Label fx:id="lbl_rm1" contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" />
+                              <Label fx:id="lbl_rm" contentDisplay="CENTER" styleClass="label-promptRent" stylesheets="@../styles.css" />
                               <HBox alignment="TOP_CENTER">
                                  <children>
                                     <Label contentDisplay="CENTER" style="-fx-font-weight: 800;" styleClass="label-promptRent" stylesheets="@../styles.css" text=" | No. of Hour: " />

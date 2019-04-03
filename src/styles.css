@@ -112,7 +112,6 @@
 	-fx-text-fill:  #ca525a;
 	-fx-font-family: Calibri;
 	-fx-font-weight: 900;
-	-fx-text
 	
 }
 
@@ -197,7 +196,7 @@
 
 .toggle-button-UI-scheduled{
     -fx-background-color: #00CCAE;
-     -fx-background-radius: 0;
+    -fx-background-radius: 0;
     -fx-border-width: .2;
     -fx-border-color:#b2b2b2;
     

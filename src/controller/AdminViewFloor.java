@@ -312,15 +312,13 @@ public class AdminViewFloor implements Initializable {
 			newRoom.getStyleClass().clear();
 			newRoom.getStyleClass().add("toggle-button-UI-rented");
 			newRoom.setSelected(false);
-			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Success.fxml"));
+//			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Rent_Confirmation_Success.fxml"));
 			oldStage = (Stage) btn_exit.getScene().getWindow();
-			SceneUtil.nextScene(root, "Rent confirmation", oldStage);
+			oldStage.close();
+//			SceneUtil.nextScene(root, "Rent confirmation", oldStage);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -468,7 +466,14 @@ public class AdminViewFloor implements Initializable {
 				rootPane.setEffect(null);
 				return;
 			}
-			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented") == false) {
+			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented") || newRoom.getStyleClass().toString().contains("toggle-button-UI-scheduled")) {
+				rootPane.setEffect(new GaussianBlur());
+				roomInfo = newRoom.getId().split("_");
+				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
+				SceneUtil.openWindow(root);
+				rootPane.setEffect(null);
+			} else {
+				
 				rootPane.setEffect(new GaussianBlur());
 				alert = "Please select a rented room.";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
@@ -476,12 +481,6 @@ public class AdminViewFloor implements Initializable {
 				SceneUtil.openWindow(root);
 				rootPane.setEffect(null);
 
-			} else {
-				rootPane.setEffect(new GaussianBlur());
-				roomInfo = newRoom.getId().split("_");
-				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation.fxml"));
-				SceneUtil.openWindow(root);
-				rootPane.setEffect(null);
 			}
 		
 	}
@@ -732,7 +731,7 @@ public class AdminViewFloor implements Initializable {
 						toggle.setSelected(true);
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
-						newRoom.getStyleClass().add("toggle-button-UI-rented");
+						newRoom.getStyleClass().add("toggle-button-UI-scheduled");
 						newRoom.setSelected(false);
 						break;
 					}
