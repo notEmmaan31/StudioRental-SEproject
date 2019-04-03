@@ -115,6 +115,16 @@
          <children>
             <HBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0">
                <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="33.0" styleClass="label-bottom" stylesheets="@../styles.css" text="SCHEDULED">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#206175" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="30.0">
+               <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="33.0" styleClass="label-bottom" stylesheets="@../styles.css" text="RENTED">
                      <HBox.margin>
                         <Insets right="10.0" />

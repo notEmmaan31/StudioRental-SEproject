@@ -195,7 +195,7 @@
 
 
 .toggle-button-UI-scheduled{
-    -fx-background-color: #00CCAE;
+    -fx-background-color: #206175;
     -fx-background-radius: 0;
     -fx-border-width: .2;
     -fx-border-color:#b2b2b2;
@@ -204,11 +204,11 @@
 
 
 .toggle-button-UI-scheduled:hover{
-    -fx-background-color-scheduled: #99FFF0;
+    -fx-background-color: #26738b;
 }
 
 .toggle-button-UI-scheduled:selected{
-    -fx-background-color-scheduled: #B2FFF3;
+    -fx-background-color: #287992;
 }
 
 /*Label day
@@ -325,7 +325,7 @@
 
 .label-bottom{
 	-fx-text-fill: #666666;
-	-fx-font-size: 14pt;
+	-fx-font-size: 17px;
 	-fx-font-weight: 900;
 	-fx-font-family: Calibri;
 }
