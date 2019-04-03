@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import org.apache.commons.lang3.math.NumberUtils;
@@ -560,7 +561,7 @@ public class AdminViewFloor implements Initializable {
 		if (location.toString().contains("Main") && !location.toString().contains("Admin")) {
 			curLocation = location.toString();
 			Date now = new Date();
-			SimpleDateFormat day = new SimpleDateFormat("EEEE");
+			SimpleDateFormat day = new SimpleDateFormat("'-' EEEE '-' MMMM dd, yyyy '-' hh:mm a '-'", Locale.ENGLISH);
 			lbl_day.setText(day.format(now));
 			reload();
 //			updateRentedRoom();
@@ -572,7 +573,7 @@ public class AdminViewFloor implements Initializable {
 		if (location.toString().contains("Main") && location.toString().contains("Admin")) {
 			curLocation = location.toString();
 			Date now = new Date();
-			SimpleDateFormat day = new SimpleDateFormat("EEEE");
+			SimpleDateFormat day = new SimpleDateFormat("'-' EEEE '-' MMMM dd, yyyy '-' hh:mm a '-'", Locale.ENGLISH);
 			lbl_day.setText(day.format(now));
 			reload();
 //			updateRentedRoom();
