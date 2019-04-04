@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+   <children>
+      <AnchorPane prefHeight="302.0" prefWidth="1366.0" style="-fx-background-color: transparent;" stylesheets="@../styles.css" AnchorPane.bottomAnchor="466.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="143.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <ImageView fitHeight="127.0" fitWidth="501.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="290.0" stroke="#b2b2b2">
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+                        </Line>
+                        <Label fx:id="lbl_day" alignment="TOP_LEFT" contentDisplay="TOP" styleClass="label-functionMin" stylesheets="@../styles.css" text="DATE" />
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button fx:id="btn_floor6" mnemonicParsing="false" onAction="#floor6" styleClass="button-floorMin" stylesheets="@../styles.css" text="6TH FLOOR" />
+                              <Line endX="100.0" startX="100.0" startY="30.0" stroke="#949494">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Line>
+                              <Button fx:id="btn_floor5" mnemonicParsing="false" onAction="#floor5" styleClass="button-floorMin" stylesheets="@../styles.css" text="5TH FLOOR" />
+                              <Line endX="100.0" startX="100.0" startY="30.0" stroke="#949494">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Line>
+                              <Button fx:id="btn_floor3" mnemonicParsing="false" onAction="#floor3" styleClass="button-floorMin" stylesheets="@../styles.css" text="3RD FLOOR" />
+                              <Line endX="100.0" startX="100.0" startY="30.0" stroke="#949494">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Line>
+                              <Button fx:id="btn_floor2" mnemonicParsing="false" onAction="#floor2" styleClass="button-floorMin" stylesheets="@../styles.css" text="2ND FLOOR" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="BOTTOM_RIGHT" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <Button fx:id="btn_logout" mnemonicParsing="false" onAction="#logout" styleClass="button-functionMin" text="LOGOUT" />
+               </children>
+            </VBox>
+            <HBox prefHeight="54.0" prefWidth="1366.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="150.0" styleClass="button-timeMin" stylesheets="@../styles.css" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="STUDIO" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="EXT" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2subMin" stylesheets="@../styles.css" text="EXT" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="988.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox fx:id="vboxHeader" alignment="CENTER" prefHeight="56.0" prefWidth="1434.0">
+                     <children>
+                        <HBox prefHeight="54.0" prefWidth="1366.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="150.0" styleClass="button-timeMin" stylesheets="@../styles.css" text="TIME SLOT" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="1" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="2" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="3" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="4" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="5" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="6" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="7" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="8" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="9" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="10" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="11" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="12" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="1" />
+                              <Button mnemonicParsing="false" prefWidth="85.0" styleClass="button-2Min" stylesheets="@../styles.css" text="2" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-17.0" layoutY="686.0" prefHeight="82.0" prefWidth="1383.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="686.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="30.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="33.0" styleClass="label-bottom" stylesheets="@../styles.css" text="RENTED">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb777f" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" layoutY="18.0" prefHeight="65.0" prefWidth="1366.0" stylesheets="@../styles.css">
+               <children>
+                  <Button fx:id="btn_rent" alignment="CENTER" mnemonicParsing="false" onAction="#rent" styleClass="button-functionMin" text="RENT">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_remove" alignment="CENTER" mnemonicParsing="false" onAction="#remove" styleClass="button-functionMin" text="CANCEL">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_update" alignment="CENTER" mnemonicParsing="false" onAction="#update" styleClass="button-functionMin" text="UPDATE ROOM SCHEDULE">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_transaction" mnemonicParsing="false" onAction="#transact" styleClass="button-functionMin" text="TRANSACTION LOGS">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="33.0" styleClass="label-bottom" stylesheets="@../styles.css" text="SCHEDULED">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#206175" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="roomsPane" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" hmax="0.0" layoutX="205.0" layoutY="292.0" pannable="true" prefHeight="404.0" prefWidth="1366.0" styleClass="scrollPane-UI" stylesheets="@../styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="292.0">
+         <content>
+            <StackPane prefHeight="962.0" prefWidth="1352.0" style="-fx-border-width: 0;" styleClass="stackPane-UI" stylesheets="@../styles.css">
+               <children>
+                  <HBox prefHeight="1300.0" prefWidth="768.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 0;">
+                     <children>
+                        <VBox alignment="CENTER" prefWidth="150.0" style="-fx-background-color: #323232;">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="7:00-8:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic></Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="8:00-9:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="9:00-10:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="10:00-11:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="11:00-12:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="AM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="12:00-1:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="1:00-2:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="2:00-3:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="3:00-4:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="4:00-5:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="5:00-6:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="6:00-7:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="90.0" prefWidth="186.0" styleClass="button-headerMin" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <Label styleClass="label-headerMin" text="7:00-8:00">
+                                             <stylesheets>
+                                                <URL value="@../styles.css" />
+                                                <URL value="@../styles.css" />
+                                             </stylesheets>
+                                          </Label>
+                                          <Label styleClass="label-subHMin" text="PM" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="toggleGroup" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <ToggleButton fx:id="S1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S3_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S3_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S4_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S4_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S5_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S5_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S6_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S6_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S7_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S7_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S8_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S8_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S9_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S9_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S10_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S10_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S11_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S11_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="S12_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="S12_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="EXT1_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT1_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="85.0">
+                           <children>
+                              <ToggleButton fx:id="EXT2_7" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_8" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_9" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_10" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_11" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_12" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_13" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_14" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_15" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_16" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_17" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_18" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                              <ToggleButton fx:id="EXT2_19" mnemonicParsing="false" onAction="#select" prefHeight="100.0" prefWidth="180.0" styleClass="toggle-button-UI" toggleGroup="$toggleGroup" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
