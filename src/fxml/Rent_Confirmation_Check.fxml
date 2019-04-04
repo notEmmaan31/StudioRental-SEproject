@@ -22,11 +22,6 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-font-weight: 900;" text="Are you sure you want to confirm rent reservation?">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Label>
                   <VBox alignment="CENTER" prefWidth="840.0">
                      <children>
                         <HBox alignment="TOP_CENTER">
@@ -53,7 +48,7 @@
                         <Insets bottom="20.0" top="10.0" />
                      </VBox.margin>
                   </VBox>
-                  <VBox>
+                  <VBox alignment="TOP_CENTER">
                      <children>
                         <VBox alignment="CENTER" prefHeight="81.0" prefWidth="840.0">
                            <children>
@@ -76,9 +71,14 @@
                               </VBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="40.0" />
+                              <Insets bottom="20.0" />
                            </VBox.margin>
                         </VBox>
+                        <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-font-weight: 900;" text="Are you sure you want to confirm rent reservation?">
+                           <VBox.margin>
+                              <Insets bottom="40.0" />
+                           </VBox.margin>
+                        </Label>
                         <HBox alignment="TOP_CENTER">
                            <children>
                               <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-back" stylesheets="@../styles.css" text="NO" textFill="WHITE" />
