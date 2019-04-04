@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginManage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginManage">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="199.0" prefWidth="840.0">
          <children>
@@ -43,7 +43,7 @@
             <VBox alignment="CENTER" layoutX="178.0" layoutY="23.0">
                <children>
                   <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Forgot Password" />
-                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 23px; -fx-font-weight: 700; -fx-text-fill: #ca525b;" text="Minimum of 9 characters, an upper case,&#10;a lower Case and a number required for password." textAlignment="CENTER">
+                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 23px; -fx-font-weight: 700; -fx-text-fill: #323232;" text="Minimum of 9 characters, an upper case,&#10;a lower Case and a number required for password." textAlignment="CENTER">
                      <VBox.margin>
                         <Insets top="70.0" />
                      </VBox.margin>

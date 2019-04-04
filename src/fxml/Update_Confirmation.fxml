@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
       <Pane layoutY="190.0" prefHeight="410.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
          <children>
@@ -22,7 +22,7 @@
                         <Insets bottom="50.0" />
                      </VBox.margin>
                   </Label>
-                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 21px; -fx-font-weight: 900; -fx-text-fill: #6c6c6c;" text="Are you sure you want to change the scheduled RENT RESERVATIONS?&#10;&#10;*Changing the schedule will affect the entire scheduled rents." textAlignment="CENTER">
+                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 21px; -fx-font-weight: 900; -fx-text-fill: #323232;" text="Are you sure you want to change the scheduled RENT RESERVATIONS?&#10;&#10;*Changing the schedule will affect the entire scheduled rents." textAlignment="CENTER">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
