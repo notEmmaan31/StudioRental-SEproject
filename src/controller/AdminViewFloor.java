@@ -214,7 +214,7 @@ public class AdminViewFloor implements Initializable {
 		try {
 			newRoom = null;
 			newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
-			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented")) {
+			if (newRoom.getStyleClass().toString().contains("toggle-button-UI-rented")||newRoom.getStyleClass().toString().contains("toggle-button-UI-scheduled")) {
 				rootPane.setEffect(new GaussianBlur());
 				alert = "Please select a vacant room.";
 				root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/alert.fxml"));
@@ -329,8 +329,7 @@ public class AdminViewFloor implements Initializable {
 		rootPane.setEffect(new GaussianBlur());
 		oldStage = (Stage) btn_update.getScene().getWindow();
 		root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Update.fxml"));
-		SceneUtil.openWindow(root);
-		rootPane.setEffect(null);
+		SceneUtil.nextScene(root,"update",oldStage);
 	}
 
 	@FXML
@@ -561,7 +560,7 @@ public class AdminViewFloor implements Initializable {
 		if (location.toString().contains("Main") && !location.toString().contains("Admin")) {
 			curLocation = location.toString();
 			Date now = new Date();
-			SimpleDateFormat day = new SimpleDateFormat("'-' EEEE '-' MMMM dd, yyyy '-' hh:mm a '-'", Locale.ENGLISH);
+			SimpleDateFormat day = new SimpleDateFormat("'-' EEEE '-' MMMM dd, yyyy '-'", Locale.ENGLISH);
 			lbl_day.setText(day.format(now));
 			reload();
 //			updateRentedRoom();
@@ -573,7 +572,7 @@ public class AdminViewFloor implements Initializable {
 		if (location.toString().contains("Main") && location.toString().contains("Admin")) {
 			curLocation = location.toString();
 			Date now = new Date();
-			SimpleDateFormat day = new SimpleDateFormat("'-' EEEE '-' MMMM dd, yyyy '-' hh:mm a '-'", Locale.ENGLISH);
+			SimpleDateFormat day = new SimpleDateFormat("'-' EEEE '-' MMMM dd, yyyy '-'", Locale.ENGLISH);
 			lbl_day.setText(day.format(now));
 			reload();
 //			updateRentedRoom();
@@ -606,13 +605,16 @@ public class AdminViewFloor implements Initializable {
 		if (location.toString().contains("Remove_Confirmation.fxml")) {
 			
 			try {
-
+				
+				lastName = null;
+				firstName = null;
+				studNum = null;
 				System.out.println(roomInfo[1]);
 				System.out.println(roomInfo[0].replaceAll("rm", "").toUpperCase());
 				Class.forName(DRIVER);
 				Connection con = DriverManager.getConnection(CONNECTION_URL);
 				PreparedStatement ps = con.prepareStatement(
-						"SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ? ");
+						"SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND TIME_RENTED = ? AND ROOM_RENTED = ? ORDER BY OID DESC ");
 				ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
 				ps.setString(2, roomInfo[1]);
 				ps.setString(3, roomInfo[0]);
@@ -623,13 +625,13 @@ public class AdminViewFloor implements Initializable {
 					firstName = rs.getString("FIRST_NAME");
 					studNum = rs.getString("STUDENT_NUMBER");
 
-					if (lastName.trim().isEmpty() == false) {
+//					if (lastName.trim().isEmpty() == false) {
 
 						lbl_lastName.setText(lastName);
 						lbl_firstName.setText(firstName);
 						lbl_studNum.setText(studNum);
 
-					}
+//					}
 				}
 
 				else {
@@ -688,30 +690,9 @@ public class AdminViewFloor implements Initializable {
 		try {
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(CONNECTION_URL);
-			PreparedStatement ps = con
-					.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? ");
-			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
-			ps.setString(2, "false");
-			ResultSet rs = ps.executeQuery();
-
-			while (rs.next()) {
-				StringBuffer sb = new StringBuffer("");
-				sb.append(rs.getString("ROOM_RENTED"));
-				sb.append("_");
-				sb.append(rs.getString("TIME_RENTED"));
-
-				for (Toggle toggle : toggleGroup.getToggles()) {
-					if (toggle.toString().contains(sb.toString().toLowerCase())|| toggle.toString().contains(sb.toString().toUpperCase())) {
-						toggle.setSelected(true);
-						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
-						newRoom.getStyleClass().clear();
-						newRoom.getStyleClass().add("toggle-button-UI-rented");
-						newRoom.setSelected(false);
-						break;
-					}
-				}
-			}
-
+			PreparedStatement ps = null;
+			ResultSet rs = null; 
+			
 			Date now = new Date();
 			SimpleDateFormat day = new SimpleDateFormat("EEEE");
 
@@ -760,6 +741,28 @@ public class AdminViewFloor implements Initializable {
 						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
 						newRoom.getStyleClass().clear();
 						newRoom.getStyleClass().add("toggle-button-UI");
+						newRoom.setSelected(false);
+						break;
+					}
+				}
+			}
+			ps = con.prepareStatement("SELECT * FROM APP.ORDERS WHERE DATE_RENTED = ? AND CANCELLED = ? ");
+			ps.setString(1, new java.sql.Date(System.currentTimeMillis()).toString());
+			ps.setString(2, "false");
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				StringBuffer sb = new StringBuffer("");
+				sb.append(rs.getString("ROOM_RENTED"));
+				sb.append("_");
+				sb.append(rs.getString("TIME_RENTED"));
+
+				for (Toggle toggle : toggleGroup.getToggles()) {
+					if (toggle.toString().contains(sb.toString().toLowerCase())|| toggle.toString().contains(sb.toString().toUpperCase())) {
+						toggle.setSelected(true);
+						newRoom = (ToggleButton) toggleGroup.getSelectedToggle();
+						newRoom.getStyleClass().clear();
+						newRoom.getStyleClass().add("toggle-button-UI-rented");
 						newRoom.setSelected(false);
 						break;
 					}
@@ -990,8 +993,10 @@ public class AdminViewFloor implements Initializable {
 					cell.setCellStyle(cs);
 					cell.setCellValue("CONSERVATORY OF MUSIC");
 					cell = sheet.createRow(1).createCell(3);
+					cell.setCellStyle(cs);
 					cell.setCellValue("STUDIO RENTAL MONITORING SYSTEM");
-					row.createCell(1).setCellValue("Order ID");
+					cell = row.createCell(1);
+					cell.setCellValue("Order ID");
 					row.createCell(2).setCellValue("Student number");
 					row.createCell(3).setCellValue("Last name");
 					row.createCell(4).setCellValue("First name");
@@ -1021,10 +1026,12 @@ public class AdminViewFloor implements Initializable {
 					FileChooser fc = new FileChooser();
 					fc.getExtensionFilters().add(new ExtensionFilter("Microsoft Excel", "*.xlsx"));
 					file = fc.showSaveDialog(null);
+					
 
 //					lbl_file.setText(file.getPath());
-					
-					workbook.write(new FileOutputStream(file));
+					FileOutputStream fos = new FileOutputStream(file);
+					workbook.write(fos);
+					fos.close();
 					workbook.close();
 					Stage stage = (Stage) btn_exit.getScene().getWindow();
 					stage.close();
