@@ -21,14 +21,14 @@
                   <VBox alignment="CENTER">
                      <children>
                         <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Forgot Password" />
-                        <Label style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required administrator email information.">
+                        <Label style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required administrator username information.">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Label>
                      </children>
                   </VBox>
-                  <TextField fx:id="tf_email" prefHeight="26.0" prefWidth="468.0" promptText="Email">
+                  <TextField fx:id="tf_email" prefHeight="26.0" prefWidth="468.0" promptText="Username">
                      <VBox.margin>
                         <Insets top="60.0" />
                      </VBox.margin>

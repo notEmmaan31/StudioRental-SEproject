@@ -69,6 +69,7 @@
                      </VBox.margin>
                   </PasswordField>
                   <PasswordField fx:id="pf_newPassRetype" prefHeight="26.0" prefWidth="469.0" promptText="Retype New Password" />
+                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Password must be 8 characters longer or less than 20 characters.&#10;Password must contain 1 upper case letter.&#10;Password must contain 1 numeric character." />
                </children>
             </VBox>
          </children>

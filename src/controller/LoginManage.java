@@ -121,7 +121,7 @@ public class LoginManage {
 	// ForgotFXML
 	@FXML
 	void forgotPass(ActionEvent event) throws IOException {
-		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Forgot.fxml"));
+		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Forgot_Match.fxml"));
 		SceneUtil.openWindow(root);
 	}
 
@@ -131,7 +131,7 @@ public class LoginManage {
 		try {
 			Class.forName(DRIVER);
 			connection = DriverManager.getConnection(CONNECTION_URL);
-			ps = connection.prepareStatement("SELECT * FROM ACCOUNT.USERS WHERE EMAIL = ?");
+			ps = connection.prepareStatement("SELECT * FROM ACCOUNT.USERS WHERE USERNAME = ?");
 			ps.setString(1, tf_email.getText());
 			rs = ps.executeQuery();
 
@@ -191,7 +191,7 @@ public class LoginManage {
 					ps.setString(2, email);
 					ps.executeUpdate();
 					ps.close();
-					connection.close();
+					con.close();
 
 					Stage oldStage = (Stage) btn_exit.getScene().getWindow();
 					Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/LogIn_Forgot_Success.fxml"));
