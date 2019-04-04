@@ -41,14 +41,32 @@
       </VBox>
       <Pane layoutY="190.0" prefHeight="410.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
          <children>
-            <VBox alignment="CENTER" layoutX="237.0" layoutY="22.0">
+            <VBox alignment="TOP_CENTER" layoutY="28.0" prefHeight="267.0" prefWidth="840.0">
                <children>
-                  <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Forgot Password" />
-                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="E-mail is a match. Enter a new password.">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                  </Label>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label alignment="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Forgot Password" textAlignment="CENTER" />
+                        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefWidth="840.0" style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-text-fill: #323232;" text="Enter new password." textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Label>
+                        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="840.0" style="-fx-font-family: Calibri; -fx-font-size: 20px; -fx-text-fill: #323232;" text="Password must be 8 characters longer or less than 20 characters and &#10;must contain an upper case character and a numeric character.&#10;&#10;" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_CENTER">
+                     <children>
+                        <VBox>
+                           <children>
+                              <PasswordField fx:id="pf_newPass" prefHeight="26.0" prefWidth="469.0" promptText="New Password">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <PasswordField fx:id="pf_newPassRetype" prefHeight="26.0" prefWidth="469.0" promptText="Retype New Password" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
             <HBox layoutX="215.0" layoutY="300.0">
@@ -61,17 +79,6 @@
                   </Button>
                </children>
             </HBox>
-            <VBox layoutX="186.0" layoutY="143.0">
-               <children>
-                  <PasswordField fx:id="pf_newPass" prefHeight="26.0" prefWidth="469.0" promptText="New Password">
-                     <VBox.margin>
-                        <Insets bottom="30.0" />
-                     </VBox.margin>
-                  </PasswordField>
-                  <PasswordField fx:id="pf_newPassRetype" prefHeight="26.0" prefWidth="469.0" promptText="Retype New Password" />
-                  <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Password must be 8 characters longer or less than 20 characters.&#10;Password must contain 1 upper case letter.&#10;Password must contain 1 numeric character." />
-               </children>
-            </VBox>
          </children>
       </Pane>
    </children>
