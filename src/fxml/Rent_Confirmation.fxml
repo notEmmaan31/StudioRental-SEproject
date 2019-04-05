@@ -73,7 +73,7 @@
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="34.0" prefWidth="173.0" styleClass="button-terms" stylesheets="@../styles.css" text="terms &amp; conditions">
+                        <Button fx:id="btn_terms" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#showTerms" prefHeight="34.0" prefWidth="173.0" styleClass="button-terms" stylesheets="@../styles.css" text="terms &amp; conditions">
                            <HBox.margin>
                               <Insets left="-18.0" />
                            </HBox.margin>

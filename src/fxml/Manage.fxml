@@ -40,7 +40,6 @@
                      </VBox.margin>
                   </PasswordField>
                   <Label fx:id="btn_forgotpass" styleClass="button-forgot" stylesheets="@../styles.css" text="Forgot Password?" />
-                  <Button fx:id="btn_forgot" mnemonicParsing="false" onAction="#forgotPass" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: transparent;" styleClass="button-forgot" stylesheets="@../styles.css" />
                </children>
             </VBox>
             <HBox layoutX="215.0" layoutY="300.0">
@@ -53,6 +52,7 @@
                   <Button fx:id="btn_confirmlogin" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="101.0" styleClass="button-confirm" stylesheets="@../styles.css" text="CONFIRM" />
                </children>
             </HBox>
+            <Button fx:id="btn_forgot" layoutX="180.0" layoutY="227.0" mnemonicParsing="false" onAction="#forgotPass" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: transparent;" styleClass="button-forgot" stylesheets="@../styles.css" />
          </children>
       </Pane>
       <VBox alignment="TOP_CENTER" prefHeight="199.0" prefWidth="840.0">

@@ -59,7 +59,7 @@ public class AdminViewFloor implements Initializable {
     private DatePicker dp_datepicker;
     
     @FXML
-    private Button btn_saveDaily,toMain,btn_checkRemove;
+    private Button btn_saveDaily,toMain,btn_checkRemove,btn_terms;
     
     @FXML
     private AnchorPane rootPane;
@@ -984,6 +984,20 @@ try {
 		}
 		
 		
+	}
+	
+	@FXML
+	void showTerms(ActionEvent event) {
+		try {
+			
+			oldStage = (Stage) btn_toMain.getScene().getWindow();
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
+			SceneUtil.nextScene(root, "6th Floor", oldStage);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML
