@@ -991,8 +991,8 @@ try {
 		try {
 			
 			oldStage = (Stage) btn_exit.getScene().getWindow();
-			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
-			SceneUtil.nextScene(root, "6th Floor", oldStage);
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Terms_Conditions.fxml"));
+			SceneUtil.openWindow(root);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
