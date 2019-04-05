@@ -990,7 +990,7 @@ try {
 	void showTerms(ActionEvent event) {
 		try {
 			
-			oldStage = (Stage) btn_toMain.getScene().getWindow();
+			oldStage = (Stage) btn_exit.getScene().getWindow();
 			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Main6F_Admin.fxml"));
 			SceneUtil.nextScene(root, "6th Floor", oldStage);
 			
@@ -1013,7 +1013,7 @@ try {
 				if(rs.next()) {
 					XSSFWorkbook workbook = new XSSFWorkbook();
 					XSSFSheet sheet = workbook.createSheet("Transactions");
-					XSSFRow row = sheet.createRow(2);
+					XSSFRow row = sheet.createRow(3);
 					CellStyle cs = workbook.createCellStyle();
 					cs.setAlignment(HorizontalAlignment.CENTER);
 					Cell cell = sheet.createRow(0).createCell(3);
@@ -1022,33 +1022,35 @@ try {
 					cell = sheet.createRow(1).createCell(3);
 					cell.setCellStyle(cs);
 					cell.setCellValue("STUDIO RENTAL MONITORING SYSTEM");
-					cell = row.createCell(1);
+					cell = row.createCell(0);
 					cell.setCellValue("Order ID");
-					row.createCell(2).setCellValue("Student number");
-					row.createCell(3).setCellValue("Last name");
-					row.createCell(4).setCellValue("First name");
-					row.createCell(5).setCellValue("Room rented");
-					row.createCell(6).setCellValue("Time rented");
-					row.createCell(7).setCellValue("Date rented");
-					row.createCell(8).setCellValue("Rent cancelled");
-					row.createCell(9).setCellValue("Payment");
-					int i = 3;
+					row.createCell(1).setCellValue("Student number");
+					row.createCell(2).setCellValue("Last name");
+					row.createCell(3).setCellValue("First name");
+					row.createCell(4).setCellValue("Room rented");
+					row.createCell(5).setCellValue("Time rented");
+					row.createCell(6).setCellValue("Date rented");
+					row.createCell(7).setCellValue("Rent cancelled");
+					row.createCell(8).setCellValue("Payment");
+					int i = 4;
 					while(rs.next()) {
 						if(!rs.getString("STUDENT_NUMBER").isEmpty()) {
 							row = sheet.createRow(i);
-							row.createCell(1).setCellValue(rs.getString("OID"));
-							row.createCell(2).setCellValue(rs.getString("STUDENT_NUMBER"));
-							row.createCell(3).setCellValue(rs.getString("LAST_NAME"));
-							row.createCell(4).setCellValue(rs.getString("FIRST_NAME"));
-							row.createCell(5).setCellValue(rs.getString("ROOM_RENTED"));
-							row.createCell(6).setCellValue(rs.getString("TIME_RENTED"));
-							row.createCell(7).setCellValue(rs.getString("DATE_RENTED"));
-							row.createCell(8).setCellValue(rs.getString("CANCELLED"));
-							row.createCell(9).setCellValue(rs.getString("PAYMENT"));
+							row.createCell(0).setCellValue(rs.getString("OID"));
+							row.createCell(1).setCellValue(rs.getString("STUDENT_NUMBER"));
+							row.createCell(2).setCellValue(rs.getString("LAST_NAME"));
+							row.createCell(3).setCellValue(rs.getString("FIRST_NAME"));
+							row.createCell(4).setCellValue(rs.getString("ROOM_RENTED"));
+							row.createCell(5).setCellValue(rs.getString("TIME_RENTED"));
+							row.createCell(6).setCellValue(rs.getString("DATE_RENTED"));
+							row.createCell(7).setCellValue(rs.getString("CANCELLED"));
+							row.createCell(8).setCellValue(rs.getString("PAYMENT"));
 							i++;
 						}
 					}
-					sheet.autoSizeColumn(1);
+					for(i = 0; i <=8 ; i++) {
+						sheet.autoSizeColumn(i);
+					}
 					file = null;
 					FileChooser fc = new FileChooser();
 					fc.getExtensionFilters().add(new ExtensionFilter("Microsoft Excel", "*.xlsx"));
