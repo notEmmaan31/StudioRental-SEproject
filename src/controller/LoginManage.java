@@ -121,7 +121,7 @@ public class LoginManage {
 	// ForgotFXML
 	@FXML
 	void forgotPass(ActionEvent event) throws IOException {
-		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Forgot_Match.fxml"));
+		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Forgot.fxml"));
 		SceneUtil.openWindow(root);
 	}
 

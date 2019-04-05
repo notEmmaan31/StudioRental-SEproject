@@ -59,7 +59,7 @@ public class AdminViewFloor implements Initializable {
     private DatePicker dp_datepicker;
     
     @FXML
-    private Button btn_saveDaily,toMain;
+    private Button btn_saveDaily,toMain,btn_checkRemove;
     
     @FXML
     private AnchorPane rootPane;
@@ -602,7 +602,7 @@ public class AdminViewFloor implements Initializable {
 			lbl_alert.setText(alert);
 		}
 
-		if (location.toString().contains("Remove_Confirmation.fxml")) {
+		if (location.toString().contains("Remove_Confirmation.fxml")||location.toString().contains("Remove_Confirmation_Check.fxml")) {
 			
 			try {
 				
@@ -847,7 +847,7 @@ public class AdminViewFloor implements Initializable {
 
 	@FXML
 	void confirmRemove(ActionEvent event) throws IOException {
-		try {
+try {
 			
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(CONNECTION_URL);
@@ -927,8 +927,21 @@ public class AdminViewFloor implements Initializable {
 			e.printStackTrace();
 		} 
 	}
-
-		@FXML
+	
+	@FXML
+	void checkRemove(ActionEvent event) {
+		try {
+			oldStage = (Stage) btn_exit.getScene().getWindow();
+			root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Remove_Confirmation_Check.fxml"));
+			SceneUtil.nextScene(root, "Print Daily", oldStage);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@FXML
 	void transact(ActionEvent event) {
 		try {
 			rootPane.setEffect(new GaussianBlur());
