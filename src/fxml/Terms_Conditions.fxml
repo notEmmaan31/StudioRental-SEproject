@@ -6,12 +6,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="840.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="909.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewFloor">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" prefHeight="506.0" prefWidth="838.0" AnchorPane.bottomAnchor="-192.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+      <VBox alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" prefHeight="506.0" prefWidth="838.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="105.0" fitWidth="342.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,11 +23,81 @@
                </VBox.margin>
             </ImageView>
             <Line endX="400.0" startX="-100.0" stroke="#b2b2b2" />
-            <Label fx:id="lbl_alert" contentDisplay="CENTER" styleClass="label-alert" stylesheets="@../styles.css" text="he student should pay a fixed rate of ₱15.00 per hour to the admin for approval of rent reservation.&#10;Students can rent for a maximum of 2 hours per rent. (Admin’s discretion)&#10;Students can extend for 1 hour per rent.&#10;Students should get the keys from the staff within a grace period of 15 minutes from the time reserved to avoid reservation nullification.&#10;Voided reservations cannot be refunded.&#10;Students can request to remove their reservations.&#10;Students cannot refund payment on approved reservations." textAlignment="CENTER">
+            <VBox>
                <VBox.margin>
-                  <Insets bottom="40.0" top="40.0" />
+                  <Insets bottom="20.0" top="40.0" />
                </VBox.margin>
-            </Label>
+               <children>
+                  <HBox alignment="TOP_CENTER">
+                     <children>
+                        <Label fx:id="lbl_alert2" alignment="CENTER" contentDisplay="CENTER" styleClass="label-termsHeader" stylesheets="@../styles.css" text="TERMS &amp; CONDITIONS" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+                  <VBox prefWidth="769.0">
+                     <children>
+                        <Label fx:id="lbl_alert" contentDisplay="CENTER" styleClass="label-terms" stylesheets="@../styles.css" text="1. The student should pay a fixed rate of ₱15.00 per hour to the admin for approval of rent reservation.&#10;" textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="30.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl_alert1" contentDisplay="CENTER" styleClass="label-terms" stylesheets="@../styles.css" text="2. Students can rent for a maximum of 2 hours per rent. (Admin’s discretion)." textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="30.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl_alert11" contentDisplay="CENTER" styleClass="label-terms" stylesheets="@../styles.css" text="3. Students can extend for 1 hour per rent." textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="30.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl_alert111" contentDisplay="CENTER" prefHeight="54.0" prefWidth="885.0" styleClass="label-terms" stylesheets="@../styles.css" text="4. Students should get the keys from the staff within a grace period of 15 minutes from the time reserved &#10;to avoid reservation nullification.&#10;" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl_alert1111" contentDisplay="CENTER" styleClass="label-terms" stylesheets="@../styles.css" text="5. Voided reservations cannot be refunded.&#10;" textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="30.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl_alert11111" contentDisplay="CENTER" styleClass="label-terms" stylesheets="@../styles.css" text="6. Students can request to remove their reservations.&#10;" textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="30.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl_alert111111" contentDisplay="CENTER" styleClass="label-terms" stylesheets="@../styles.css" text="7. Students cannot refund payment on approved reservations." textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="50.0" right="30.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="30.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
             <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" styleClass="button-ok" stylesheets="@../styles.css" text="OKAY" />
          </children>
       </VBox>

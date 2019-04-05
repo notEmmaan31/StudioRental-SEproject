@@ -118,6 +118,20 @@
 .button-terms:hover{
 	-fx-text-fill:  #ee626c;
 }
+
+.label-termsHeader{
+	-fx-text-fill:  #323232;
+	-fx-font-family: Cambria;
+	-fx-font-size: 23px;
+	-fx-font-weight: 900;
+}
+
+.label-terms{
+	-fx-text-fill:  #323232;
+	-fx-font-family: Calibri;
+	-fx-font-size: 19px;
+}
+
 /*Rooms container for Scrollpane */
 .stackPane-UI{
     -fx-background-color: transparent;
