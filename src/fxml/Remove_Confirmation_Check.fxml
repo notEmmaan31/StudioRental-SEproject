@@ -30,7 +30,6 @@
                   <VBox alignment="CENTER">
                      <children>
                         <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="Confirmation" />
-                        <Label contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-font-weight: 900;" text="Are you sure you want to cancel rent reservation?" />
                         <VBox alignment="CENTER">
                            <children>
                               <Label fx:id="lbl_studNum" contentDisplay="CENTER" style="-fx-font-family: Calibri; -fx-font-size: 24px; -fx-font-weight: lighter; -fx-text-fill: #515151;">
@@ -94,6 +93,7 @@
                   </HBox>
                </children>
             </VBox>
+            <Label contentDisplay="CENTER" layoutX="157.0" layoutY="241.0" style="-fx-font-family: Calibri; -fx-font-size: 26px; -fx-font-weight: 900;" text="Are you sure you want to cancel rent reservation?" />
          </children>
       </Pane>
       <VBox alignment="TOP_CENTER" prefHeight="199.0" prefWidth="840.0">

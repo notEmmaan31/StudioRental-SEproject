@@ -1043,7 +1043,12 @@ try {
 							row.createCell(4).setCellValue(rs.getString("ROOM_RENTED"));
 							row.createCell(5).setCellValue(rs.getString("TIME_RENTED"));
 							row.createCell(6).setCellValue(rs.getString("DATE_RENTED"));
-							row.createCell(7).setCellValue(rs.getString("CANCELLED"));
+							if (rs.getString("CANCELLED").contains("true")) {
+								row.createCell(7).setCellValue("Cancelled");
+							} else {
+								row.createCell(7).setCellValue("Reserved");
+							}
+							
 							row.createCell(8).setCellValue(rs.getString("PAYMENT"));
 							i++;
 						}
@@ -1062,6 +1067,9 @@ try {
 					workbook.write(fos);
 					fos.close();
 					workbook.close();
+					rs.close();
+					ps.close();
+					con.close();
 					Stage stage = (Stage) btn_exit.getScene().getWindow();
 					stage.close();
 				}
