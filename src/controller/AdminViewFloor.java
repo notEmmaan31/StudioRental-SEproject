@@ -368,7 +368,7 @@ public class AdminViewFloor implements Initializable {
 				sheet = workbook.getSheetAt(i);
 				for (int j = 6; j < 36; j++) {
 					if (j == 20) {
-						j += 3;
+						j += 2;
 						continue;
 					}
 					for (int k = 1; k < 17; k++) {
@@ -845,6 +845,7 @@ public class AdminViewFloor implements Initializable {
 		service.start();
 	}
 
+	@SuppressWarnings("resource")
 	@FXML
 	void confirmRemove(ActionEvent event) throws IOException {
 try {
@@ -885,6 +886,7 @@ try {
 				if(rs.next()) {
 					oid = Integer.parseInt(rs.getString("OID")) + 1;
 				}
+				
 				ps = con.prepareStatement("SELECT * FROM APP.SCHEDULED_RENT WHERE ROOM_RENTED = ? AND DAY_RENTED = ? AND TIME_RENTED = ?");
 				ps.setString(1, roomInfo[0].toUpperCase());
 				ps.setString(2, day.format(now).toUpperCase());

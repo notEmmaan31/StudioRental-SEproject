@@ -13,6 +13,7 @@ import util.SceneUtil;
 import util.Encryption;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -121,7 +122,8 @@ public class LoginManage {
 	// ForgotFXML
 	@FXML
 	void forgotPass(ActionEvent event) throws IOException {
-		Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login_Forgot.fxml"));
+		URL url = getClass().getResource("/src/fxml/Login_Forgot.fxml");
+		Parent root = (Parent) FXMLLoader.load(url);
 		SceneUtil.openWindow(root);
 	}
 
